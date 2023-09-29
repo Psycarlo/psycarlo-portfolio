@@ -46,4 +46,4 @@ pnpm preview
 
 ### Deploy
 
-todo
+Deployed in [Vercel](https://vercel.com/)
