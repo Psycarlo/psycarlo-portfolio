@@ -8,85 +8,68 @@ import vividImage from '../assets/vivid.png'
 import clubeetnico from '../assets/clubeetnico.png'
 
 import Layout from '../layouts/Layout.astro'
+import WrapperLayout from '../layouts/WrapperLayout.vue'
+import ContentLayout from '../layouts/ContentLayout.vue'
 import ProjectCard from '../components/ProjectCard.vue'
-import LetsWorkTogether from '../components/LetsWorkTogether.vue'
-import TheFooter from '../components/TheFooter.vue'
 ---
 
 <Layout title="Projects | Carlos Marques" page="projects">
-  <div class="rounded-lg bg-brand-lightest relative">
-    <div class="p-8">
-      <div class="flex gap-2 items-center">
-        <div
-          class="bg-orange-500 w-2 h-2 rounded-full animate-pulse motion-reduce:animate-none"
-        >
-        </div>
-        <h2 class="font-medium text-xl">Projects</h2>
-      </div>
-      <div class="flex flex-col mt-10 gap-2">
-        <h3 class="text-4xl font-semibold">My Works</h3>
-        <p class="text-brand-grayDark">
-          Get to know the projects I worked on. My work strives to give users a
-          memorable experience.
-        </p>
-      </div>
-    </div>
-    <div
-      class="flex flex-col gap-6 rounded-lg bg-brand-lighter mt-6 mb-3 p-6 mx-2 relative z-10"
-    >
-      <div class="flex flex-col gap-2">
-        <ProjectCard
-          title="Psybitcoin"
-          type="Learning platform, Bitcoin education"
-          to="/projects/psybitcoin/"
-        >
-          <img src={psybitcoinImage.src} alt="Psybitcoin" />
-        </ProjectCard>
-        <ProjectCard
-          title="Spame"
-          type="Content creation, AI tool"
-          to="/projects/spame/"
-        >
-          <img src={spameImage.src} alt="Spame" />
-        </ProjectCard>
-        <ProjectCard
-          title="Kurika"
-          type="Social media, Proof of concept"
-          to="/projects/kurika/"
-        >
-          <img src={kurikaImage.src} alt="Kurika" />
-        </ProjectCard>
-        <ProjectCard
-          title="Yearly"
-          type="Ecommerce, Self-care journaling"
-          to="/projects/yearly/"
-        >
-          <img src={yearlyImage.src} alt="Yearly" />
-        </ProjectCard>
-        <ProjectCard
-          title="Lotus"
-          type="Ecommerce, Custom shopify theme"
-          to="/projects/lotus/"
-        >
-          <img src={lotusImage.src} alt="Lotus" />
-        </ProjectCard>
-        <ProjectCard
-          title="Vivid"
-          type="Open source, Dashboard components library"
-          to="/projects/vivid/"
-        >
-          <img src={vividImage.src} alt="Vivid" />
-        </ProjectCard>
-        <ProjectCard
-          title="Clube Étnico"
-          type="Social media, Proof of concept"
-          to="/projects/clubeetnico/"
-        >
-          <img src={clubeetnico.src} alt="Clube Étnico" />
-        </ProjectCard>
-      </div>
-    </div>
-    <LetsWorkTogether client:visible />
-    <TheFooter />
-  </div>
+  <WrapperLayout
+    topic="Projects"
+    title="My Works"
+    description="Get to know the projects I worked on. My work strives to give users a memorable experience."
+    client:load
+  >
+    <ContentLayout>
+      <ProjectCard
+        title="Psybitcoin"
+        type="Learning platform, Bitcoin education"
+        to="/projects/psybitcoin/"
+      >
+        <img src={psybitcoinImage.src} alt="Psybitcoin" />
+      </ProjectCard>
+      <ProjectCard
+        title="Spame"
+        type="Content creation, AI tool"
+        to="/projects/spame/"
+      >
+        <img src={spameImage.src} alt="Spame" />
+      </ProjectCard>
+      <ProjectCard
+        title="Kurika"
+        type="Social media, Proof of concept"
+        to="/projects/kurika/"
+      >
+        <img src={kurikaImage.src} alt="Kurika" />
+      </ProjectCard>
+      <ProjectCard
+        title="Yearly"
+        type="Ecommerce, Self-care journaling"
+        to="/projects/yearly/"
+      >
+        <img src={yearlyImage.src} alt="Yearly" />
+      </ProjectCard>
+      <ProjectCard
+        title="Lotus"
+        type="Ecommerce, Custom shopify theme"
+        to="/projects/lotus/"
+      >
+        <img src={lotusImage.src} alt="Lotus" />
+      </ProjectCard>
+      <ProjectCard
+        title="Vivid"
+        type="Open source, Dashboard components library"
+        to="/projects/vivid/"
+      >
+        <img src={vividImage.src} alt="Vivid" />
+      </ProjectCard>
+      <ProjectCard
+        title="Clube Étnico"
+        type="Social media, Proof of concept"
+        to="/projects/clubeetnico/"
+      >
+        <img src={clubeetnico.src} alt="Clube Étnico" />
+      </ProjectCard>
+    </ContentLayout>
+  </WrapperLayout>
 </Layout>

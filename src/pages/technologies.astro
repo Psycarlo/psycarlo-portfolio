@@ -19,6 +19,34 @@ import cssImage from '../assets/css.png'
 import scssImage from '../assets/scss.png'
 import tailwindImage from '../assets/tailwind.png'
 
+import mysqlImage from '../assets/mysql.png'
+import postgresqlImage from '../assets/postgresql.png'
+import mongodbImage from '../assets/mongodb.png'
+import redisImage from '../assets/redis.png'
+
+import jestImage from '../assets/jest.png'
+import vitestImage from '../assets/vitest.png'
+import cypressImage from '../assets/cypress.png'
+import playwrightImage from '../assets/playwright.png'
+
+import githubImage from '../assets/github.png'
+import turborepoImage from '../assets/turborepo.png'
+import vscImage from '../assets/vsc.png'
+import dockerImage from '../assets/docker.png'
+import nxImage from '../assets/nx.png'
+
+import jiraImage from '../assets/jira.png'
+import linearImage from '../assets/linear.png'
+
+import confluenceImage from '../assets/confluence.png'
+import notionImage from '../assets/notion.png'
+
+import adobeImage from '../assets/adobe.png'
+import figmaImage from '../assets/figma.png'
+
+import supabaseImage from '../assets/supabase.png'
+import unityImage from '../assets/unity.png'
+
 import Layout from '../layouts/Layout.astro'
 import WrapperLayout from '../layouts/WrapperLayout.vue'
 import ContentLayout from '../layouts/ContentLayout.vue'
@@ -158,6 +186,214 @@ import TechnologiesCard from '../components/TechnologiesCard.vue'
             d="M6.5 20q-2.275 0-3.888-1.575T1 14.575q0-1.95 1.175-3.475T5.25 9.15q.625-2.3 2.5-3.725T12 4q2.925 0 4.963 2.038T19 11q1.725.2 2.863 1.488T23 15.5q0 1.875-1.313 3.188T18.5 20h-12Zm0-2h12q1.05 0 1.775-.725T21 15.5q0-1.05-.725-1.775T18.5 13H17v-2q0-2.075-1.463-3.538T12 6Q9.925 6 8.462 7.463T7 11h-.5q-1.45 0-2.475 1.025T3 14.5q0 1.45 1.025 2.475T6.5 18Zm5.5-6Z"
           >
           </path>
+        </svg>
+      </TechnologiesCard>
+      <TechnologiesCard
+        title="Databases"
+        description="MySQL, PostgreSQL, MongoDB, Redis"
+      >
+        <TechnologyButton to="https://www.mysql.com/">
+          <img src={mysqlImage.src} alt="MySQL" title="MySQL" />
+        </TechnologyButton>
+        <TechnologyButton to="https://www.postgresql.org/">
+          <img src={postgresqlImage.src} alt="PostgreSQL" title="PostgreSQL" />
+        </TechnologyButton>
+        <TechnologyButton to="https://www.mongodb.com/">
+          <img src={mongodbImage.src} alt="MongoDB" title="MongoDB" />
+        </TechnologyButton>
+        <TechnologyButton to="https://redis.io/">
+          <img src={redisImage.src} alt="Redis" title="Redis" />
+        </TechnologyButton>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          slot="icon"
+        >
+          <path
+            fill="currentColor"
+            fill-rule="evenodd"
+            d="M3.25 6c0-1.542 1.23-2.736 2.758-3.5C7.58 1.716 9.7 1.25 12 1.25s4.42.465 5.992 1.25c1.528.764 2.758 1.958 2.758 3.5v12c0 1.542-1.23 2.735-2.758 3.5c-1.572.785-3.692 1.25-5.992 1.25s-4.42-.465-5.992-1.25C4.48 20.734 3.25 19.541 3.25 18V6Zm1.5 0c0-.667.56-1.474 1.929-2.158C8.002 3.181 9.882 2.75 12 2.75s3.998.43 5.321 1.092C18.69 4.526 19.25 5.332 19.25 6c0 .667-.56 1.474-1.929 2.158C15.998 8.819 14.118 9.25 12 9.25s-3.998-.43-5.321-1.092C5.31 7.474 4.75 6.668 4.75 6Zm0 12c0 .667.56 1.474 1.929 2.158c1.323.661 3.203 1.092 5.321 1.092s3.998-.43 5.321-1.092c1.368-.684 1.929-1.49 1.929-2.158v-3.293c-.377.3-.804.565-1.258.792C16.42 16.285 14.3 16.75 12 16.75s-4.42-.465-5.992-1.25a7.146 7.146 0 0 1-1.258-.793V18Zm14.5-9.293V12c0 .667-.56 1.474-1.929 2.158c-1.323.661-3.203 1.092-5.321 1.092s-3.998-.43-5.321-1.092C5.31 13.474 4.75 12.668 4.75 12V8.707c.377.3.804.565 1.258.792C7.58 10.285 9.7 10.75 12 10.75s4.42-.465 5.992-1.25a7.144 7.144 0 0 0 1.258-.793Z"
+            clip-rule="evenodd"
+          >
+          </path>
+        </svg>
+      </TechnologiesCard>
+      <TechnologiesCard
+        title="Test"
+        description="Jest, Vitest, Cypress, Playwright"
+      >
+        <TechnologyButton to="https://jestjs.io/">
+          <img src={jestImage.src} alt="Jest" title="Jest" />
+        </TechnologyButton>
+        <TechnologyButton to="https://vitest.dev/">
+          <img src={vitestImage.src} alt="Vitest" title="Vitest" />
+        </TechnologyButton>
+        <TechnologyButton to="https://www.cypress.io/">
+          <img src={cypressImage.src} alt="Cypress" title="Cypress" />
+        </TechnologyButton>
+        <TechnologyButton to="https://playwright.dev/">
+          <img src={playwrightImage.src} alt="Playwright" title="Playwright" />
+        </TechnologyButton>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          slot="icon"
+        >
+          <path
+            fill="none"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M14.5 2v17.5c0 1.4-1.1 2.5-2.5 2.5h0c-1.4 0-2.5-1.1-2.5-2.5V2m-1 0h7m-1 14h-5"
+          >
+          </path>
+        </svg>
+      </TechnologiesCard>
+      <TechnologiesCard
+        title="Tooling"
+        description="Github, Turborepo, Visual Studio Code, Docker, Nx"
+      >
+        <TechnologyButton to="https://github.com/">
+          <img src={githubImage.src} alt="Github" title="Github" />
+        </TechnologyButton>
+        <TechnologyButton to="https://turbo.build/repo">
+          <img src={turborepoImage.src} alt="Turborepo" title="Turborepo" />
+        </TechnologyButton>
+        <TechnologyButton to="https://nx.dev/">
+          <img src={nxImage.src} alt="Nx" title="Nx" />
+        </TechnologyButton>
+        <TechnologyButton to="https://code.visualstudio.com/">
+          <img
+            src={vscImage.src}
+            alt="Visual Studio Code"
+            title="Visual Studio Code"
+          />
+        </TechnologyButton>
+        <TechnologyButton to="https://www.docker.com/">
+          <img src={dockerImage.src} alt="Docker" title="Docker" />
+        </TechnologyButton>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          slot="icon"
+        >
+          <g fill="none" fill-rule="evenodd">
+            <path
+              d="M24 0v24H0V0h24ZM12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035c-.01-.004-.019-.001-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427c-.002-.01-.009-.017-.017-.018Zm.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093c.012.004.023 0 .029-.008l.004-.014l-.034-.614c-.003-.012-.01-.02-.02-.022Zm-.715.002a.023.023 0 0 0-.027.006l-.006.014l-.034.614c0 .012.007.02.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01l-.184-.092Z"
+            >
+            </path>
+            <path
+              fill="currentColor"
+              d="M6.798 2.884a7.002 7.002 0 0 1 9.294 8.565l4.394 3.718a3.76 3.76 0 1 1-5.3 5.3l-3.717-4.394a7.002 7.002 0 0 1-8.565-9.295c.358-.894 1.48-1.007 2.063-.373L8.17 9.883l1.446-.288l.29-1.449l-3.48-3.198c-.634-.583-.522-1.706.373-2.064ZM8.805 4.42l2.763 2.54c.322.296.466.738.38 1.165l-.47 2.354a1.25 1.25 0 0 1-.982.981l-2.35.467a1.25 1.25 0 0 1-1.164-.38L4.438 8.785a5.002 5.002 0 0 0 6.804 5.25a1.257 1.257 0 0 1 1.422.355l4.05 4.786a1.76 1.76 0 1 0 2.48-2.48l-4.785-4.05a1.257 1.257 0 0 1-.355-1.422a5.001 5.001 0 0 0-5.25-6.804Z"
+            >
+            </path>
+          </g>
+        </svg>
+      </TechnologiesCard>
+      <TechnologiesCard title="Task Management" description="Jira, Linear">
+        <TechnologyButton to="https://www.atlassian.com/software/jira">
+          <img src={jiraImage.src} alt="Jira" title="Jira" />
+        </TechnologyButton>
+        <TechnologyButton to="https://linear.app/">
+          <img src={linearImage.src} alt="Linear" title="Linear" />
+        </TechnologyButton>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          slot="icon"
+        >
+          <path
+            fill="currentColor"
+            d="M19 4H5v16h14V4ZM3 2.992C3 2.444 3.447 2 3.998 2H20a1 1 0 0 1 1 1v17.992A1 1 0 0 1 20.007 22H3.993A1 1 0 0 1 3 21.008V2.992Zm8.293 10.13l4.243-4.243l1.414 1.414l-5.657 5.657l-3.89-3.89l1.415-1.414l2.475 2.475Z"
+          >
+          </path>
+        </svg>
+      </TechnologiesCard>
+      <TechnologiesCard title="Documentation" description="Confluence, Notion">
+        <TechnologyButton to="https://www.atlassian.com/software/confluence">
+          <img src={confluenceImage.src} alt="Confluence" title="Confluence" />
+        </TechnologyButton>
+        <TechnologyButton to="https://www.notion.so/">
+          <img src={notionImage.src} alt="Notion" title="Notion" />
+        </TechnologyButton>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          slot="icon"
+        >
+          <g fill="none" stroke="currentColor" stroke-width="1.5">
+            <path
+              d="M3 10c0-3.771 0-5.657 1.172-6.828C5.343 2 7.229 2 11 2h2c3.771 0 5.657 0 6.828 1.172C21 4.343 21 6.229 21 10v4c0 3.771 0 5.657-1.172 6.828C18.657 22 16.771 22 13 22h-2c-3.771 0-5.657 0-6.828-1.172C3 19.657 3 17.771 3 14v-4Z"
+            >
+            </path>
+            <path stroke-linecap="round" d="M8 10h8m-8 4h5"></path></g
+          >
+        </svg>
+      </TechnologiesCard>
+      <TechnologiesCard title="Design" description="Adobe, Figma">
+        <TechnologyButton to="https://www.adobe.com/">
+          <img src={adobeImage.src} alt="Adobe" title="Adobe" />
+        </TechnologyButton>
+        <TechnologyButton to="figma.com">
+          <img src={figmaImage.src} alt="Figma" title="Figma" />
+        </TechnologyButton>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          slot="icon"
+        >
+          <g
+            fill="none"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="1.5"
+          >
+            <path
+              d="m17.674 11.408l-1.905 5.715a.6.6 0 0 1-.398.386L3.693 20.98a.6.6 0 0 1-.74-.765L6.745 8.841a.6.6 0 0 1 .34-.365l5.387-2.218a.6.6 0 0 1 .653.13l4.404 4.405a.6.6 0 0 1 .145.615ZM3.296 20.602l6.364-6.364"
+            >
+            </path>
+            <path
+              d="m17.792 11.056l2.828-2.829a2 2 0 0 0 0-2.828L18.5 3.277a2 2 0 0 0-2.829 0l-2.828 2.829m-1.062 6.01a1.5 1.5 0 1 0-2.121 2.122a1.5 1.5 0 0 0 2.121-2.122Z"
+            ></path>
+          </g>
+        </svg>
+      </TechnologiesCard>
+      <TechnologiesCard title="Others" description="Supabase, Unity">
+        <TechnologyButton to="https://supabase.com/">
+          <img src={supabaseImage.src} alt="Supabase" title="Supabase" />
+        </TechnologyButton>
+        <TechnologyButton to="https://unity.com/">
+          <img src={unityImage.src} alt="Unity" title="Unity" />
+        </TechnologyButton>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 48 48"
+          slot="icon"
+        >
+          <g fill="none" stroke="currentColor" stroke-width="4">
+            <path
+              stroke-linejoin="round"
+              d="M22.799 4.201L4.414 22.586a2 2 0 0 0 0 2.828L22.8 43.8a2 2 0 0 0 2.828 0l18.385-18.385a2 2 0 0 0 0-2.828L25.627 4.2a2 2 0 0 0-2.828 0Z"
+            >
+            </path>
+            <path stroke-linecap="round" d="M18 24h12m-6-6v12"></path>
+          </g>
         </svg>
       </TechnologiesCard>
     </ContentLayout>

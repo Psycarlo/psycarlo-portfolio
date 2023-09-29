@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex h-16 items-center justify-between rounded-xl bg-brand-lightest px-6 shadow-sm"
+    class="fixed top-4 z-50 flex h-16 w-[560px] items-center justify-between rounded-xl bg-brand-lightest px-6 shadow-md"
   >
     <ul class="flex items-center gap-3">
       <li>
