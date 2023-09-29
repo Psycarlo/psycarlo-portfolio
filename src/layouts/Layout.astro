@@ -1,30 +1,39 @@
---- 
-import '@fontsource/inter';
-import TheHeader from '../components/TheHeader.vue';
+---
+import '@fontsource-variable/inter'
+import TheHeader from '../components/TheHeader.vue'
+
+type CurrentPage =
+  | 'home'
+  | 'about'
+  | 'projects'
+  | 'technologies'
+  | 'bitcoin'
+  | 'none'
 
 interface Props {
-	title: string;
+  title: string
+  page: CurrentPage
 }
 
-const { title } = Astro.props;
+const { title } = Astro.props
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description">
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/png" href="/favicon.png" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body class="bg-brand-light font-brand">
-		<main class="flex justify-center px-8">
-			<div class="w-[560px] py-4 flex flex-col gap-4">
-				<TheHeader />
-				<slot />
-			</div>
-		</main>
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body class="bg-brand-light font-brand">
+    <main class="flex justify-center px-8">
+      <div class="w-[560px] py-4 flex flex-col gap-4">
+        <TheHeader page={Astro.props.page} />
+        <slot />
+      </div>
+    </main>
+  </body>
 </html>

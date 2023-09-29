@@ -1,11 +1,14 @@
 <template>
-  <a :href="to" class="shadow-md py-2 px-5 bg-brand-darkest text-brand-lightest rounded-lg font-medium text-sm hover:-translate-y-[2px] transition-transform duration-300">
+  <a
+    :href="to"
+    class="hover:ring-brand-grayLightest rounded-lg bg-brand-darkest px-5 py-2 text-sm font-medium text-brand-lightest shadow-md ring-offset-1 transition-all duration-300 hover:ring-[3px]"
+  >
     {{ text }}
   </a>
 </template>
 
 <script setup lang="ts">
-  import { type PropType } from 'vue';
+  import { type PropType } from 'vue'
 
   type Variant = 'primary' | 'subtle'
 

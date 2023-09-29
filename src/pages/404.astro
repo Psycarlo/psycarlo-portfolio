@@ -1,0 +1,29 @@
+---
+import Layout from '../layouts/Layout.astro'
+import Button from '../components/Button.vue'
+import ViewButton from '../components/ViewButton.vue'
+import TheFooter from '../components/TheFooter.vue'
+---
+
+<Layout title="Portfolio | Carlos Marques" page="none">
+  <div class="rounded-lg bg-brand-lightest relative">
+    <div class="flex p-8">
+      <div class="flex gap-3 items-center">
+        <div
+          class="bg-orange-500 w-2 h-2 rounded-full animate-pulse motion-reduce:animate-none"
+        >
+        </div>
+        <h2 class="font-medium text-xl">Oops! 404</h2>
+      </div>
+    </div>
+    <div class="flex items-center justify-center flex-col gap-3 min-h-[60vh]">
+      <p class="font-semibold text-3xl">Page not found.</p>
+      <p class="text-brand-grayDark text-sm">This page does not exist.</p>
+      <div class="flex gap-3 mt-3">
+        <Button variant="primary" to="/" text="Back to Home" />
+        <ViewButton text="See My Work" />
+      </div>
+    </div>
+    <TheFooter />
+  </div>
+</Layout>

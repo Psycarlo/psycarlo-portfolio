@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
+  content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
   darkMode: 'class',
   theme: {
     extend: {
@@ -11,6 +11,8 @@ module.exports = {
           darker: '#212121',
           darky: '#2B2B2B',
           dark: '#373737',
+          grayLightest: '#D9DFE8',
+          grayLight: '#BFC3CB',
           gray: '#9A9CA4',
           grayDark: '#666D80',
           light: '#EBEEF3',
@@ -18,13 +20,13 @@ module.exports = {
           lighter: '#F6F8FA',
           lightest: '#FFFFFF',
           white: '#FFFFFF',
-          success: '#28C780',
-        },
+          success: '#28C780'
+        }
       },
       fontFamily: {
-        brand: ['Inter', 'sans-serif']
-      },
-    },
+        brand: ['Inter Variable', 'sans-serif']
+      }
+    }
   },
-  plugins: [],
-};
+  plugins: []
+}
