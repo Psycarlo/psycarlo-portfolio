@@ -7,7 +7,7 @@
     <div class="my-3 flex items-center gap-4">
       <Button to="/contact/" text="Contact Me" variant="primary" />
       <CopyButton
-        client:load
+        client:visible
         text="Copy Email"
         copyText="psycarlo1@gmail.com"
       />
