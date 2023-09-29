@@ -11,129 +11,155 @@ import reactImage from '../assets/react.png'
 import nextImage from '../assets/next.png'
 import astroImage from '../assets/astro.png'
 
+import firebaseImage from '../assets/firebase.png'
+import gcpImage from '../assets/gcp.png'
+import vercelImage from '../assets/vercel.png'
+
+import cssImage from '../assets/css.png'
+import scssImage from '../assets/scss.png'
+import tailwindImage from '../assets/tailwind.png'
+
 import Layout from '../layouts/Layout.astro'
-import LetsWorkTogether from '../components/LetsWorkTogether.vue'
-import TheFooter from '../components/TheFooter.vue'
+import WrapperLayout from '../layouts/WrapperLayout.vue'
+import ContentLayout from '../layouts/ContentLayout.vue'
+import TechnologyButton from '../components/TechnologyButton.vue'
+import TechnologiesCard from '../components/TechnologiesCard.vue'
 ---
 
 <Layout title="Technologies | Carlos Marques" page="technologies">
-  <div class="rounded-lg bg-brand-lightest relative">
-    <div
-      class="flex flex-col gap-6 rounded-lg bg-brand-lighter mt-10 mb-3 p-6 mx-2 relative z-10"
-    >
-      <div class="flex gap-2 items-center">
-        <div
-          class="bg-orange-500 w-2 h-2 rounded-full animate-pulse motion-reduce:animate-none"
+  <WrapperLayout
+    topic="Technologies"
+    title="Dev Things"
+    description="Get to know the technologies I use to build my projects. I am always open to learn new things."
+    client:load
+  >
+    <ContentLayout>
+      <TechnologiesCard
+        title="Languages"
+        description="Javascript, Typescript, Node.js, Python, Java"
+      >
+        <TechnologyButton
+          to="https://developer.mozilla.org/en-US/docs/Web/javascript"
         >
-        </div>
-        <h2 class="font-medium text-xl">Technologies</h2>
-      </div>
-      <div class="flex flex-col my-3 gap-2">
-        <h3 class="text-4xl font-semibold">Dev Things</h3>
-        <p class="text-brand-grayDark">
-          Get to know the technologies I use to build my projects. I am always
-          open to learn new things.
-        </p>
-      </div>
-      <div class="flex flex-col gap-2">
-        <div
-          class="flex flex-col gap-3 rounded-lg border border-brand-light bg-brand-lightest p-4 shadow-sm"
+          <img src={jsImage.src} alt="Javascript" title="Javascript" />
+        </TechnologyButton>
+        <TechnologyButton to="https://www.typescriptlang.org/">
+          <img src={tsImage.src} alt="Typescript" title="Typescript" />
+        </TechnologyButton>
+        <TechnologyButton to="https://nodejs.org/en">
+          <img src={nodeImage.src} alt="Node.js" title="Node.js" />
+        </TechnologyButton>
+        <TechnologyButton to="https://www.python.org/">
+          <img src={pythonImage.src} alt="Python" title="Python" />
+        </TechnologyButton>
+        <TechnologyButton to="https://www.java.com/">
+          <img src={javaImage.src} alt="Java" title="Java" />
+        </TechnologyButton>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 512 512"
+          slot="icon"
         >
-          <div class="flex justify-between items-center">
-            <p class="text-lg font-semibold">Languages</p>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 512 512"
-            >
-              <path
-                fill="currentColor"
-                d="m478.33 433.6l-90-218a22 22 0 0 0-40.67 0l-90 218a22 22 0 1 0 40.67 16.79L316.66 406h102.67l18.33 44.39A22 22 0 0 0 458 464a22 22 0 0 0 20.32-30.4ZM334.83 362L368 281.65L401.17 362Zm-66.99-19.08a22 22 0 0 0-4.89-30.7c-.2-.15-15-11.13-36.49-34.73c39.65-53.68 62.11-114.75 71.27-143.49H330a22 22 0 0 0 0-44H214V70a22 22 0 0 0-44 0v20H54a22 22 0 0 0 0 44h197.25c-9.52 26.95-27.05 69.5-53.79 108.36c-31.41-41.68-43.08-68.65-43.17-68.87a22 22 0 0 0-40.58 17c.58 1.38 14.55 34.23 52.86 83.93c.92 1.19 1.83 2.35 2.74 3.51c-39.24 44.35-77.74 71.86-93.85 80.74a22 22 0 1 0 21.07 38.63c2.16-1.18 48.6-26.89 101.63-85.59c22.52 24.08 38 35.44 38.93 36.1a22 22 0 0 0 30.75-4.9Z"
-              >
-              </path>
-            </svg>
-          </div>
-          <div class="flex gap-2 items-center">
-            <div
-              class="flex h-14 w-14 items-center justify-center rounded-full border-2 border-brand-light bg-brand-lightest bg-center"
-            >
-              <img src={jsImage.src} alt="Javascript" title="Javascript" />
-            </div>
-            <div
-              class="flex h-14 w-14 items-center justify-center rounded-full border-2 border-brand-light bg-brand-lightest bg-center"
-            >
-              <img src={tsImage.src} alt="Typescript" title="Typescript" />
-            </div>
-            <div
-              class="flex h-14 w-14 items-center justify-center rounded-full border-2 border-brand-light bg-brand-lightest bg-center"
-            >
-              <img src={nodeImage.src} alt="Nodejs" title="Nodejs" />
-            </div>
-            <div
-              class="flex h-14 w-14 items-center justify-center rounded-full border-2 border-brand-light bg-brand-lightest bg-center"
-            >
-              <img src={pythonImage.src} alt="Python" title="Python" />
-            </div>
-            <div
-              class="flex h-14 w-14 items-center justify-center rounded-full border-2 border-brand-light bg-brand-lightest bg-center"
-            >
-              <img src={javaImage.src} alt="Java" title="Java" />
-            </div>
-          </div>
-        </div>
-        <div
-          class="flex flex-col gap-3 rounded-lg border border-brand-light bg-brand-lightest p-4 shadow-sm"
+          <path
+            fill="currentColor"
+            d="m478.33 433.6l-90-218a22 22 0 0 0-40.67 0l-90 218a22 22 0 1 0 40.67 16.79L316.66 406h102.67l18.33 44.39A22 22 0 0 0 458 464a22 22 0 0 0 20.32-30.4ZM334.83 362L368 281.65L401.17 362Zm-66.99-19.08a22 22 0 0 0-4.89-30.7c-.2-.15-15-11.13-36.49-34.73c39.65-53.68 62.11-114.75 71.27-143.49H330a22 22 0 0 0 0-44H214V70a22 22 0 0 0-44 0v20H54a22 22 0 0 0 0 44h197.25c-9.52 26.95-27.05 69.5-53.79 108.36c-31.41-41.68-43.08-68.65-43.17-68.87a22 22 0 0 0-40.58 17c.58 1.38 14.55 34.23 52.86 83.93c.92 1.19 1.83 2.35 2.74 3.51c-39.24 44.35-77.74 71.86-93.85 80.74a22 22 0 1 0 21.07 38.63c2.16-1.18 48.6-26.89 101.63-85.59c22.52 24.08 38 35.44 38.93 36.1a22 22 0 0 0 30.75-4.9Z"
+          >
+          </path>
+        </svg>
+      </TechnologiesCard>
+      <TechnologiesCard
+        title="Frameworks"
+        description="Vue, Nuxt, React, Next, Astro"
+      >
+        <TechnologyButton to="https://vuejs.org/">
+          <img src={vueImage.src} alt="Vue" title="Vue" />
+        </TechnologyButton>
+        <TechnologyButton to="https://nuxt.com/">
+          <img src={nuxtImage.src} alt="Nuxt" title="Nuxt" />
+        </TechnologyButton>
+        <TechnologyButton to="https://react.dev/">
+          <img src={reactImage.src} alt="React" title="React" />
+        </TechnologyButton>
+        <TechnologyButton to="https://nextjs.org/">
+          <img src={nextImage.src} alt="Next" title="Next" />
+        </TechnologyButton>
+        <TechnologyButton to="https://astro.build/">
+          <img src={astroImage.src} alt="Astro" title="Astro" />
+        </TechnologyButton>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          slot="icon"
         >
-          <div class="flex justify-between items-center">
-            <p class="text-lg font-semibold">Frameworks</p>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-            >
-              <path
-                fill="none"
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-width="1.5"
-                d="m15.578 3.382l2 1.05c2.151 1.129 3.227 1.693 3.825 2.708C22 8.154 22 9.417 22 11.94v.117c0 2.525 0 3.788-.597 4.802c-.598 1.015-1.674 1.58-3.825 2.709l-2 1.049C13.822 21.539 12.944 22 12 22s-1.822-.46-3.578-1.382l-2-1.05c-2.151-1.129-3.227-1.693-3.825-2.708C2 15.846 2 14.583 2 12.06v-.117c0-2.525 0-3.788.597-4.802c.598-1.015 1.674-1.58 3.825-2.708l2-1.05C10.178 2.461 11.056 2 12 2s1.822.46 3.578 1.382ZM21 7.5l-4 2M12 12L3 7.5m9 4.5v9.5m0-9.5l4.5-2.25l.5-.25m0 0V13m0-3.5l-9.5-5"
-              >
-              </path>
-            </svg>
-          </div>
-          <div class="flex gap-2 items-center">
-            <div
-              class="flex h-14 w-14 items-center justify-center rounded-full border-2 border-brand-light bg-brand-lightest bg-center"
-            >
-              <img src={vueImage.src} alt="Vue" title="Vue" />
-            </div>
-            <div
-              class="flex h-14 w-14 items-center justify-center rounded-full border-2 border-brand-light bg-brand-lightest bg-center"
-            >
-              <img src={nuxtImage.src} alt="Nuxt" title="Nuxt" />
-            </div>
-            <div
-              class="flex h-14 w-14 items-center justify-center rounded-full border-2 border-brand-light bg-brand-lightest bg-center"
-            >
-              <img src={reactImage.src} alt="React" title="React" />
-            </div>
-            <div
-              class="flex h-14 w-14 items-center justify-center rounded-full border-2 border-brand-light bg-brand-lightest bg-center"
-            >
-              <img src={nextImage.src} alt="Next" title="Next" />
-            </div>
-            <div
-              class="flex h-14 w-14 items-center justify-center rounded-full border-2 border-brand-light bg-brand-lightest bg-center"
-            >
-              <img src={astroImage.src} alt="Astro" title="Astro" />
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <LetsWorkTogether client:visible />
-    <TheFooter />
-  </div>
+          <path
+            fill="none"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-width="1.5"
+            d="m15.578 3.382l2 1.05c2.151 1.129 3.227 1.693 3.825 2.708C22 8.154 22 9.417 22 11.94v.117c0 2.525 0 3.788-.597 4.802c-.598 1.015-1.674 1.58-3.825 2.709l-2 1.049C13.822 21.539 12.944 22 12 22s-1.822-.46-3.578-1.382l-2-1.05c-2.151-1.129-3.227-1.693-3.825-2.708C2 15.846 2 14.583 2 12.06v-.117c0-2.525 0-3.788.597-4.802c.598-1.015 1.674-1.58 3.825-2.708l2-1.05C10.178 2.461 11.056 2 12 2s1.822.46 3.578 1.382ZM21 7.5l-4 2M12 12L3 7.5m9 4.5v9.5m0-9.5l4.5-2.25l.5-.25m0 0V13m0-3.5l-9.5-5"
+          >
+          </path>
+        </svg>
+      </TechnologiesCard>
+      <TechnologiesCard title="Styling" description="CSS, SCSS, Tailwind">
+        <TechnologyButton to="https://developer.mozilla.org/en-US/docs/Web/CSS">
+          <img src={cssImage.src} alt="CSS" title="CSS" />
+        </TechnologyButton>
+        <TechnologyButton to="https://sass-lang.com/">
+          <img src={scssImage.src} alt="SCSS" title="SCSS" />
+        </TechnologyButton>
+        <TechnologyButton to="https://tailwindcss.com/">
+          <img src={tailwindImage.src} alt="Tailwind" title="Tailwind" />
+        </TechnologyButton>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 512 512"
+          slot="icon"
+        >
+          <path
+            fill="none"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="32"
+            d="M452.37 59.63h0a40.49 40.49 0 0 0-57.26 0L184 294.74c23.08 4.7 46.12 27.29 49.26 49.26l219.11-227.11a40.49 40.49 0 0 0 0-57.26ZM138 336c-29.88 0-54 24.5-54 54.86c0 23.95-20.88 36.57-36 36.57C64.56 449.74 92.82 464 120 464c39.78 0 72-32.73 72-73.14c0-30.36-24.12-54.86-54-54.86Z"
+          >
+          </path>
+        </svg>
+      </TechnologiesCard>
+      <TechnologiesCard
+        title="Cloud"
+        description="Firebase, Google Cloud, Vercel"
+      >
+        <TechnologyButton to="https://firebase.google.com/">
+          <img src={firebaseImage.src} alt="Firebase" title="Firebase" />
+        </TechnologyButton>
+        <TechnologyButton to="https://cloud.google.com/">
+          <img src={gcpImage.src} alt="Google Cloud" title="Google Cloud" />
+        </TechnologyButton>
+        <TechnologyButton to="https://vercel.com/">
+          <img src={vercelImage.src} alt="Vercel" title="Vercel" />
+        </TechnologyButton>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          slot="icon"
+        >
+          <path
+            fill="currentColor"
+            d="M6.5 20q-2.275 0-3.888-1.575T1 14.575q0-1.95 1.175-3.475T5.25 9.15q.625-2.3 2.5-3.725T12 4q2.925 0 4.963 2.038T19 11q1.725.2 2.863 1.488T23 15.5q0 1.875-1.313 3.188T18.5 20h-12Zm0-2h12q1.05 0 1.775-.725T21 15.5q0-1.05-.725-1.775T18.5 13H17v-2q0-2.075-1.463-3.538T12 6Q9.925 6 8.462 7.463T7 11h-.5q-1.45 0-2.475 1.025T3 14.5q0 1.45 1.025 2.475T6.5 18Zm5.5-6Z"
+          >
+          </path>
+        </svg>
+      </TechnologiesCard>
+    </ContentLayout>
+  </WrapperLayout>
 </Layout>
