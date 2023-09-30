@@ -21,7 +21,8 @@ module.exports = {
           lighter: '#F6F8FA',
           lightest: '#FFFFFF',
           white: '#FFFFFF',
-          success: '#28C780'
+          success: '#28C780',
+          error: '#D05353'
         }
       },
       fontFamily: {

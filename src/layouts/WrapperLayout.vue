@@ -15,7 +15,7 @@
       </div>
     </div>
     <slot></slot>
-    <LetsWorkTogether client:visible />
+    <LetsWorkTogether client:visible v-if="!withoutLetsWorkTogether" />
     <TheFooter />
   </div>
 </template>
@@ -36,6 +36,10 @@
     description: {
       type: String,
       required: true
+    },
+    withoutLetsWorkTogether: {
+      type: Boolean,
+      default: false
     }
   })
 </script>

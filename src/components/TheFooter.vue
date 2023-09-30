@@ -1,5 +1,5 @@
 <template>
-  <div class="mb-2 flex flex-col gap-2">
+  <div class="mb-2 flex flex-col gap-2 pb-2">
     <div
       class="relative z-10 mx-2 flex flex-col gap-6 rounded-lg bg-brand-lighter px-6 py-8 dark:bg-brand-darky"
     >
