@@ -36,6 +36,7 @@
           client:visible
           text="Copy Address"
           :copy-text="BC1_ADDRESS"
+          class="dark:border-brand-dark"
         />
       </div>
     </div>

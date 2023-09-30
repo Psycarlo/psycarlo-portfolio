@@ -33,8 +33,8 @@
       <li>
         <a
           href="/about/"
-          class="group flex h-10 w-10 items-center justify-center rounded-full transition-all duration-200 hover:bg-brand-light"
-          :class="{ 'bg-brand-light': page === 'about' }"
+          class="group flex h-10 w-10 items-center justify-center rounded-full transition-all duration-200 hover:bg-brand-light dark:hover:bg-brand-dark"
+          :class="{ 'bg-brand-light dark:bg-brand-dark': page === 'about' }"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -42,7 +42,7 @@
             viewBox="0 0 24 24"
             stroke-width="1.5"
             stroke="currentColor"
-            class="h-6 w-6 transition-colors duration-200 group-hover:stroke-brand-darkest"
+            class="h-6 w-6 transition-colors duration-200 group-hover:stroke-brand-darkest dark:group-hover:stroke-brand-lightest"
             :class="[
               page === 'about'
                 ? 'stroke-brand-darkest dark:stroke-brand-lightest'
@@ -60,8 +60,8 @@
       <li>
         <a
           href="/projects"
-          class="group flex h-10 w-10 items-center justify-center rounded-full transition-all duration-200 hover:bg-brand-light"
-          :class="{ 'bg-brand-light': page === 'projects' }"
+          class="group flex h-10 w-10 items-center justify-center rounded-full transition-all duration-200 hover:bg-brand-light dark:hover:bg-brand-dark"
+          :class="{ 'bg-brand-light dark:bg-brand-dark': page === 'projects' }"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -69,7 +69,7 @@
             viewBox="0 0 24 24"
             stroke-width="1.5"
             stroke="currentColor"
-            class="h-6 w-6 transition-colors duration-200 group-hover:stroke-brand-darkest"
+            class="h-6 w-6 transition-colors duration-200 group-hover:stroke-brand-darkest dark:group-hover:stroke-brand-lightest"
             :class="[
               page === 'projects'
                 ? 'stroke-brand-darkest dark:stroke-brand-lightest'
@@ -87,8 +87,10 @@
       <li>
         <a
           href="/technologies/"
-          class="group flex h-10 w-10 items-center justify-center rounded-full transition-all duration-200 hover:bg-brand-light"
-          :class="{ 'bg-brand-light': page === 'technologies' }"
+          class="group flex h-10 w-10 items-center justify-center rounded-full transition-all duration-200 hover:bg-brand-light dark:hover:bg-brand-dark"
+          :class="{
+            'bg-brand-light dark:bg-brand-dark': page === 'technologies'
+          }"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -96,7 +98,7 @@
             viewBox="0 0 24 24"
             stroke-width="1.5"
             stroke="currentColor"
-            class="h-6 w-6 transition-colors duration-200 group-hover:stroke-brand-darkest"
+            class="h-6 w-6 transition-colors duration-200 group-hover:stroke-brand-darkest dark:group-hover:stroke-brand-lightest"
             :class="[
               page === 'technologies'
                 ? 'stroke-brand-darkest dark:stroke-brand-lightest'
@@ -114,13 +116,13 @@
       <li>
         <a
           href="/bitcoin/"
-          class="group flex h-10 w-10 items-center justify-center rounded-full transition-all duration-200 hover:bg-brand-light"
-          :class="{ 'bg-brand-light': page === 'bitcoin' }"
+          class="group flex h-10 w-10 items-center justify-center rounded-full transition-all duration-200 hover:bg-brand-light dark:hover:bg-brand-dark"
+          :class="{ 'bg-brand-light dark:bg-brand-dark': page === 'bitcoin' }"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
-            class="h-6 w-6 transition-colors duration-200 group-hover:text-brand-darkest"
+            class="h-6 w-6 transition-colors duration-200 group-hover:text-brand-darkest dark:group-hover:text-brand-lightest"
             :class="[
               page === 'bitcoin'
                 ? 'text-brand-darkest dark:text-brand-lightest'

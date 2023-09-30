@@ -92,13 +92,13 @@
         by
         <a
           href="https://www.instagram.com/psybitcoin/"
-          class="underline transition-all duration-200 hover:text-brand-darky hover:no-underline"
+          class="underline transition-all duration-200 hover:text-brand-darky hover:no-underline dark:hover:text-brand-light"
           target="_blank"
           >Psycarlo</a
         >
         //
         <a
-          class="underline transition-all duration-200 hover:text-brand-darky hover:no-underline"
+          class="underline transition-all duration-200 hover:text-brand-darky hover:no-underline dark:hover:text-brand-light"
           href="https://psybitcoin.com/"
           target="_blank"
           >Psybitcoin</a

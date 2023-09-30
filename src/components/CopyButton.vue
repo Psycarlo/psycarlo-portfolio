@@ -1,7 +1,7 @@
 <template>
   <button
     @click="copyText"
-    class="border-brand-grayLightest flex items-center gap-1 rounded-lg border px-3 py-2 text-sm font-medium shadow-sm ring-offset-1 transition-all duration-300 hover:ring-[3px] hover:ring-brand-light"
+    class="border-brand-grayLightest flex items-center gap-1 rounded-lg border px-3 py-2 text-sm font-medium shadow-sm ring-offset-1 ring-offset-transparent transition-all duration-300 hover:ring-[3px] hover:ring-brand-light dark:border-brand-darky dark:hover:ring-brand-dark/40"
   >
     <svg
       xmlns="http://www.w3.org/2000/svg"

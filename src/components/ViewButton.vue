@@ -1,7 +1,7 @@
 <template>
   <a
     :href="to"
-    class="group flex items-center gap-1 rounded-lg border border-brand-light bg-brand-lightest px-3 py-2 text-sm font-semibold text-brand-dark shadow-md ring-offset-1 transition-all duration-300 hover:ring-[3px] hover:ring-brand-light"
+    class="group flex items-center gap-1 rounded-lg border border-brand-light bg-brand-lightest px-3 py-2 text-sm font-semibold text-brand-dark shadow-md ring-offset-1 ring-offset-transparent transition-all duration-300 hover:ring-[3px] hover:ring-brand-light dark:border-brand-darky dark:bg-brand-dark dark:text-brand-lightest dark:hover:ring-brand-dark/40"
   >
     <span>{{ text }}</span>
     <svg

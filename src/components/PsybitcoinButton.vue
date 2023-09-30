@@ -2,7 +2,7 @@
   <a
     href="https://psybitcoin.com"
     target="_blank"
-    class="hover:ring-brand-grayLightest flex w-full items-center justify-center gap-2 rounded-lg bg-gradient-to-tl from-[#9400d3] to-[#b60aff] px-5 py-2 text-sm text-brand-lightest shadow-md ring-offset-1 transition-all duration-200 hover:ring-[3px] active:scale-[1.01]"
+    class="hover:ring-brand-grayLightest flex w-full items-center justify-center gap-2 rounded-lg bg-gradient-to-tl from-[#9400d3] to-[#b60aff] px-5 py-2 text-sm text-brand-lightest shadow-md ring-offset-1 ring-offset-transparent transition-all duration-200 hover:ring-[3px] active:scale-[1.01] dark:hover:ring-brand-dark"
   >
     <svg
       xmlns="http://www.w3.org/2000/svg"
