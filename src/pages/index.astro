@@ -5,10 +5,28 @@ import psybitcoinImage from '../assets/psybitcoin.png'
 import spameImage from '../assets/spame.png'
 import kurikaImage from '../assets/kurika.png'
 
+import jsImage from '../assets/js.png'
+import tsImage from '../assets/ts.png'
+import nodeImage from '../assets/node.png'
+import pythonImage from '../assets/python.png'
+import javaImage from '../assets/java.png'
+
+import vueImage from '../assets/vue.png'
+import nuxtImage from '../assets/nuxt.png'
+import reactImage from '../assets/react.png'
+import nextImage from '../assets/next.png'
+import astroImage from '../assets/astro.png'
+
+import cssImage from '../assets/css.png'
+import scssImage from '../assets/scss.png'
+import tailwindImage from '../assets/tailwind.png'
+
 import Layout from '../layouts/Layout.astro'
 import Button from '../components/Button.vue'
 import CopyButton from '../components/CopyButton.vue'
 import ProjectCard from '../components/ProjectCard.vue'
+import TechnologiesCard from '../components/TechnologiesCard.vue'
+import TechnologyButton from '../components/TechnologyButton.vue'
 import ViewButton from '../components/ViewButton.vue'
 import LetsWorkTogether from '../components/LetsWorkTogether.vue'
 import TheFooter from '../components/TheFooter.vue'
@@ -93,6 +111,109 @@ import TheFooter from '../components/TheFooter.vue'
           <h2 class="font-medium text-xl">Technologies</h2>
         </div>
         <ViewButton to="/technologies/" />
+      </div>
+      <div class="flex flex-col gap-2">
+        <TechnologiesCard
+          title="Languages"
+          description="Javascript, Typescript, Node.js, Python, Java"
+        >
+          <TechnologyButton
+            to="https://developer.mozilla.org/en-US/docs/Web/javascript"
+          >
+            <img src={jsImage.src} alt="Javascript" title="Javascript" />
+          </TechnologyButton>
+          <TechnologyButton to="https://www.typescriptlang.org/">
+            <img src={tsImage.src} alt="Typescript" title="Typescript" />
+          </TechnologyButton>
+          <TechnologyButton to="https://nodejs.org/en">
+            <img src={nodeImage.src} alt="Node.js" title="Node.js" />
+          </TechnologyButton>
+          <TechnologyButton to="https://www.python.org/">
+            <img src={pythonImage.src} alt="Python" title="Python" />
+          </TechnologyButton>
+          <TechnologyButton to="https://www.java.com/">
+            <img src={javaImage.src} alt="Java" title="Java" />
+          </TechnologyButton>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 512 512"
+            slot="icon"
+          >
+            <path
+              fill="currentColor"
+              d="m478.33 433.6l-90-218a22 22 0 0 0-40.67 0l-90 218a22 22 0 1 0 40.67 16.79L316.66 406h102.67l18.33 44.39A22 22 0 0 0 458 464a22 22 0 0 0 20.32-30.4ZM334.83 362L368 281.65L401.17 362Zm-66.99-19.08a22 22 0 0 0-4.89-30.7c-.2-.15-15-11.13-36.49-34.73c39.65-53.68 62.11-114.75 71.27-143.49H330a22 22 0 0 0 0-44H214V70a22 22 0 0 0-44 0v20H54a22 22 0 0 0 0 44h197.25c-9.52 26.95-27.05 69.5-53.79 108.36c-31.41-41.68-43.08-68.65-43.17-68.87a22 22 0 0 0-40.58 17c.58 1.38 14.55 34.23 52.86 83.93c.92 1.19 1.83 2.35 2.74 3.51c-39.24 44.35-77.74 71.86-93.85 80.74a22 22 0 1 0 21.07 38.63c2.16-1.18 48.6-26.89 101.63-85.59c22.52 24.08 38 35.44 38.93 36.1a22 22 0 0 0 30.75-4.9Z"
+            >
+            </path>
+          </svg>
+        </TechnologiesCard>
+        <TechnologiesCard
+          title="Frameworks"
+          description="Vue, Nuxt, React, Next, Astro"
+        >
+          <TechnologyButton to="https://vuejs.org/">
+            <img src={vueImage.src} alt="Vue" title="Vue" />
+          </TechnologyButton>
+          <TechnologyButton to="https://nuxt.com/">
+            <img src={nuxtImage.src} alt="Nuxt" title="Nuxt" />
+          </TechnologyButton>
+          <TechnologyButton to="https://react.dev/">
+            <img src={reactImage.src} alt="React" title="React" />
+          </TechnologyButton>
+          <TechnologyButton to="https://nextjs.org/">
+            <img src={nextImage.src} alt="Next" title="Next" />
+          </TechnologyButton>
+          <TechnologyButton to="https://astro.build/">
+            <img src={astroImage.src} alt="Astro" title="Astro" />
+          </TechnologyButton>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            slot="icon"
+          >
+            <path
+              fill="none"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-width="1.5"
+              d="m15.578 3.382l2 1.05c2.151 1.129 3.227 1.693 3.825 2.708C22 8.154 22 9.417 22 11.94v.117c0 2.525 0 3.788-.597 4.802c-.598 1.015-1.674 1.58-3.825 2.709l-2 1.049C13.822 21.539 12.944 22 12 22s-1.822-.46-3.578-1.382l-2-1.05c-2.151-1.129-3.227-1.693-3.825-2.708C2 15.846 2 14.583 2 12.06v-.117c0-2.525 0-3.788.597-4.802c.598-1.015 1.674-1.58 3.825-2.708l2-1.05C10.178 2.461 11.056 2 12 2s1.822.46 3.578 1.382ZM21 7.5l-4 2M12 12L3 7.5m9 4.5v9.5m0-9.5l4.5-2.25l.5-.25m0 0V13m0-3.5l-9.5-5"
+            >
+            </path>
+          </svg>
+        </TechnologiesCard>
+        <TechnologiesCard title="Styling" description="CSS, SCSS, Tailwind">
+          <TechnologyButton
+            to="https://developer.mozilla.org/en-US/docs/Web/CSS"
+          >
+            <img src={cssImage.src} alt="CSS" title="CSS" />
+          </TechnologyButton>
+          <TechnologyButton to="https://sass-lang.com/">
+            <img src={scssImage.src} alt="SCSS" title="SCSS" />
+          </TechnologyButton>
+          <TechnologyButton to="https://tailwindcss.com/">
+            <img src={tailwindImage.src} alt="Tailwind" title="Tailwind" />
+          </TechnologyButton>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 512 512"
+            slot="icon"
+          >
+            <path
+              fill="none"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="32"
+              d="M452.37 59.63h0a40.49 40.49 0 0 0-57.26 0L184 294.74c23.08 4.7 46.12 27.29 49.26 49.26l219.11-227.11a40.49 40.49 0 0 0 0-57.26ZM138 336c-29.88 0-54 24.5-54 54.86c0 23.95-20.88 36.57-36 36.57C64.56 449.74 92.82 464 120 464c39.78 0 72-32.73 72-73.14c0-30.36-24.12-54.86-54-54.86Z"
+            >
+            </path>
+          </svg>
+        </TechnologiesCard>
       </div>
     </div>
     <LetsWorkTogether client:visible />
