@@ -1,7 +1,19 @@
 ---
 import Layout from '../../layouts/Layout.astro'
+import ProjectLayout from '../../layouts/ProjectLayout.vue';
+
+import spame from '../../assets/spame.png'
 ---
 
 <Layout title="Spame | Carlos Marques" page="none">
-  <main></main>
+  <ProjectLayout 
+    client:load 
+    title="Spame" 
+    description="..."
+    intro="..."
+    problem="..."
+    solution="..."
+  >
+    <img src={spame.src} alt="Spame" class="w-[48px] h-[48px]" />
+  </ProjectLayout>
 </Layout>

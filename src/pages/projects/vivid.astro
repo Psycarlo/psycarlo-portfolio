@@ -1,7 +1,19 @@
 ---
 import Layout from '../../layouts/Layout.astro'
+import ProjectLayout from '../../layouts/ProjectLayout.vue';
+
+import vivid from '../../assets/vivid.png'
 ---
 
 <Layout title="Vivid | Carlos Marques" page="none">
-  <main></main>
+  <ProjectLayout 
+    client:load 
+    title="Vivid" 
+    description="..."
+    intro="..."
+    problem="..."
+    solution="..."
+  >
+    <img src={vivid.src} alt="Vivid" class="w-[48px] h-[48px]" />
+  </ProjectLayout>
 </Layout>

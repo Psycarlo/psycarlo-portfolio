@@ -1,7 +1,20 @@
 ---
 import Layout from '../../layouts/Layout.astro'
+import ProjectLayout from '../../layouts/ProjectLayout.vue';
+
+import clubeetnico from '../../assets/clubeetnico.png'
 ---
 
 <Layout title="Clube Étnico | Carlos Marques" page="none">
-  <main></main>
+  <ProjectLayout 
+    client:load 
+    title="Clube Étnico Portuguez" 
+    website="https://clubeetnico.pt/" 
+    description="..."
+    intro="..."
+    problem="..."
+    solution="..."
+  >
+    <img src={clubeetnico.src} alt="Clube Étnico Portuguez" class="w-[48px] h-[48px]" />
+  </ProjectLayout>
 </Layout>

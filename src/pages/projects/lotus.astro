@@ -1,7 +1,19 @@
 ---
 import Layout from '../../layouts/Layout.astro'
+import ProjectLayout from '../../layouts/ProjectLayout.vue';
+
+import lotus from '../../assets/lotus.png'
 ---
 
 <Layout title="Lotus | Carlos Marques" page="none">
-  <main></main>
+  <ProjectLayout 
+    client:load 
+    title="Lotus" 
+    description="..."
+    intro="..."
+    problem="..."
+    solution="..."
+  >
+    <img src={lotus.src} alt="Lotus" class="w-[48px] h-[48px]" />
+  </ProjectLayout>
 </Layout>

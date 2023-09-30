@@ -1,7 +1,20 @@
 ---
 import Layout from '../../layouts/Layout.astro'
+import ProjectLayout from '../../layouts/ProjectLayout.vue';
+
+import psybitcoin from '../../assets/psybitcoin.png'
 ---
 
 <Layout title="Psybitcoin | Carlos Marques" page="none">
-  <main></main>
+  <ProjectLayout 
+    client:load 
+    title="Psybitcoin" 
+    website="https://stage.psybitcoin.com" 
+    description="An educational platform that teaches student about bitcoin and other exciting topics. Bitcoin brings peace, love, hope and freedom to humanity and everyone should know about it."
+    intro="..."
+    problem="..."
+    solution="..."
+  >
+    <img src={psybitcoin.src} alt="Psybitcon" class="w-[48px] h-[48px]" />
+  </ProjectLayout>
 </Layout>

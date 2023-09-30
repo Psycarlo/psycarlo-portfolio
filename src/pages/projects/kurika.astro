@@ -1,7 +1,19 @@
 ---
 import Layout from '../../layouts/Layout.astro'
+import ProjectLayout from '../../layouts/ProjectLayout.vue';
+
+import kurika from '../../assets/kurika.png'
 ---
 
 <Layout title="Kurika | Carlos Marques" page="none">
-  <main></main>
+  <ProjectLayout 
+    client:load 
+    title="Kurika" 
+    description="..."
+    intro="..."
+    problem="..."
+    solution="..."
+  >
+    <img src={kurika.src} alt="Kurika" class="w-[48px] h-[48px]" />
+  </ProjectLayout>
 </Layout>

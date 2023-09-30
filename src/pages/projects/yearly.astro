@@ -1,7 +1,19 @@
 ---
 import Layout from '../../layouts/Layout.astro'
+import ProjectLayout from '../../layouts/ProjectLayout.vue';
+
+import yearly from '../../assets/yearly.png'
 ---
 
 <Layout title="Yearly | Carlos Marques" page="none">
-  <main></main>
+  <ProjectLayout 
+    client:load 
+    title="Yearly" 
+    description="..."
+    intro="..."
+    problem="..."
+    solution="..."
+  >
+    <img src={yearly.src} alt="Yearly" class="w-[48px] h-[48px]" />
+  </ProjectLayout>
 </Layout>
