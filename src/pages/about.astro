@@ -1,7 +1,43 @@
 ---
 import Layout from '../layouts/Layout.astro'
+import WrapperLayout from '../layouts/WrapperLayout.vue'
+import ContentLayout from '../layouts/ContentLayout.vue'
+
+import carlos from '../assets/psycarlo.webp'
 ---
 
 <Layout title="About | Carlos Marques" page="about">
-  <main></main>
+  <WrapperLayout
+    topic="About"
+    title="I'm Carlos"
+    description="Hello, I'm Carlos Marques, a passionate creator based in the picturesque country of Portugal. I embarked on my journey in the world of technology and design at the University of Aveiro, where my curiosity and love for crafting memorable digital experiences first took root. With over 5 years of professional experience under my belt, I've honed my skills to develop products that not only meet user needs but also leave a lasting impression. My preferred canvas for crafting these digital wonders is Vue.js, a framework that allows me to bring my creative visions to life. Beyond my work, I'm equally enthusiastic about educating and empowering others, and I enjoy teaching about the fascinating world of Bitcoin. Join me on this digital adventure, and let's create something amazing together."
+    client:load
+  >
+    <ContentLayout>
+      <div class="flex items-center justify-center">
+        <img
+          src={carlos.src}
+          alt="Carlos Marques"
+          class="w-[80%] rounded-lg overflow-hidden"
+        />
+      </div>
+    </ContentLayout>
+    <div class="px-8">
+      <div class="mt-10 flex flex-col gap-2">
+        <h3 class="text-4xl font-semibold">More About Me</h3>
+        <p class="text-brand-grayDark">
+          In my quest to create exceptional user experiences, I believe that
+          every project is an opportunity to learn and innovate. I'm always
+          eager to expand my knowledge and push the boundaries of what's
+          possible. My dedication to staying at the forefront of the tech
+          industry drives me to continuously adapt and evolve my skills. When
+          I'm not immersed in the world of code and design, you can find me
+          sharing my insights and expertise on Bitcoin, helping others navigate
+          this exciting digital frontier. Thank you for visiting my website, and
+          I look forward to connecting with you to turn your ideas into digital
+          masterpieces.
+        </p>
+      </div>
+    </div>
+  </WrapperLayout>
 </Layout>
