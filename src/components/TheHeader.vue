@@ -6,7 +6,7 @@
       <li>
         <a
           href="/"
-          class="group flex h-10 w-10 items-center justify-center rounded-full transition-all duration-200 hover:bg-brand-dark dark:hover:bg-brand-dark"
+          class="group flex h-10 w-10 items-center justify-center rounded-full transition-all duration-200 hover:bg-brand-light dark:hover:bg-brand-dark"
           :class="{ 'bg-brand-light dark:bg-brand-dark': page === 'home' }"
         >
           <svg
