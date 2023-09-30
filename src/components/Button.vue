@@ -1,7 +1,7 @@
 <template>
   <a
     :href="to"
-    class="hover:ring-brand-grayLightest rounded-lg bg-brand-darkest px-5 py-2 text-sm font-medium text-brand-lightest shadow-md ring-offset-1 transition-all duration-300 hover:ring-[3px]"
+    class="hover:ring-brand-grayLightest rounded-lg bg-brand-darkest px-5 py-2 text-sm font-medium text-brand-lightest shadow-md ring-offset-1 transition-all duration-300 hover:ring-[3px] dark:bg-brand-lightest dark:text-brand-darkest"
   >
     {{ text }}
   </a>

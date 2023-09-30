@@ -1,16 +1,18 @@
 <template>
   <div class="mb-2 flex flex-col gap-2">
     <div
-      class="relative z-10 mx-2 flex flex-col gap-6 rounded-lg bg-brand-lighter px-6 py-8"
+      class="relative z-10 mx-2 flex flex-col gap-6 rounded-lg bg-brand-lighter px-6 py-8 dark:bg-brand-darky"
     >
       <div class="flex justify-between">
         <div class="flex items-center gap-3">
           <div
-            class="h-2 w-2 animate-pulse rounded-full bg-orange-500 motion-reduce:animate-none"
+            class="h-2 min-h-[0.5rem] w-2 min-w-[0.5rem] animate-pulse rounded-full bg-orange-500 motion-reduce:animate-none"
           ></div>
-          <h2 class="text-xl font-medium">Follow Me</h2>
+          <h2 class="text-xl font-medium">
+            Follow <span class="hidden sm:inline">Me</span>
+          </h2>
         </div>
-        <ul class="flex gap-3">
+        <ul class="flex gap-1 sm:gap-3">
           <li>
             <SocialButton
               to="https://www.instagram.com/psybitcoin"
@@ -81,7 +83,7 @@
       </div>
     </div>
     <div
-      class="relative z-10 mx-2 flex flex-col items-center gap-2 rounded-lg bg-brand-lighter px-6 py-12"
+      class="relative z-10 mx-2 flex flex-col items-center gap-2 rounded-lg bg-brand-lighter px-6 py-12 dark:bg-brand-darky"
     >
       <p class="text-sm text-brand-gray">
         © 2023 Carlos Marques | Software Engineer & Designer

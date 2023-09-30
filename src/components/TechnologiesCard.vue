@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex flex-col rounded-lg border border-brand-light bg-brand-lightest p-4 shadow-sm"
+    class="dark:border-brand-grayDarkest flex flex-col rounded-lg border border-brand-light bg-brand-lightest p-4 shadow-sm dark:bg-brand-dark"
   >
     <div class="flex items-center justify-between">
       <p class="text-lg font-semibold">{{ title }}</p>

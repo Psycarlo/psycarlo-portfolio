@@ -1,13 +1,13 @@
 <template>
   <div
-    class="fixed top-4 z-50 flex h-16 w-[560px] items-center justify-between rounded-xl bg-brand-lightest px-6 shadow-md"
+    class="fixed top-4 z-50 flex h-16 w-[560px] items-center justify-between rounded-xl bg-brand-lightest px-6 shadow-md dark:border dark:border-brand-darky dark:bg-brand-darker"
   >
     <ul class="flex items-center gap-3">
       <li>
         <a
           href="/"
-          class="group flex h-10 w-10 items-center justify-center rounded-full transition-all duration-200 hover:bg-brand-light"
-          :class="{ 'bg-brand-light': page === 'home' }"
+          class="group flex h-10 w-10 items-center justify-center rounded-full transition-all duration-200 hover:bg-brand-dark dark:hover:bg-brand-dark"
+          :class="{ 'bg-brand-light dark:bg-brand-dark': page === 'home' }"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -15,9 +15,11 @@
             viewBox="0 0 24 24"
             stroke-width="1.5"
             stroke="currentColor"
-            class="h-6 w-6 transition-colors duration-200 group-hover:stroke-brand-darkest"
+            class="h-6 w-6 transition-colors duration-200 group-hover:stroke-brand-darkest dark:group-hover:stroke-brand-lightest"
             :class="[
-              page === 'home' ? 'stroke-brand-darkest' : 'stroke-brand-gray'
+              page === 'home'
+                ? 'stroke-brand-darkest dark:stroke-brand-lightest'
+                : 'stroke-brand-gray'
             ]"
           >
             <path
@@ -42,7 +44,9 @@
             stroke="currentColor"
             class="h-6 w-6 transition-colors duration-200 group-hover:stroke-brand-darkest"
             :class="[
-              page === 'about' ? 'stroke-brand-darkest' : 'stroke-brand-gray'
+              page === 'about'
+                ? 'stroke-brand-darkest dark:stroke-brand-lightest'
+                : 'stroke-brand-gray'
             ]"
           >
             <path
@@ -67,7 +71,9 @@
             stroke="currentColor"
             class="h-6 w-6 transition-colors duration-200 group-hover:stroke-brand-darkest"
             :class="[
-              page === 'projects' ? 'stroke-brand-darkest' : 'stroke-brand-gray'
+              page === 'projects'
+                ? 'stroke-brand-darkest dark:stroke-brand-lightest'
+                : 'stroke-brand-gray'
             ]"
           >
             <path
@@ -93,7 +99,7 @@
             class="h-6 w-6 transition-colors duration-200 group-hover:stroke-brand-darkest"
             :class="[
               page === 'technologies'
-                ? 'stroke-brand-darkest'
+                ? 'stroke-brand-darkest dark:stroke-brand-lightest'
                 : 'stroke-brand-gray'
             ]"
           >
@@ -116,7 +122,9 @@
             viewBox="0 0 24 24"
             class="h-6 w-6 transition-colors duration-200 group-hover:text-brand-darkest"
             :class="[
-              page === 'bitcoin' ? 'text-brand-darkest' : 'text-brand-gray'
+              page === 'bitcoin'
+                ? 'text-brand-darkest dark:text-brand-lightest'
+                : 'text-brand-gray'
             ]"
           >
             <path
@@ -129,25 +137,7 @@
     </ul>
     <ul class="flex items-center gap-3">
       <li>
-        <a
-          href="#"
-          class="group flex h-10 w-10 items-center justify-center rounded-full transition-all duration-200 hover:bg-brand-light"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke-width="1.5"
-            stroke="currentColor"
-            class="h-6 w-6 stroke-brand-darkest transition-colors duration-200 group-hover:fill-brand-darkest"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z"
-            />
-          </svg>
-        </a>
+        <ThemeToggle client:only="vue" />
       </li>
       <li class="flex">
         <Button to="/contact/" text="Contact Me" variant="primary" />
@@ -159,6 +149,7 @@
 <script setup lang="ts">
   import { type PropType } from 'vue'
   import Button from './Button.vue'
+  import ThemeToggle from './ThemeToggle.vue'
 
   type CurrentPage =
     | 'home'

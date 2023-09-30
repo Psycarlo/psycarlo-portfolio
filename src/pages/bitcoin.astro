@@ -1,7 +1,34 @@
 ---
 import Layout from '../layouts/Layout.astro'
+import WrapperLayout from '../layouts/WrapperLayout.vue'
+import ContentLayout from '../layouts/ContentLayout.vue'
+import BitcoinCard from '../components/BitcoinCard.vue'
+
+import splash from '../assets/splash.png'
+import qr from '../assets/qr.png'
 ---
 
 <Layout title="Bitcoin | Carlos Marques" page="bitcoin">
-  <main></main>
+  <WrapperLayout
+    topic="Bitcoin"
+    title="Absolute Scarcity"
+    description="Bitcoin is the hardest money in the world. It brings peace, love, hope and freedom to the human race."
+    client:load
+  >
+    <ContentLayout>
+      <BitcoinCard client:visible>
+        <img
+          src={splash.src}
+          alt="Psybitcoin Splash"
+          class="rounded-lg shadow-md"
+        />
+        <img
+          src={qr.src}
+          alt="Bitcoin Adress QR Code"
+          class="rounded-lg duration-300 hover:scale-[1.02] transition-transform"
+          slot="qr"
+        />
+      </BitcoinCard>
+    </ContentLayout>
+  </WrapperLayout>
 </Layout>

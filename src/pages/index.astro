@@ -1,5 +1,4 @@
 ---
-import { Image } from 'astro:assets'
 import carlosImage from '../assets/carlos.png'
 import psybitcoinImage from '../assets/psybitcoin.png'
 import spameImage from '../assets/spame.png'
@@ -33,7 +32,7 @@ import TheFooter from '../components/TheFooter.vue'
 ---
 
 <Layout title="Portfolio | Carlos Marques" page="home">
-  <div class="rounded-lg bg-brand-lightest relative">
+  <div class="rounded-lg bg-brand-lightest dark:bg-brand-darker relative">
     <div class="flex flex-col p-8">
       <div class="flex gap-3 items-center">
         <div
@@ -44,7 +43,7 @@ import TheFooter from '../components/TheFooter.vue'
       </div>
       <div class="flex flex-col gap-3 mt-10">
         <h1 class="font-semibold text-4xl">Carlos Marques</h1>
-        <p class="text-brand-grayDark text-sm">
+        <p class="text-brand-grayDark text-sm dark:text-brand-grayLight">
           Software Engineer & Designer from Portugal.<br />
            I create beautiful and performant products.<br />
            Also teach about Bitcoin.
@@ -63,7 +62,7 @@ import TheFooter from '../components/TheFooter.vue'
       </div>
     </div>
     <div
-      class="flex flex-col gap-6 rounded-lg bg-brand-lighter mt-10 mb-3 p-6 mx-2 relative z-10"
+      class="flex flex-col gap-6 rounded-lg bg-brand-lighter dark:bg-brand-darky mt-10 mb-3 p-6 mx-2 relative z-10"
     >
       <div class="flex justify-between">
         <div class="flex gap-2 items-center">
@@ -100,7 +99,7 @@ import TheFooter from '../components/TheFooter.vue'
       </div>
     </div>
     <div
-      class="flex flex-col gap-6 rounded-lg bg-brand-lighter p-6 mx-2 relative z-10"
+      class="flex flex-col gap-6 rounded-lg bg-brand-lighter dark:bg-brand-darky p-6 mx-2 relative z-10"
     >
       <div class="flex justify-between">
         <div class="flex gap-2 items-center">
