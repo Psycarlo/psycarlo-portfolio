@@ -4,6 +4,7 @@ import WrapperLayout from '../layouts/WrapperLayout.vue'
 import ContentLayout from '../layouts/ContentLayout.vue'
 
 import carlos from '../assets/psycarlo.webp'
+import signature from '../assets/signature.png'
 ---
 
 <Layout title="About | Carlos Marques" page="about">
@@ -14,11 +15,16 @@ import carlos from '../assets/psycarlo.webp'
     client:load
   >
     <ContentLayout>
-      <div class="flex items-center justify-center">
+      <div class="flex items-center justify-center relative">
         <img
           src={carlos.src}
           alt="Carlos Marques"
-          class="w-[80%] rounded-lg overflow-hidden"
+          class="peer w-[80%] rounded-lg overflow-hidden ring-2 ring-offset-2 ring-brand-grayLightest hover:scale-105 duration-300 transition object-cover"
+        />
+        <img
+          src={signature.src}
+          alt="Carlos Marques Signature"
+          class="absolute left-2 top-4 -rotate-12 drop-shadow-xl"
         />
       </div>
     </ContentLayout>
