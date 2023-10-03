@@ -1,8 +1,11 @@
 ---
 import Layout from '../../layouts/Layout.astro'
-import ProjectLayout from '../../layouts/ProjectLayout.vue';
+import ProjectLayout from '../../layouts/ProjectLayout.vue'
+import TechnologyButton from '../../components/TechnologyButton.vue'
 
 import kurika from '../../assets/kurika.png'
+
+import adobe from '../../assets/adobe.png'
 ---
 
 <Layout title="Kurika | Carlos Marques" page="none">
@@ -15,5 +18,10 @@ import kurika from '../../assets/kurika.png'
     solution="..."
   >
     <img src={kurika.src} alt="Kurika" class="w-[48px] h-[48px]" />
+    <div class="grid-cols-4 sm:grid-cols-5 grid md:grid-cols-6 gap-2" slot="technologies">
+      <TechnologyButton to="https://www.adobe.com/">
+        <img src={adobe.src} alt="Adobe" title="Adobe" />
+      </TechnologyButton>
+    </div>
   </ProjectLayout>
 </Layout>

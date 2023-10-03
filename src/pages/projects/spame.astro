@@ -1,8 +1,25 @@
 ---
 import Layout from '../../layouts/Layout.astro'
-import ProjectLayout from '../../layouts/ProjectLayout.vue';
+import ProjectLayout from '../../layouts/ProjectLayout.vue'
+import TechnologyButton from '../../components/TechnologyButton.vue'
 
 import spame from '../../assets/spame.png'
+
+import ts from '../../assets/ts.png'
+import nuxt from '../../assets/nuxt.png'
+import tailwind from '../../assets/tailwind.png'
+import vercel from '../../assets/vercel.png'
+import postgresql from '../../assets/postgresql.png'
+import jest from '../../assets/jest.png'
+import playwright from '../../assets/playwright.png'
+import github from '../../assets/github.png'
+import turborepo from '../../assets/turborepo.png'
+import vsc from '../../assets/vsc.png'
+import docker from '../../assets/docker.png'
+import linear from '../../assets/linear.png'
+import notion from '../../assets/notion.png'
+import adobe from '../../assets/adobe.png'
+import supabase from '../../assets/supabase.png'
 ---
 
 <Layout title="Spame | Carlos Marques" page="none">
@@ -15,5 +32,56 @@ import spame from '../../assets/spame.png'
     solution="..."
   >
     <img src={spame.src} alt="Spame" class="w-[48px] h-[48px]" />
+    <div class="grid-cols-4 sm:grid-cols-5 grid md:grid-cols-6 gap-2" slot="technologies">
+      <TechnologyButton to="https://www.typescriptlang.org/">
+        <img src={ts.src} alt="Typescript" title="Typescript" />
+      </TechnologyButton>
+      <TechnologyButton to="https://nuxt.com/">
+        <img src={nuxt.src} alt="Nuxt" title="Nuxt" />
+      </TechnologyButton>
+      <TechnologyButton to="https://tailwindcss.com/">
+        <img src={tailwind.src} alt="Tailwind" title="Tailwind" />
+      </TechnologyButton>
+      <TechnologyButton to="https://vercel.com/">
+        <img src={vercel.src} alt="Vercel" title="Vercel" />
+      </TechnologyButton>
+      <TechnologyButton to="https://www.postgresql.org/">
+        <img src={postgresql.src} alt="PostgreSQL" title="PostgreSQL" />
+      </TechnologyButton>
+      <TechnologyButton to="https://jestjs.io/">
+        <img src={jest.src} alt="Jest" title="Jest" />
+      </TechnologyButton>
+      <TechnologyButton to="https://playwright.dev/">
+        <img src={playwright.src} alt="Playwright" title="Playwright" />
+      </TechnologyButton>
+      <TechnologyButton to="https://github.com/">
+        <img src={github.src} alt="Github" title="Github" />
+      </TechnologyButton>
+      <TechnologyButton to="https://turbo.build/repo">
+        <img src={turborepo.src} alt="Turborepo" title="Turborepo" />
+      </TechnologyButton>
+      <TechnologyButton to="https://code.visualstudio.com/">
+        <img
+          src={vsc.src}
+          alt="Visual Studio Code"
+          title="Visual Studio Code"
+        />
+      </TechnologyButton>
+      <TechnologyButton to="https://www.docker.com/">
+        <img src={docker.src} alt="Docker" title="Docker" />
+      </TechnologyButton>
+      <TechnologyButton to="https://linear.app/">
+        <img src={linear.src} alt="Linear" title="Linear" />
+      </TechnologyButton>
+      <TechnologyButton to="https://www.notion.so/">
+        <img src={notion.src} alt="Notion" title="Notion" />
+      </TechnologyButton>
+      <TechnologyButton to="https://www.adobe.com/">
+        <img src={adobe.src} alt="Adobe" title="Adobe" />
+      </TechnologyButton>
+      <TechnologyButton to="https://supabase.com/">
+        <img src={supabase.src} alt="Supabase" title="Supabase" />
+      </TechnologyButton>
+    </div>
   </ProjectLayout>
 </Layout>

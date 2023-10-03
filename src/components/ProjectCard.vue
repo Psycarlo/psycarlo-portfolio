@@ -5,7 +5,7 @@
   >
     <div class="flex items-center gap-4">
       <div
-        class="flex h-14 w-14 items-center justify-center rounded-full border-2 border-brand-light bg-brand-lightest bg-center dark:border-brand-darky dark:bg-brand-darky"
+        class="flex h-14 w-14 min-w-[3.5rem] min-h-[3.5rem] items-center justify-center rounded-full border-2 border-brand-light bg-brand-lightest bg-center dark:border-brand-darky dark:bg-brand-darky"
       >
         <slot></slot>
       </div>

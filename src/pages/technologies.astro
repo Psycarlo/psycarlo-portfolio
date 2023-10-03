@@ -46,6 +46,7 @@ import figmaImage from '../assets/figma.png'
 
 import supabaseImage from '../assets/supabase.png'
 import unityImage from '../assets/unity.png'
+import shopifyImage from '../assets/shopify.png'
 
 import Layout from '../layouts/Layout.astro'
 import WrapperLayout from '../layouts/WrapperLayout.vue'
@@ -372,12 +373,15 @@ import TechnologiesCard from '../components/TechnologiesCard.vue'
           </g>
         </svg>
       </TechnologiesCard>
-      <TechnologiesCard title="Others" description="Supabase, Unity">
+      <TechnologiesCard title="Others" description="Supabase, Unity, Shopify">
         <TechnologyButton to="https://supabase.com/">
           <img src={supabaseImage.src} alt="Supabase" title="Supabase" />
         </TechnologyButton>
         <TechnologyButton to="https://unity.com/">
           <img src={unityImage.src} alt="Unity" title="Unity" />
+        </TechnologyButton>
+        <TechnologyButton to="https://shopify.dev/">
+          <img src={shopifyImage.src} alt="Shopify" title="Shopify" />
         </TechnologyButton>
         <svg
           xmlns="http://www.w3.org/2000/svg"

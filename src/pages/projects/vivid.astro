@@ -1,8 +1,16 @@
 ---
 import Layout from '../../layouts/Layout.astro'
-import ProjectLayout from '../../layouts/ProjectLayout.vue';
+import ProjectLayout from '../../layouts/ProjectLayout.vue'
+import TechnologyButton from '../../components/TechnologyButton.vue'
 
 import vivid from '../../assets/vivid.png'
+
+import ts from '../../assets/ts.png'
+import vue from '../../assets/vue.png'
+import tailwind from '../../assets/tailwind.png'
+import github from '../../assets/github.png'
+import turborepo from '../../assets/turborepo.png'
+import vsc from '../../assets/vsc.png'
 ---
 
 <Layout title="Vivid | Carlos Marques" page="none">
@@ -15,5 +23,28 @@ import vivid from '../../assets/vivid.png'
     solution="..."
   >
     <img src={vivid.src} alt="Vivid" class="w-[48px] h-[48px]" />
+    <div class="grid-cols-4 sm:grid-cols-5 grid md:grid-cols-6 gap-2" slot="technologies">
+      <TechnologyButton to="https://www.typescriptlang.org/">
+        <img src={ts.src} alt="Typescript" title="Typescript" />
+      </TechnologyButton>
+      <TechnologyButton to="https://vuejs.org/">
+        <img src={vue.src} alt="Vue" title="Vue" />
+      </TechnologyButton>
+      <TechnologyButton to="https://tailwindcss.com/">
+        <img src={tailwind.src} alt="Tailwind" title="Tailwind" />
+      </TechnologyButton>
+      <TechnologyButton to="https://github.com/">
+        <img src={github.src} alt="Github" title="Github" />
+      </TechnologyButton>
+      <TechnologyButton to="https://turbo.build/repo">
+        <img src={turborepo.src} alt="Turborepo" title="Turborepo" />
+      </TechnologyButton>
+      <TechnologyButton to="https://code.visualstudio.com/">
+        <img
+          src={vsc.src}
+          alt="Visual Studio Code"
+          title="Visual Studio Code"
+        />
+    </div>
   </ProjectLayout>
 </Layout>

@@ -1,8 +1,13 @@
 ---
 import Layout from '../../layouts/Layout.astro'
-import ProjectLayout from '../../layouts/ProjectLayout.vue';
+import ProjectLayout from '../../layouts/ProjectLayout.vue'
+import TechnologyButton from '../../components/TechnologyButton.vue'
 
 import yearly from '../../assets/yearly.png'
+
+import notion from '../../assets/notion.png'
+import adobe from '../../assets/adobe.png'
+import shopify from '../../assets/shopify.png'
 ---
 
 <Layout title="Yearly | Carlos Marques" page="none">
@@ -15,5 +20,16 @@ import yearly from '../../assets/yearly.png'
     solution="..."
   >
     <img src={yearly.src} alt="Yearly" class="w-[48px] h-[48px]" />
+    <div class="grid-cols-4 sm:grid-cols-5 grid md:grid-cols-6 gap-2" slot="technologies">
+      <TechnologyButton to="https://www.notion.so/">
+        <img src={notion.src} alt="Notion" title="Notion" />
+      </TechnologyButton>
+      <TechnologyButton to="https://www.adobe.com/">
+        <img src={adobe.src} alt="Adobe" title="Adobe" />
+      </TechnologyButton>
+      <TechnologyButton to="https://shopify.dev/">
+        <img src={shopify.src} alt="Shopify" title="Shopify" />
+      </TechnologyButton>
+    </div>
   </ProjectLayout>
 </Layout>
