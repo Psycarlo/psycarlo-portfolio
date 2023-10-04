@@ -5,6 +5,8 @@ import TechnologyButton from '../../components/TechnologyButton.vue'
 
 import psybitcoin from '../../assets/psybitcoin.png'
 
+import psybitcoinImage1 from '../../assets/psybitcoin/psybitcoin1.png'
+
 import ts from '../../assets/ts.png'
 import node from '../../assets/node.png'
 import vue from '../../assets/vue.png'
@@ -28,11 +30,12 @@ import adobe from '../../assets/adobe.png'
     title="Psybitcoin" 
     website="https://stage.psybitcoin.com" 
     description="An educational platform that teaches student about bitcoin and other exciting topics. Bitcoin brings peace, love, hope and freedom to humanity and everyone should know about it."
-    intro="..."
+    intro="As a bitcoiner, I feel the need to spread the message of Satoshi Nakamoto by teaching people about Bitcoin. Psybitcoin provides video lessons to people to want to learn about the best money on planet earth."
     problem="..."
     solution="..."
   >
     <img src={psybitcoin.src} alt="Psybitcon" class="w-[48px] h-[48px]" />
+    <img src={psybitcoinImage1.src} alt="Psybitcoin Website" class="w-full rounded-md" slot="image1" />
     <div class="grid-cols-4 sm:grid-cols-5 grid md:grid-cols-6 gap-2" slot="technologies">
       <TechnologyButton to="https://www.typescriptlang.org/">
         <img src={ts.src} alt="Typescript" title="Typescript" />

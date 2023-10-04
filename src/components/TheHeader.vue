@@ -1,6 +1,6 @@
 <template>
   <div
-    class="fixed top-4 z-50 flex h-16 w-[560px] items-center justify-between rounded-xl bg-brand-lightest px-6 shadow-md dark:border dark:border-brand-darky dark:bg-brand-darker"
+    class="fixed top-4 z-50 flex h-16 sm:w-[560px] items-center justify-between rounded-xl bg-brand-lightest px-6 shadow-md dark:border dark:border-brand-darky dark:bg-brand-darker"
   >
     <ul class="flex items-center gap-3">
       <li>
@@ -141,7 +141,7 @@
       <li>
         <ThemeToggle client:only="vue" />
       </li>
-      <li class="flex">
+      <li>
         <Button to="/contact/" text="Contact Me" variant="primary" />
       </li>
     </ul>
