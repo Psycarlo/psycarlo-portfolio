@@ -4,6 +4,7 @@ import ProjectLayout from '../../layouts/ProjectLayout.vue'
 import TechnologyButton from '../../components/TechnologyButton.vue'
 
 import clubeetnico from '../../assets/clubeetnico.png'
+import clubeetnicoImage1 from '../../assets/clubeetnico/clubeetnico1.png'
 
 import ts from '../../assets/ts.png'
 import node from '../../assets/node.png'
@@ -33,6 +34,7 @@ import adobe from '../../assets/adobe.png'
     solution="Clube Étnico Portuguez addresses this issue by providing a virtual gathering place for Portuguese men to come together, share ideas, and actively participate in various activities. By focusing on the pillars of sports, art, and academy, we aim to create a well-rounded and enriching experience for our members. Through the platform's features, we hope to foster a sense of belonging, encourage personal development, and strengthen connections within the Portuguese community, ultimately improving the lives of our members."
   >
     <img src={clubeetnico.src} alt="Clube Étnico Portuguez" class="w-[48px] h-[48px]" />
+    <img src={clubeetnicoImage1.src} alt="Clube Étnico Portuguez" class="w-full rounded-md" slot="image1" />
     <div class="grid-cols-4 sm:grid-cols-5 grid md:grid-cols-6 gap-2" slot="technologies">
       <TechnologyButton to="https://www.typescriptlang.org/">
         <img src={ts.src} alt="Typescript" title="Typescript" />

@@ -5,6 +5,9 @@ import TechnologyButton from '../../components/TechnologyButton.vue'
 
 import yearly from '../../assets/yearly.png'
 
+import yearlyImage1 from '../../assets/yearly/yearly1.png'
+import yearlyImage2 from '../../assets/yearly/yearly2.png'
+
 import notion from '../../assets/notion.png'
 import adobe from '../../assets/adobe.png'
 import shopify from '../../assets/shopify.png'
@@ -20,6 +23,8 @@ import shopify from '../../assets/shopify.png'
     solution="Yearly offers a practical solution to these challenges. By combining the flexibility of a bullet journal with innovative features, Yearly promotes daily habit formation and self-tracking. Users can organize their lives, set achievable goals, and enhance productivity, ultimately leading to a more fulfilling and balanced lifestyle."
   >
     <img src={yearly.src} alt="Yearly" class="w-[48px] h-[48px]" />
+    <img src={yearlyImage1.src} alt="Yearly Logo" class="w-full rounded-md" slot="image1" />
+    <img src={yearlyImage2.src} alt="Yearly Binder" class="w-full rounded-md" slot="image2" />
     <div class="grid-cols-4 sm:grid-cols-5 grid md:grid-cols-6 gap-2" slot="technologies">
       <TechnologyButton to="https://www.notion.so/">
         <img src={notion.src} alt="Notion" title="Notion" />
