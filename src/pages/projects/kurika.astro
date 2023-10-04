@@ -4,6 +4,7 @@ import ProjectLayout from '../../layouts/ProjectLayout.vue'
 import TechnologyButton from '../../components/TechnologyButton.vue'
 
 import kurika from '../../assets/kurika.png'
+import kurikaImage1 from '../../assets/kurika/kurika1.png'
 
 import adobe from '../../assets/adobe.png'
 ---
@@ -18,6 +19,7 @@ import adobe from '../../assets/adobe.png'
     solution="Kurika bridges this gap by providing a comprehensive solution for group interaction. With features tailored to group dynamics, Kurika simplifies communication, entertainment, and organization within groups. Our Proof of Concept showcases the potential of a mobile application designed to enhance group cohesion and foster meaningful connections among its members."
   >
     <img src={kurika.src} alt="Kurika" class="w-[48px] h-[48px]" />
+    <img src={kurikaImage1.src} alt="Kurika Design" class="w-full rounded-md" slot="image1" />
     <div class="grid-cols-4 sm:grid-cols-5 grid md:grid-cols-6 gap-2" slot="technologies">
       <TechnologyButton to="https://www.adobe.com/">
         <img src={adobe.src} alt="Adobe" title="Adobe" />
