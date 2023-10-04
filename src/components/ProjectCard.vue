@@ -20,7 +20,7 @@
       viewBox="0 0 24 24"
       stroke-width="2"
       stroke="currentColor"
-      class="stroke-brand-grayLight h-5 w-5 transition-all duration-300 group-hover:translate-x-1 group-hover:stroke-brand-gray"
+      class="stroke-brand-grayLight h-5 w-5 min-h-[1.25rem] min-w-[1.25rem] transition-all duration-300 group-hover:translate-x-1 group-hover:stroke-brand-gray"
     >
       <path
         stroke-linecap="round"

@@ -22,6 +22,7 @@ import tailwindImage from '../assets/tailwind.png'
 
 import Layout from '../layouts/Layout.astro'
 import Button from '../components/Button.vue'
+// @ts-ignore
 import CopyButton from '../components/CopyButton.vue'
 import ProjectCard from '../components/ProjectCard.vue'
 import TechnologiesCard from '../components/TechnologiesCard.vue'
@@ -33,22 +34,22 @@ import TheFooter from '../components/TheFooter.vue'
 
 <Layout title="Portfolio | Carlos Marques" page="home">
   <div class="rounded-lg bg-brand-lightest dark:bg-brand-darker relative">
-    <div class="flex flex-col p-8">
+    <div class="flex flex-col px-8 pt-8 sm:pb-8">
       <div class="flex gap-3 items-center">
         <div
           class="bg-orange-500 w-2 h-2 rounded-full animate-pulse motion-reduce:animate-none"
         >
         </div>
-        <h2 class="font-medium text-xl">Software Engineer & Designer</h2>
+        <h2 class="font-medium he:text-xl text-lg">Software Engineer & Designer</h2>
       </div>
       <div class="flex flex-col gap-3 mt-10">
-        <h1 class="font-semibold text-4xl">Carlos Marques</h1>
-        <p class="text-brand-grayDark text-sm dark:text-brand-grayLight">
+        <h1 class="font-semibold text-4xl text-center sm:text-left">Carlos Marques</h1>
+        <p class="text-brand-grayDark text-sm dark:text-brand-grayLight text-center sm:text-left">
           Software Engineer & Designer from Portugal.<br />
            I create beautiful and performant products.<br />
            Also teach about Bitcoin.
         </p>
-        <ul class="flex gap-4 items-center">
+        <ul class="flex gap-4 items-center justify-center sm:justify-normal">
           <Button to="/contact/" text="Contact Me" variant="primary" />
           <CopyButton
             client:load
@@ -57,12 +58,12 @@ import TheFooter from '../components/TheFooter.vue'
           />
         </ul>
       </div>
-      <div class="absolute top-4 right-6 drop-shadow-2xl">
+      <div class="flex justify-center sm:absolute sm:top-4 sm:right-6 drop-shadow-2xl mt-8 sm:mt-0">
         <img src={carlosImage.src} alt="Carlos Marques" />
       </div>
     </div>
     <div
-      class="flex flex-col gap-6 rounded-lg bg-brand-lighter dark:bg-brand-darky mt-10 mb-3 p-6 mx-2 relative z-10"
+      class="flex flex-col gap-6 rounded-lg bg-brand-lighter dark:bg-brand-darky mt-0 sm:mt-10 mb-3 p-6 mx-2 relative z-10"
     >
       <div class="flex justify-between">
         <div class="flex gap-2 items-center">

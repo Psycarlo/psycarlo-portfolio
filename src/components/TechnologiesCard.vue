@@ -7,7 +7,7 @@
       <slot name="icon"></slot>
     </div>
     <p class="text-xs text-brand-gray">{{ description }}</p>
-    <div class="mt-3 flex items-center gap-2">
+    <div class="mt-3 grid grid-cols-3 xs:grid-cols-5 gap-2 w-fit">
       <slot></slot>
     </div>
   </div>

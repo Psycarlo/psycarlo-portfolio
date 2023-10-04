@@ -1,6 +1,6 @@
 <template>
   <div
-    class="fixed top-4 z-50 flex h-16 sm:w-[560px] items-center justify-between rounded-xl bg-brand-lightest px-6 shadow-md dark:border dark:border-brand-darky dark:bg-brand-darker"
+    class="fixed top-4 z-50 w-[96%] flex he:flex-row flex-col h-28 he:h-16 left-[50%] translate-x-[-50%] sm:w-[560px] items-center justify-center gap-2 he:gap-0 he:justify-between rounded-xl bg-brand-lightest px-6 shadow-md dark:border dark:border-brand-darky dark:bg-brand-darker"
   >
     <ul class="flex items-center gap-3">
       <li>

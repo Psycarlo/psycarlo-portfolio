@@ -33,10 +33,10 @@ const { title } = Astro.props
   <body
     class="bg-brand-light dark:bg-brand-darkest font-brand text-brand-darkest dark:text-brand-lightest"
   >
-    <main class="flex justify-center px-8">
+    <main class="flex justify-center px-2 xs:px-4 sm:px-8">
       <div class="w-[560px] py-4 flex flex-col gap-4">
         <TheHeader client:load page={Astro.props.page} />
-        <div class="pt-20">
+        <div class="he:pt-20 pt-32">
           <slot />
         </div>
       </div>
