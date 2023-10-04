@@ -4,6 +4,7 @@ import ProjectLayout from '../../layouts/ProjectLayout.vue';
 import TechnologyButton from '../../components/TechnologyButton.vue'
 
 import lotus from '../../assets/lotus.png'
+import lotusImage1 from '../../assets/lotus/lotus1.png'
 
 import tailwind from '../../assets/tailwind.png'
 import github from '../../assets/github.png'
@@ -23,6 +24,7 @@ import shopify from '../../assets/shopify.png'
     solution="As we confronted these issues, Lotus emerged as a robust solution not only for our project but also for the wider Shopify community. Our vision extends beyond addressing our own challenges; we intend to make Lotus accessible to all through the Shopify Theme Store. By doing so, we aim to empower entrepreneurs, business owners, and Shopify users at large with a theme that offers a comprehensive feature set, stunning design, and enhanced functionality. With Lotus, we seek to contribute to the success of numerous online stores, simplifying the process of achieving their online goals while ensuring a visually striking and user-friendly presence."
   >
     <img src={lotus.src} alt="Lotus" class="w-[48px] h-[48px]" />
+    <img src={lotusImage1.src} alt="Lotus Logo" class="w-full rounded-md" slot="image1" />
     <div class="grid-cols-4 sm:grid-cols-5 grid md:grid-cols-6 gap-2" slot="technologies">
       <TechnologyButton to="https://tailwindcss.com/">
         <img src={tailwind.src} alt="Tailwind" title="Tailwind" />
