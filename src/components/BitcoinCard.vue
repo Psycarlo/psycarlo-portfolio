@@ -25,19 +25,41 @@
       <p class="text-brand-gray">
         Want to buy me a coffee? I am taking bitcoin ;)
       </p>
-      <div>
-        <slot name="qr"></slot>
-        <p class="mt-1 text-center text-xs text-brand-grayDark">
-          scan the qr code
-        </p>
-      </div>
-      <div class="mt-2 flex items-center justify-center gap-4">
-        <CopyButton
-          client:visible
-          text="Copy Address"
-          :copy-text="BC1_ADDRESS"
-          class="dark:border-brand-dark"
-        />
+      <div class="flex gap-4">
+        <div>
+          <div class="flex flex-col items-center">
+            <p>On-chain</p>
+            <slot name="qr"></slot>
+            <p class="mt-1 text-center text-xs text-brand-grayDark">
+              scan the qr code
+            </p>
+          </div>
+          <div class="mt-2 flex items-center justify-center gap-4">
+            <CopyButton
+              client:visible
+              text="Copy Address"
+              :copy-text="BC1_ADDRESS"
+              class="dark:border-brand-dark"
+            />
+          </div>
+        </div>
+        <div>
+          <div class="flex flex-col items-center">
+            <p>Lightning Address</p>
+            <slot name="qrln"></slot>
+            <p class="mt-1 text-center text-xs text-brand-grayDark">
+              scan the qr code
+            </p>
+          </div>
+          <div class="mt-2 flex items-center justify-center gap-4">
+            <CopyButton
+              client:visible
+              text="Copy Address"
+              :copy-text="LN_ADDRESS"
+              class="dark:border-brand-dark"
+            />
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -48,4 +70,5 @@
   import CopyButton from '../components/CopyButton.vue'
 
   const BC1_ADDRESS = 'bc1qzsdges0lm34jkjfydgltr6jqnuxcjrj7rapuyy'
+  const LN_ADDRESS = 'longstring52@walletofsatoshi.com'
 </script>

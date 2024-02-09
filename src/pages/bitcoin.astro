@@ -6,6 +6,7 @@ import BitcoinCard from '../components/BitcoinCard.vue'
 
 import splash from '../assets/splash.png'
 import qr from '../assets/qr.png'
+import qrln from '../assets/qrln.png'
 ---
 
 <Layout title="Bitcoin | Carlos Marques" page="bitcoin">
@@ -27,6 +28,12 @@ import qr from '../assets/qr.png'
           alt="Bitcoin Adress QR Code"
           class="rounded-lg duration-300 hover:scale-[1.02] transition-transform"
           slot="qr"
+        />
+        <img
+          src={qrln.src}
+          alt="Lightning Adress QR Code"
+          class="rounded-lg duration-300 hover:scale-[1.02] transition-transform"
+          slot="qrln"
         />
       </BitcoinCard>
     </ContentLayout>

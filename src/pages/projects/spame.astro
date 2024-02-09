@@ -6,6 +6,7 @@ import TechnologyButton from '../../components/TechnologyButton.vue'
 import spame from '../../assets/spame.png'
 
 import spameImage1 from '../../assets/spame/spame1.png'
+import spameImage2 from '../../assets/spame/spame2.png'
 
 import ts from '../../assets/ts.png'
 import nuxt from '../../assets/nuxt.png'
@@ -25,17 +26,31 @@ import supabase from '../../assets/supabase.png'
 ---
 
 <Layout title="Spame | Carlos Marques" page="none">
-  <ProjectLayout 
-    client:load 
-    title="Spame" 
+  <ProjectLayout
+    client:load
+    title="Spame"
     description="Introducing Spame, a revolutionary tool that harnesses the power of AI, a dynamic plugin marketplace, real-time trend analysis, and robust client-side applications to streamline content creation, scheduling, and monitoring for both individuals and brands on a massive scale."
     intro="Spame empowers users with a suite of essential features. It allows you to swiftly generate content ideas, create, design, edit, and fine-tune your content using its robust editor. You can seamlessly schedule content releases across major social media platforms, eliminating the need for manual posting. Additionally, Spame offers a centralized dashboard for monitoring and engaging with followers on all major social media channels. It provides in-depth analytics to help you understand what's working and what's not in your content strategy."
     problem="In today's fast-paced digital landscape, content creation and management can be overwhelming. Keeping up with the ever-changing trends, juggling multiple social media platforms, and analyzing content performance is a challenge. Manual content scheduling is time-consuming and prone to errors, making it difficult to maintain a consistent online presence."
     solution="Spame solves these problems by offering a comprehensive platform that streamlines content creation, scheduling, and monitoring. Our AI-powered tools make content generation efficient, while automated scheduling ensures your content reaches your audience at the right time. The centralized monitoring dashboard simplifies engagement and provides valuable insights, helping you optimize your content strategy for better results."
   >
     <img src={spame.src} alt="Spame" class="w-[48px] h-[48px]" />
-    <img src={spameImage1.src} alt="Spame Intro" class="w-full rounded-md" slot="image1" />
-    <div class="grid-cols-4 sm:grid-cols-5 grid md:grid-cols-6 gap-2" slot="technologies">
+    <img
+      src={spameImage1.src}
+      alt="Spame Intro"
+      class="w-full rounded-md"
+      slot="image1"
+    />
+    <img
+      src={spameImage2.src}
+      alt="Spame Home"
+      class="w-full rounded-md"
+      slot="image2"
+    />
+    <div
+      class="grid-cols-4 sm:grid-cols-5 grid md:grid-cols-6 gap-2"
+      slot="technologies"
+    >
       <TechnologyButton to="https://www.typescriptlang.org/">
         <img src={ts.src} alt="Typescript" title="Typescript" />
       </TechnologyButton>
