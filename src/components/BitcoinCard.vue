@@ -70,5 +70,5 @@
   import CopyButton from '../components/CopyButton.vue'
 
   const BC1_ADDRESS = 'bc1qzsdges0lm34jkjfydgltr6jqnuxcjrj7rapuyy'
-  const LN_ADDRESS = 'longstring52@walletofsatoshi.com'
+  const LN_ADDRESS = 'psycarlo@walletofsatoshi.com'
 </script>
