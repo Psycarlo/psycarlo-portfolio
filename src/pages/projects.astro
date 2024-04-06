@@ -1,9 +1,10 @@
 ---
 import psybitcoinImage from '../assets/psybitcoin.png'
 import spameImage from '../assets/spame.png'
+import satsignerImage from '../assets/satsigner.png'
 import kurikaImage from '../assets/kurika.png'
 import yearlyImage from '../assets/yearly.png'
-import lotusImage from '../assets/lotus.png'
+// import lotusImage from '../assets/lotus.png'
 import vividImage from '../assets/vivid.png'
 import clubeetnico from '../assets/clubeetnico.png'
 
@@ -36,6 +37,13 @@ import ProjectCard from '../components/ProjectCard.vue'
         <img src={spameImage.src} alt="Spame" />
       </ProjectCard>
       <ProjectCard
+        title="SatSigner"
+        type="Open source, Bitcoin App"
+        to="/projects/satsigner/"
+      >
+        <img src={satsignerImage.src} alt="SatSigner" />
+      </ProjectCard>
+      <ProjectCard
         title="Kurika"
         type="Social media, Proof of concept"
         to="/projects/kurika/"
@@ -49,13 +57,13 @@ import ProjectCard from '../components/ProjectCard.vue'
       >
         <img src={yearlyImage.src} alt="Yearly" />
       </ProjectCard>
-      <ProjectCard
+      <!-- <ProjectCard
         title="Lotus"
         type="Ecommerce, Custom shopify theme"
         to="/projects/lotus/"
       >
         <img src={lotusImage.src} alt="Lotus" />
-      </ProjectCard>
+      </ProjectCard> -->
       <ProjectCard
         title="Vivid"
         type="Open source, Dashboard components library"
