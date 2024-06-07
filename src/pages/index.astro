@@ -1,8 +1,9 @@
 ---
 import carlosImage from '../assets/carlos.png'
 import psybitcoinImage from '../assets/psybitcoin.png'
-import spameImage from '../assets/spame.png'
+import mybitgImage from '../assets/mybitg.png'
 import satsignerImage from '../assets/satsigner.png'
+import spameImage from '../assets/spame.png'
 
 import jsImage from '../assets/js.png'
 import tsImage from '../assets/ts.png'
@@ -97,18 +98,25 @@ import TheFooter from '../components/TheFooter.vue'
           <img src={psybitcoinImage.src} alt="Psybitcoin" />
         </ProjectCard>
         <ProjectCard
+          title="My Bit G"
+          type="Open source, Bitcoin Desktop Wallet"
+          to="/projects/mybitg/"
+        >
+          <img src={mybitgImage.src} alt="My Bit G" />
+        </ProjectCard>
+        <ProjectCard
+          title="SatSigner"
+          type="Open source, Bitcoin Mobile App"
+          to="/projects/satsigner/"
+        >
+          <img src={satsignerImage.src} alt="SatSigner" />
+        </ProjectCard>
+        <ProjectCard
           title="Spame"
           type="Content creation, AI tool"
           to="/projects/spame/"
         >
           <img src={spameImage.src} alt="Spame" />
-        </ProjectCard>
-        <ProjectCard
-          title="SatSigner"
-          type="Open source, Bitcoin App"
-          to="/projects/satsigner/"
-        >
-          <img src={satsignerImage.src} alt="SatSigner" />
         </ProjectCard>
       </div>
     </div>
