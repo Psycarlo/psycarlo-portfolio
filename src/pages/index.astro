@@ -65,12 +65,16 @@ import TheFooter from '../components/TheFooter.vue'
            Also teach about Bitcoin ₿.
         </p>
         <ul class="flex gap-4 items-center justify-center sm:justify-normal">
-          <Button to="/contact/" text="Contact Me" variant="primary" />
-          <CopyButton
-            client:load
-            text="Copy Email"
-            copyText="psycarlo1@gmail.com"
-          />
+          <li>
+            <Button to="/contact/" text="Contact Me" variant="primary" />
+          </li>
+          <li>
+            <CopyButton
+              client:load
+              text="Copy Email"
+              copyText="psycarlo1@gmail.com"
+            />
+          </li>
         </ul>
       </div>
       <div

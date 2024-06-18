@@ -1,6 +1,6 @@
 <template>
   <div
-    class="fixed top-4 z-50 w-[96%] flex he:flex-row flex-col h-28 he:h-16 left-[50%] translate-x-[-50%] sm:w-[560px] items-center justify-center gap-2 he:gap-0 he:justify-between rounded-xl bg-brand-lightest px-6 shadow-md dark:border dark:border-brand-darky dark:bg-brand-darker"
+    class="fixed left-[50%] top-4 z-50 flex h-28 w-[96%] translate-x-[-50%] flex-col items-center justify-center gap-2 rounded-xl bg-brand-lightest px-6 shadow-md dark:border dark:border-brand-darky dark:bg-brand-darker he:h-16 he:flex-row he:justify-between he:gap-0 sm:w-[560px]"
   >
     <ul class="flex items-center gap-3">
       <li>
@@ -8,6 +8,7 @@
           href="/"
           class="group flex h-10 w-10 items-center justify-center rounded-full transition-all duration-200 hover:bg-brand-light dark:hover:bg-brand-dark"
           :class="{ 'bg-brand-light dark:bg-brand-dark': page === 'home' }"
+          aria-label="Home"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -35,6 +36,7 @@
           href="/about/"
           class="group flex h-10 w-10 items-center justify-center rounded-full transition-all duration-200 hover:bg-brand-light dark:hover:bg-brand-dark"
           :class="{ 'bg-brand-light dark:bg-brand-dark': page === 'about' }"
+          aria-label="About"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -62,6 +64,7 @@
           href="/projects"
           class="group flex h-10 w-10 items-center justify-center rounded-full transition-all duration-200 hover:bg-brand-light dark:hover:bg-brand-dark"
           :class="{ 'bg-brand-light dark:bg-brand-dark': page === 'projects' }"
+          aria-label="Projects"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -91,6 +94,7 @@
           :class="{
             'bg-brand-light dark:bg-brand-dark': page === 'technologies'
           }"
+          aria-label="Technologies"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -118,6 +122,7 @@
           href="/bitcoin/"
           class="group flex h-10 w-10 items-center justify-center rounded-full transition-all duration-200 hover:bg-brand-light dark:hover:bg-brand-dark"
           :class="{ 'bg-brand-light dark:bg-brand-dark': page === 'bitcoin' }"
+          aria-label="Bitcoin"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
