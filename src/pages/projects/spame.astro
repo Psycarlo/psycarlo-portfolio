@@ -1,4 +1,6 @@
 ---
+import { Image } from 'astro:assets'
+
 import Layout from '../../layouts/Layout.astro'
 import ProjectLayout from '../../layouts/ProjectLayout.vue'
 import TechnologyButton from '../../components/TechnologyButton.vue'
@@ -34,15 +36,15 @@ import supabase from '../../assets/supabase.png'
     problem="In today's fast-paced digital landscape, content creation and management can be overwhelming. Keeping up with the ever-changing trends, juggling multiple social media platforms, and analyzing content performance is a challenge. Manual content scheduling is time-consuming and prone to errors, making it difficult to maintain a consistent online presence."
     solution="Spame solves these problems by offering a comprehensive platform that streamlines content creation, scheduling, and monitoring. Our AI-powered tools make content generation efficient, while automated scheduling ensures your content reaches your audience at the right time. The centralized monitoring dashboard simplifies engagement and provides valuable insights, helping you optimize your content strategy for better results."
   >
-    <img src={spame.src} alt="Spame" class="w-[48px] h-[48px]" />
-    <img
-      src={spameImage1.src}
+    <Image src={spame} alt="Spame" class="w-[48px] h-[48px]" />
+    <Image
+      src={spameImage1}
       alt="Spame Intro"
       class="w-full rounded-md"
       slot="image1"
     />
-    <img
-      src={spameImage2.src}
+    <Image
+      src={spameImage2}
       alt="Spame Home"
       class="w-full rounded-md"
       slot="image2"
@@ -52,53 +54,49 @@ import supabase from '../../assets/supabase.png'
       slot="technologies"
     >
       <TechnologyButton to="https://www.typescriptlang.org/">
-        <img src={ts.src} alt="Typescript" title="Typescript" />
+        <Image src={ts} alt="Typescript" title="Typescript" />
       </TechnologyButton>
       <TechnologyButton to="https://nuxt.com/">
-        <img src={nuxt.src} alt="Nuxt" title="Nuxt" />
+        <Image src={nuxt} alt="Nuxt" title="Nuxt" />
       </TechnologyButton>
       <TechnologyButton to="https://tailwindcss.com/">
-        <img src={tailwind.src} alt="Tailwind" title="Tailwind" />
+        <Image src={tailwind} alt="Tailwind" title="Tailwind" />
       </TechnologyButton>
       <TechnologyButton to="https://vercel.com/">
-        <img src={vercel.src} alt="Vercel" title="Vercel" />
+        <Image src={vercel} alt="Vercel" title="Vercel" />
       </TechnologyButton>
       <TechnologyButton to="https://www.postgresql.org/">
-        <img src={postgresql.src} alt="PostgreSQL" title="PostgreSQL" />
+        <Image src={postgresql} alt="PostgreSQL" title="PostgreSQL" />
       </TechnologyButton>
       <TechnologyButton to="https://jestjs.io/">
-        <img src={jest.src} alt="Jest" title="Jest" />
+        <Image src={jest} alt="Jest" title="Jest" />
       </TechnologyButton>
       <TechnologyButton to="https://playwright.dev/">
-        <img src={playwright.src} alt="Playwright" title="Playwright" />
+        <Image src={playwright} alt="Playwright" title="Playwright" />
       </TechnologyButton>
       <TechnologyButton to="https://github.com/">
-        <img src={github.src} alt="Github" title="Github" />
+        <Image src={github} alt="Github" title="Github" />
       </TechnologyButton>
       <TechnologyButton to="https://turbo.build/repo">
-        <img src={turborepo.src} alt="Turborepo" title="Turborepo" />
+        <Image src={turborepo} alt="Turborepo" title="Turborepo" />
       </TechnologyButton>
       <TechnologyButton to="https://code.visualstudio.com/">
-        <img
-          src={vsc.src}
-          alt="Visual Studio Code"
-          title="Visual Studio Code"
-        />
+        <Image src={vsc} alt="Visual Studio Code" title="Visual Studio Code" />
       </TechnologyButton>
       <TechnologyButton to="https://www.docker.com/">
-        <img src={docker.src} alt="Docker" title="Docker" />
+        <Image src={docker} alt="Docker" title="Docker" />
       </TechnologyButton>
       <TechnologyButton to="https://linear.app/">
-        <img src={linear.src} alt="Linear" title="Linear" />
+        <Image src={linear} alt="Linear" title="Linear" />
       </TechnologyButton>
       <TechnologyButton to="https://www.notion.so/">
-        <img src={notion.src} alt="Notion" title="Notion" />
+        <Image src={notion} alt="Notion" title="Notion" />
       </TechnologyButton>
       <TechnologyButton to="https://www.adobe.com/">
-        <img src={adobe.src} alt="Adobe" title="Adobe" />
+        <Image src={adobe} alt="Adobe" title="Adobe" />
       </TechnologyButton>
       <TechnologyButton to="https://supabase.com/">
-        <img src={supabase.src} alt="Supabase" title="Supabase" />
+        <Image src={supabase} alt="Supabase" title="Supabase" />
       </TechnologyButton>
     </div>
   </ProjectLayout>

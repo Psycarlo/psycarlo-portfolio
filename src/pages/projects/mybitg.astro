@@ -1,4 +1,6 @@
 ---
+import { Image } from 'astro:assets'
+
 import Layout from '../../layouts/Layout.astro'
 import ProjectLayout from '../../layouts/ProjectLayout.vue'
 import TechnologyButton from '../../components/TechnologyButton.vue'
@@ -32,21 +34,21 @@ import playwright from '../../assets/playwright.png'
     problem="Bitcoin wallets don't have a modern look. They are hard to navigate and difficult for beginners. All the tools you would need are not present in one single place."
     solution="A desktop wallet designed with a modern UI/UX that can change to suit beginners, intermediate and advanced users. Tools like blockchain explorer and price charts are right inside the wallet. Drag and drop the blocks to customize the dashboard, learn how to navigate through the wallet by participating on the step-by-step tutorials and learn more via the tooltips."
   >
-    <img src={mybitg.src} alt="MyBitG" class="w-[48px] h-[48px]" />
-    <img
-      src={mybitgImage0.src}
+    <Image src={mybitg} alt="MyBitG" class="w-[48px] h-[48px]" />
+    <Image
+      src={mybitgImage0}
       alt="MyBitG Image 1"
       class="w-full rounded-md"
       slot="image1"
     />
-    <img
-      src={mybitgImage1.src}
+    <Image
+      src={mybitgImage1}
       alt="MyBitG Image 2"
       class="w-full rounded-md"
       slot="image2"
     />
-    <img
-      src={mybitgImage2.src}
+    <Image
+      src={mybitgImage2}
       alt="MyBitG Image 3"
       class="w-full rounded-md"
       slot="image3"
@@ -56,41 +58,37 @@ import playwright from '../../assets/playwright.png'
       slot="technologies"
     >
       <TechnologyButton to="https://www.typescriptlang.org/">
-        <img src={ts.src} alt="Typescript" title="Typescript" />
+        <Image src={ts} alt="Typescript" title="Typescript" />
       </TechnologyButton>
       <TechnologyButton to="https://nodejs.org/en">
-        <img src={node.src} alt="Node.js" title="Node.js" />
+        <Image src={node} alt="Node.js" title="Node.js" />
       </TechnologyButton>
       <TechnologyButton to="https://vuejs.org/">
-        <img src={vue.src} alt="Vue" title="Vue" />
+        <Image src={vue} alt="Vue" title="Vue" />
       </TechnologyButton>
       <TechnologyButton to="https://tailwindcss.com/">
-        <img src={tailwind.src} alt="Tailwind" title="Tailwind" />
+        <Image src={tailwind} alt="Tailwind" title="Tailwind" />
       </TechnologyButton>
       <TechnologyButton to="https://vitest.dev/">
-        <img src={vitest.src} alt="Vitest" title="Vitest" />
+        <Image src={vitest} alt="Vitest" title="Vitest" />
       </TechnologyButton>
       <TechnologyButton to="https://playwright.dev/">
-        <img src={playwright.src} alt="Playwright" title="Playwright" />
+        <Image src={playwright} alt="Playwright" title="Playwright" />
       </TechnologyButton>
       <TechnologyButton to="https://github.com/">
-        <img src={github.src} alt="Github" title="Github" />
+        <Image src={github} alt="Github" title="Github" />
       </TechnologyButton>
       <TechnologyButton to="https://turbo.build/repo">
-        <img src={turborepo.src} alt="Turborepo" title="Turborepo" />
+        <Image src={turborepo} alt="Turborepo" title="Turborepo" />
       </TechnologyButton>
       <TechnologyButton to="https://code.visualstudio.com/">
-        <img
-          src={vsc.src}
-          alt="Visual Studio Code"
-          title="Visual Studio Code"
-        />
+        <Image src={vsc} alt="Visual Studio Code" title="Visual Studio Code" />
       </TechnologyButton>
       <TechnologyButton to="https://www.adobe.com/">
-        <img src={adobe.src} alt="Adobe" title="Adobe" />
+        <Image src={adobe} alt="Adobe" title="Adobe" />
       </TechnologyButton>
       <TechnologyButton to="https://www.notion.so/">
-        <img src={notion.src} alt="Notion" title="Notion" />
+        <Image src={notion} alt="Notion" title="Notion" />
       </TechnologyButton>
     </div>
   </ProjectLayout>

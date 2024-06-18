@@ -1,4 +1,6 @@
 ---
+import { Image } from 'astro:assets'
+
 import psybitcoinImage from '../assets/psybitcoin.png'
 import spameImage from '../assets/spame.png'
 import mybitgImage from '../assets/mybitg.png'
@@ -28,63 +30,56 @@ import ProjectCard from '../components/ProjectCard.vue'
         type="Learning platform, Bitcoin education"
         to="/projects/psybitcoin/"
       >
-        <img src={psybitcoinImage.src} alt="Psybitcoin" />
+        <Image src={psybitcoinImage} alt="Psybitcoin" />
       </ProjectCard>
       <ProjectCard
         title="Spame"
         type="Content creation, AI tool"
         to="/projects/spame/"
       >
-        <img src={spameImage.src} alt="Spame" />
+        <Image src={spameImage} alt="Spame" />
       </ProjectCard>
       <ProjectCard
         title="MyBitG"
         type="Open source, Bitcoin Desktop Wallet"
         to="/projects/mybitg/"
       >
-        <img src={mybitgImage.src} alt="My Bit G" />
+        <Image src={mybitgImage} alt="My Bit G" />
       </ProjectCard>
       <ProjectCard
         title="SatSigner"
         type="Open source, Bitcoin App"
         to="/projects/satsigner/"
       >
-        <img src={satsignerImage.src} alt="SatSigner" />
+        <Image src={satsignerImage} alt="SatSigner" />
       </ProjectCard>
       <ProjectCard
         title="Kurika"
         type="Social media, Proof of concept"
         to="/projects/kurika/"
       >
-        <img src={kurikaImage.src} alt="Kurika" />
+        <Image src={kurikaImage} alt="Kurika" />
       </ProjectCard>
       <ProjectCard
         title="Yearly"
         type="Ecommerce, Self-care journaling"
         to="/projects/yearly/"
       >
-        <img src={yearlyImage.src} alt="Yearly" />
+        <Image src={yearlyImage} alt="Yearly" />
       </ProjectCard>
-      <!-- <ProjectCard
-        title="Lotus"
-        type="Ecommerce, Custom shopify theme"
-        to="/projects/lotus/"
-      >
-        <img src={lotusImage.src} alt="Lotus" />
-      </ProjectCard> -->
       <ProjectCard
         title="Vivid"
         type="Open source, Dashboard components library"
         to="/projects/vivid/"
       >
-        <img src={vividImage.src} alt="Vivid" />
+        <Image src={vividImage} alt="Vivid" />
       </ProjectCard>
       <ProjectCard
         title="Clube Étnico Portuguez"
         type="Social media, Proof of concept"
         to="/projects/clubeetnico/"
       >
-        <img src={clubeetnico.src} alt="Clube Étnico Portuguez" />
+        <Image src={clubeetnico} alt="Clube Étnico Portuguez" />
       </ProjectCard>
     </ContentLayout>
   </WrapperLayout>

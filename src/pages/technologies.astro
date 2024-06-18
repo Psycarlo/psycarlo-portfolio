@@ -1,4 +1,6 @@
 ---
+import { Image } from 'astro:assets'
+
 import jsImage from '../assets/js.png'
 import tsImage from '../assets/ts.png'
 import nodeImage from '../assets/node.png'
@@ -71,19 +73,19 @@ import TechnologiesCard from '../components/TechnologiesCard.vue'
         <TechnologyButton
           to="https://developer.mozilla.org/en-US/docs/Web/javascript"
         >
-          <img src={jsImage.src} alt="Javascript" title="Javascript" />
+          <Image src={jsImage} alt="Javascript" title="Javascript" />
         </TechnologyButton>
         <TechnologyButton to="https://www.typescriptlang.org/">
-          <img src={tsImage.src} alt="Typescript" title="Typescript" />
+          <Image src={tsImage} alt="Typescript" title="Typescript" />
         </TechnologyButton>
         <TechnologyButton to="https://nodejs.org/en">
-          <img src={nodeImage.src} alt="Node.js" title="Node.js" />
+          <Image src={nodeImage} alt="Node.js" title="Node.js" />
         </TechnologyButton>
         <TechnologyButton to="https://www.python.org/">
-          <img src={pythonImage.src} alt="Python" title="Python" />
+          <Image src={pythonImage} alt="Python" title="Python" />
         </TechnologyButton>
         <TechnologyButton to="https://www.java.com/">
-          <img src={javaImage.src} alt="Java" title="Java" />
+          <Image src={javaImage} alt="Java" title="Java" />
         </TechnologyButton>
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -104,22 +106,22 @@ import TechnologiesCard from '../components/TechnologiesCard.vue'
         description="Vue, Nuxt, React, Next, Astro"
       >
         <TechnologyButton to="https://vuejs.org/">
-          <img src={vueImage.src} alt="Vue" title="Vue" />
+          <Image src={vueImage} alt="Vue" title="Vue" />
         </TechnologyButton>
         <TechnologyButton to="https://nuxt.com/">
-          <img src={nuxtImage.src} alt="Nuxt" title="Nuxt" />
+          <Image src={nuxtImage} alt="Nuxt" title="Nuxt" />
         </TechnologyButton>
         <TechnologyButton to="https://react.dev/">
-          <img src={reactImage.src} alt="React" title="React" />
+          <Image src={reactImage} alt="React" title="React" />
         </TechnologyButton>
         <TechnologyButton to="https://nextjs.org/">
-          <img src={nextImage.src} alt="Next" title="Next" />
+          <Image src={nextImage} alt="Next" title="Next" />
         </TechnologyButton>
         <TechnologyButton to="https://astro.build/">
-          <img src={astroImage.src} alt="Astro" title="Astro" />
+          <Image src={astroImage} alt="Astro" title="Astro" />
         </TechnologyButton>
         <TechnologyButton to="https://expo.dev/">
-          <img src={expoImage.src} alt="Expo" title="Expo" />
+          <Image src={expoImage} alt="Expo" title="Expo" />
         </TechnologyButton>
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -140,13 +142,13 @@ import TechnologiesCard from '../components/TechnologiesCard.vue'
       </TechnologiesCard>
       <TechnologiesCard title="Styling" description="CSS, SCSS, Tailwind">
         <TechnologyButton to="https://developer.mozilla.org/en-US/docs/Web/CSS">
-          <img src={cssImage.src} alt="CSS" title="CSS" />
+          <Image src={cssImage} alt="CSS" title="CSS" />
         </TechnologyButton>
         <TechnologyButton to="https://sass-lang.com/">
-          <img src={scssImage.src} alt="SCSS" title="SCSS" />
+          <Image src={scssImage} alt="SCSS" title="SCSS" />
         </TechnologyButton>
         <TechnologyButton to="https://tailwindcss.com/">
-          <img src={tailwindImage.src} alt="Tailwind" title="Tailwind" />
+          <Image src={tailwindImage} alt="Tailwind" title="Tailwind" />
         </TechnologyButton>
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -171,13 +173,13 @@ import TechnologiesCard from '../components/TechnologiesCard.vue'
         description="Firebase, Google Cloud, Vercel"
       >
         <TechnologyButton to="https://firebase.google.com/">
-          <img src={firebaseImage.src} alt="Firebase" title="Firebase" />
+          <Image src={firebaseImage} alt="Firebase" title="Firebase" />
         </TechnologyButton>
         <TechnologyButton to="https://cloud.google.com/">
-          <img src={gcpImage.src} alt="Google Cloud" title="Google Cloud" />
+          <Image src={gcpImage} alt="Google Cloud" title="Google Cloud" />
         </TechnologyButton>
         <TechnologyButton to="https://vercel.com/">
-          <img src={vercelImage.src} alt="Vercel" title="Vercel" />
+          <Image src={vercelImage} alt="Vercel" title="Vercel" />
         </TechnologyButton>
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -198,16 +200,16 @@ import TechnologiesCard from '../components/TechnologiesCard.vue'
         description="MySQL, PostgreSQL, MongoDB, Redis"
       >
         <TechnologyButton to="https://www.mysql.com/">
-          <img src={mysqlImage.src} alt="MySQL" title="MySQL" />
+          <Image src={mysqlImage} alt="MySQL" title="MySQL" />
         </TechnologyButton>
         <TechnologyButton to="https://www.postgresql.org/">
-          <img src={postgresqlImage.src} alt="PostgreSQL" title="PostgreSQL" />
+          <Image src={postgresqlImage} alt="PostgreSQL" title="PostgreSQL" />
         </TechnologyButton>
         <TechnologyButton to="https://www.mongodb.com/">
-          <img src={mongodbImage.src} alt="MongoDB" title="MongoDB" />
+          <Image src={mongodbImage} alt="MongoDB" title="MongoDB" />
         </TechnologyButton>
         <TechnologyButton to="https://redis.io/">
-          <img src={redisImage.src} alt="Redis" title="Redis" />
+          <Image src={redisImage} alt="Redis" title="Redis" />
         </TechnologyButton>
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -230,16 +232,16 @@ import TechnologiesCard from '../components/TechnologiesCard.vue'
         description="Jest, Vitest, Cypress, Playwright"
       >
         <TechnologyButton to="https://jestjs.io/">
-          <img src={jestImage.src} alt="Jest" title="Jest" />
+          <Image src={jestImage} alt="Jest" title="Jest" />
         </TechnologyButton>
         <TechnologyButton to="https://vitest.dev/">
-          <img src={vitestImage.src} alt="Vitest" title="Vitest" />
+          <Image src={vitestImage} alt="Vitest" title="Vitest" />
         </TechnologyButton>
         <TechnologyButton to="https://www.cypress.io/">
-          <img src={cypressImage.src} alt="Cypress" title="Cypress" />
+          <Image src={cypressImage} alt="Cypress" title="Cypress" />
         </TechnologyButton>
         <TechnologyButton to="https://playwright.dev/">
-          <img src={playwrightImage.src} alt="Playwright" title="Playwright" />
+          <Image src={playwrightImage} alt="Playwright" title="Playwright" />
         </TechnologyButton>
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -264,23 +266,23 @@ import TechnologiesCard from '../components/TechnologiesCard.vue'
         description="Github, Turborepo, Visual Studio Code, Docker, Nx"
       >
         <TechnologyButton to="https://github.com/">
-          <img src={githubImage.src} alt="Github" title="Github" />
+          <Image src={githubImage} alt="Github" title="Github" />
         </TechnologyButton>
         <TechnologyButton to="https://turbo.build/repo">
-          <img src={turborepoImage.src} alt="Turborepo" title="Turborepo" />
+          <Image src={turborepoImage} alt="Turborepo" title="Turborepo" />
         </TechnologyButton>
         <TechnologyButton to="https://nx.dev/">
-          <img src={nxImage.src} alt="Nx" title="Nx" />
+          <Image src={nxImage} alt="Nx" title="Nx" />
         </TechnologyButton>
         <TechnologyButton to="https://code.visualstudio.com/">
-          <img
-            src={vscImage.src}
+          <Image
+            src={vscImage}
             alt="Visual Studio Code"
             title="Visual Studio Code"
           />
         </TechnologyButton>
         <TechnologyButton to="https://www.docker.com/">
-          <img src={dockerImage.src} alt="Docker" title="Docker" />
+          <Image src={dockerImage} alt="Docker" title="Docker" />
         </TechnologyButton>
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -304,10 +306,10 @@ import TechnologiesCard from '../components/TechnologiesCard.vue'
       </TechnologiesCard>
       <TechnologiesCard title="Task Management" description="Jira, Linear">
         <TechnologyButton to="https://www.atlassian.com/software/jira">
-          <img src={jiraImage.src} alt="Jira" title="Jira" />
+          <Image src={jiraImage} alt="Jira" title="Jira" />
         </TechnologyButton>
         <TechnologyButton to="https://linear.app/">
-          <img src={linearImage.src} alt="Linear" title="Linear" />
+          <Image src={linearImage} alt="Linear" title="Linear" />
         </TechnologyButton>
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -325,10 +327,10 @@ import TechnologiesCard from '../components/TechnologiesCard.vue'
       </TechnologiesCard>
       <TechnologiesCard title="Documentation" description="Confluence, Notion">
         <TechnologyButton to="https://www.atlassian.com/software/confluence">
-          <img src={confluenceImage.src} alt="Confluence" title="Confluence" />
+          <Image src={confluenceImage} alt="Confluence" title="Confluence" />
         </TechnologyButton>
         <TechnologyButton to="https://www.notion.so/">
-          <img src={notionImage.src} alt="Notion" title="Notion" />
+          <Image src={notionImage} alt="Notion" title="Notion" />
         </TechnologyButton>
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -348,10 +350,10 @@ import TechnologiesCard from '../components/TechnologiesCard.vue'
       </TechnologiesCard>
       <TechnologiesCard title="Design" description="Adobe, Figma">
         <TechnologyButton to="https://www.adobe.com/">
-          <img src={adobeImage.src} alt="Adobe" title="Adobe" />
+          <Image src={adobeImage} alt="Adobe" title="Adobe" />
         </TechnologyButton>
         <TechnologyButton to="figma.com">
-          <img src={figmaImage.src} alt="Figma" title="Figma" />
+          <Image src={figmaImage} alt="Figma" title="Figma" />
         </TechnologyButton>
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -379,13 +381,13 @@ import TechnologiesCard from '../components/TechnologiesCard.vue'
       </TechnologiesCard>
       <TechnologiesCard title="Others" description="Supabase, Unity, Shopify">
         <TechnologyButton to="https://supabase.com/">
-          <img src={supabaseImage.src} alt="Supabase" title="Supabase" />
+          <Image src={supabaseImage} alt="Supabase" title="Supabase" />
         </TechnologyButton>
         <TechnologyButton to="https://unity.com/">
-          <img src={unityImage.src} alt="Unity" title="Unity" />
+          <Image src={unityImage} alt="Unity" title="Unity" />
         </TechnologyButton>
         <TechnologyButton to="https://shopify.dev/">
-          <img src={shopifyImage.src} alt="Shopify" title="Shopify" />
+          <Image src={shopifyImage} alt="Shopify" title="Shopify" />
         </TechnologyButton>
         <svg
           xmlns="http://www.w3.org/2000/svg"

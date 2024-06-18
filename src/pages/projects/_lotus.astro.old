@@ -23,29 +23,29 @@ import shopify from '../../assets/shopify.png'
     problem="The catalyst for Lotus was a fundamental problem encountered in the realm of e-commerce. Existing free Shopify themes often lack essential features such as multiselect fields, color pickers, and text input fields. These critical elements are pivotal in creating versatile and user-friendly e-commerce websites. Furthermore, many free themes lack specific sections required for our own e-commerce project, which presented a considerable challenge in crafting a seamless and captivating shopping experience for our customers."
     solution="As we confronted these issues, Lotus emerged as a robust solution not only for our project but also for the wider Shopify community. Our vision extends beyond addressing our own challenges; we intend to make Lotus accessible to all through the Shopify Theme Store. By doing so, we aim to empower entrepreneurs, business owners, and Shopify users at large with a theme that offers a comprehensive feature set, stunning design, and enhanced functionality. With Lotus, we seek to contribute to the success of numerous online stores, simplifying the process of achieving their online goals while ensuring a visually striking and user-friendly presence."
   >
-    <img src={lotus.src} alt="Lotus" class="w-[48px] h-[48px]" />
-    <img src={lotusImage1.src} alt="Lotus Logo" class="w-full rounded-md" slot="image1" />
+    <Image src={lotus} alt="Lotus" class="w-[48px] h-[48px]" />
+    <Image src={lotusImage1} alt="Lotus Logo" class="w-full rounded-md" slot="image1" />
     <div class="grid-cols-4 sm:grid-cols-5 grid md:grid-cols-6 gap-2" slot="technologies">
       <TechnologyButton to="https://tailwindcss.com/">
-        <img src={tailwind.src} alt="Tailwind" title="Tailwind" />
+        <Image src={tailwind} alt="Tailwind" title="Tailwind" />
       </TechnologyButton>
       <TechnologyButton to="https://github.com/">
-        <img src={github.src} alt="Github" title="Github" />
+        <Image src={github} alt="Github" title="Github" />
       </TechnologyButton>
       <TechnologyButton to="https://code.visualstudio.com/">
-        <img
-          src={vsc.src}
+        <Image
+          src={vsc}
           alt="Visual Studio Code"
           title="Visual Studio Code"
         />
       <TechnologyButton to="https://www.notion.so/">
-        <img src={notion.src} alt="Notion" title="Notion" />
+        <Image src={notion} alt="Notion" title="Notion" />
       </TechnologyButton>
       <TechnologyButton to="https://www.adobe.com/">
-        <img src={adobe.src} alt="Adobe" title="Adobe" />
+        <Image src={adobe} alt="Adobe" title="Adobe" />
       </TechnologyButton>
       <TechnologyButton to="https://shopify.dev/">
-        <img src={shopify.src} alt="Shopify" title="Shopify" />
+        <Image src={shopify} alt="Shopify" title="Shopify" />
       </TechnologyButton>
     </div>
   </ProjectLayout>

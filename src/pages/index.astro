@@ -1,4 +1,6 @@
 ---
+import { Image } from 'astro:assets'
+
 import carlosImage from '../assets/carlos.png'
 import psybitcoinImage from '../assets/psybitcoin.png'
 import mybitgImage from '../assets/mybitg.png'
@@ -23,6 +25,7 @@ import tailwindImage from '../assets/tailwind.png'
 
 import Layout from '../layouts/Layout.astro'
 import Button from '../components/Button.vue'
+
 // @ts-ignore
 import CopyButton from '../components/CopyButton.vue'
 import ProjectCard from '../components/ProjectCard.vue'
@@ -73,7 +76,7 @@ import TheFooter from '../components/TheFooter.vue'
       <div
         class="flex justify-center sm:absolute sm:top-4 sm:right-6 drop-shadow-2xl mt-8 sm:mt-0"
       >
-        <img src={carlosImage.src} alt="Carlos Marques" class="w-[210px]" />
+        <Image src={carlosImage} alt="Carlos Marques" class="w-[210px]" />
       </div>
     </div>
     <div
@@ -95,28 +98,28 @@ import TheFooter from '../components/TheFooter.vue'
           type="Learning platform, Bitcoin education"
           to="/projects/psybitcoin/"
         >
-          <img src={psybitcoinImage.src} alt="Psybitcoin" />
+          <Image src={psybitcoinImage} alt="Psybitcoin" />
         </ProjectCard>
         <ProjectCard
           title="My Bit G"
           type="Open source, Bitcoin Desktop Wallet"
           to="/projects/mybitg/"
         >
-          <img src={mybitgImage.src} alt="My Bit G" />
+          <Image src={mybitgImage} alt="My Bit G" />
         </ProjectCard>
         <ProjectCard
           title="SatSigner"
           type="Open source, Bitcoin Mobile App"
           to="/projects/satsigner/"
         >
-          <img src={satsignerImage.src} alt="SatSigner" />
+          <Image src={satsignerImage} alt="SatSigner" />
         </ProjectCard>
         <ProjectCard
           title="Spame"
           type="Content creation, AI tool"
           to="/projects/spame/"
         >
-          <img src={spameImage.src} alt="Spame" />
+          <Image src={spameImage} alt="Spame" />
         </ProjectCard>
       </div>
     </div>
@@ -141,19 +144,19 @@ import TheFooter from '../components/TheFooter.vue'
           <TechnologyButton
             to="https://developer.mozilla.org/en-US/docs/Web/javascript"
           >
-            <img src={jsImage.src} alt="Javascript" title="Javascript" />
+            <Image src={jsImage} alt="Javascript" title="Javascript" />
           </TechnologyButton>
           <TechnologyButton to="https://www.typescriptlang.org/">
-            <img src={tsImage.src} alt="Typescript" title="Typescript" />
+            <Image src={tsImage} alt="Typescript" title="Typescript" />
           </TechnologyButton>
           <TechnologyButton to="https://nodejs.org/en">
-            <img src={nodeImage.src} alt="Node.js" title="Node.js" />
+            <Image src={nodeImage} alt="Node.js" title="Node.js" />
           </TechnologyButton>
           <TechnologyButton to="https://www.python.org/">
-            <img src={pythonImage.src} alt="Python" title="Python" />
+            <Image src={pythonImage} alt="Python" title="Python" />
           </TechnologyButton>
           <TechnologyButton to="https://www.java.com/">
-            <img src={javaImage.src} alt="Java" title="Java" />
+            <Image src={javaImage} alt="Java" title="Java" />
           </TechnologyButton>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -174,19 +177,19 @@ import TheFooter from '../components/TheFooter.vue'
           description="Vue, Nuxt, React, Next, Astro"
         >
           <TechnologyButton to="https://vuejs.org/">
-            <img src={vueImage.src} alt="Vue" title="Vue" />
+            <Image src={vueImage} alt="Vue" title="Vue" />
           </TechnologyButton>
           <TechnologyButton to="https://nuxt.com/">
-            <img src={nuxtImage.src} alt="Nuxt" title="Nuxt" />
+            <Image src={nuxtImage} alt="Nuxt" title="Nuxt" />
           </TechnologyButton>
           <TechnologyButton to="https://react.dev/">
-            <img src={reactImage.src} alt="React" title="React" />
+            <Image src={reactImage} alt="React" title="React" />
           </TechnologyButton>
           <TechnologyButton to="https://nextjs.org/">
-            <img src={nextImage.src} alt="Next" title="Next" />
+            <Image src={nextImage} alt="Next" title="Next" />
           </TechnologyButton>
           <TechnologyButton to="https://astro.build/">
-            <img src={astroImage.src} alt="Astro" title="Astro" />
+            <Image src={astroImage} alt="Astro" title="Astro" />
           </TechnologyButton>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -209,13 +212,13 @@ import TheFooter from '../components/TheFooter.vue'
           <TechnologyButton
             to="https://developer.mozilla.org/en-US/docs/Web/CSS"
           >
-            <img src={cssImage.src} alt="CSS" title="CSS" />
+            <Image src={cssImage} alt="CSS" title="CSS" />
           </TechnologyButton>
           <TechnologyButton to="https://sass-lang.com/">
-            <img src={scssImage.src} alt="SCSS" title="SCSS" />
+            <Image src={scssImage} alt="SCSS" title="SCSS" />
           </TechnologyButton>
           <TechnologyButton to="https://tailwindcss.com/">
-            <img src={tailwindImage.src} alt="Tailwind" title="Tailwind" />
+            <Image src={tailwindImage} alt="Tailwind" title="Tailwind" />
           </TechnologyButton>
           <svg
             xmlns="http://www.w3.org/2000/svg"

@@ -1,4 +1,6 @@
 ---
+import { Image } from 'astro:assets'
+
 import Layout from '../../layouts/Layout.astro'
 import ProjectLayout from '../../layouts/ProjectLayout.vue'
 import TechnologyButton from '../../components/TechnologyButton.vue'
@@ -24,66 +26,74 @@ import adobe from '../../assets/adobe.png'
 ---
 
 <Layout title="Clube Étnico | Carlos Marques" page="none">
-  <ProjectLayout 
-    client:load 
-    title="Clube Étnico Portuguez" 
-    website="https://clubeetnico.pt/" 
+  <ProjectLayout
+    client:load
+    title="Clube Étnico Portuguez"
+    website="https://clubeetnico.pt/"
     description="Welcome to Clube Étnico Portuguez, a dynamic platform designed to foster camaraderie and collaboration among Portuguese men. Within this platform, we have created a vibrant space for sharing ideas, participating in events, and engaging with a multitude of features. Clube Étnico Portuguez goes beyond the ordinary social platform, offering a unique environment where members can interact, contribute, and grow together."
     intro="Clube Étnico Portuguez revolves around three core pillars: sports, art, and academy. These pillars encompass a diverse range of activities and interests, allowing members to nurture both their minds and bodies. The platform offers a feed for real-time updates, a marketplace for trading and exchanging, and a dedicated space for members to collectively decide on club initiatives. With Clube Étnico Portuguez, our goal is to facilitate personal growth and improvement through shared experiences and interests."
     problem="Connecting with like-minded individuals and engaging in meaningful activities can be a challenge in today's fast-paced world. Many people struggle to find a sense of community where they can explore their passions and interests with others who share similar backgrounds and values. The absence of such spaces can lead to a sense of isolation and missed opportunities for personal growth."
     solution="Clube Étnico Portuguez addresses this issue by providing a virtual gathering place for Portuguese men to come together, share ideas, and actively participate in various activities. By focusing on the pillars of sports, art, and academy, we aim to create a well-rounded and enriching experience for our members. Through the platform's features, we hope to foster a sense of belonging, encourage personal development, and strengthen connections within the Portuguese community, ultimately improving the lives of our members."
   >
-    <img src={clubeetnico.src} alt="Clube Étnico Portuguez" class="w-[48px] h-[48px]" />
-    <img src={clubeetnicoImage1.src} alt="Clube Étnico Portuguez" class="w-full rounded-md" slot="image1" />
-    <div class="grid-cols-4 sm:grid-cols-5 grid md:grid-cols-6 gap-2" slot="technologies">
+    <Image
+      src={clubeetnico}
+      alt="Clube Étnico Portuguez"
+      class="w-[48px] h-[48px]"
+    />
+    <Image
+      src={clubeetnicoImage1}
+      alt="Clube Étnico Portuguez"
+      class="w-full rounded-md"
+      slot="image1"
+    />
+    <div
+      class="grid-cols-4 sm:grid-cols-5 grid md:grid-cols-6 gap-2"
+      slot="technologies"
+    >
       <TechnologyButton to="https://www.typescriptlang.org/">
-        <img src={ts.src} alt="Typescript" title="Typescript" />
+        <Image src={ts} alt="Typescript" title="Typescript" />
       </TechnologyButton>
       <TechnologyButton to="https://nodejs.org/en">
-        <img src={node.src} alt="Node.js" title="Node.js" />
+        <Image src={node} alt="Node.js" title="Node.js" />
       </TechnologyButton>
       <TechnologyButton to="https://vuejs.org/">
-        <img src={vue.src} alt="Vue" title="Vue" />
+        <Image src={vue} alt="Vue" title="Vue" />
       </TechnologyButton>
       <TechnologyButton to="https://tailwindcss.com/">
-        <img src={tailwind.src} alt="Tailwind" title="Tailwind" />
+        <Image src={tailwind} alt="Tailwind" title="Tailwind" />
       </TechnologyButton>
       <TechnologyButton to="https://firebase.google.com/">
-        <img src={firebase.src} alt="Firebase" title="Firebase" />
+        <Image src={firebase} alt="Firebase" title="Firebase" />
       </TechnologyButton>
       <TechnologyButton to="https://cloud.google.com/">
-        <img src={gcp.src} alt="Google Cloud" title="Google Cloud" />
+        <Image src={gcp} alt="Google Cloud" title="Google Cloud" />
       </TechnologyButton>
       <TechnologyButton to="https://jestjs.io/">
-        <img src={jest.src} alt="Jest" title="Jest" />
+        <Image src={jest} alt="Jest" title="Jest" />
       </TechnologyButton>
       <TechnologyButton to="https://vitest.dev/">
-        <img src={vitest.src} alt="Vitest" title="Vitest" />
+        <Image src={vitest} alt="Vitest" title="Vitest" />
       </TechnologyButton>
       <TechnologyButton to="https://playwright.dev/">
-        <img src={playwright.src} alt="Playwright" title="Playwright" />
+        <Image src={playwright} alt="Playwright" title="Playwright" />
       </TechnologyButton>
       <TechnologyButton to="https://github.com/">
-        <img src={github.src} alt="Github" title="Github" />
+        <Image src={github} alt="Github" title="Github" />
       </TechnologyButton>
       <TechnologyButton to="https://turbo.build/repo">
-        <img src={turborepo.src} alt="Turborepo" title="Turborepo" />
+        <Image src={turborepo} alt="Turborepo" title="Turborepo" />
       </TechnologyButton>
       <TechnologyButton to="https://code.visualstudio.com/">
-        <img
-          src={vsc.src}
-          alt="Visual Studio Code"
-          title="Visual Studio Code"
-        />
+        <Image src={vsc} alt="Visual Studio Code" title="Visual Studio Code" />
       </TechnologyButton>
       <TechnologyButton to="https://linear.app/">
-        <img src={linear.src} alt="Linear" title="Linear" />
+        <Image src={linear} alt="Linear" title="Linear" />
       </TechnologyButton>
       <TechnologyButton to="https://www.notion.so/">
-        <img src={notion.src} alt="Notion" title="Notion" />
+        <Image src={notion} alt="Notion" title="Notion" />
       </TechnologyButton>
       <TechnologyButton to="https://www.adobe.com/">
-        <img src={adobe.src} alt="Adobe" title="Adobe" />
+        <Image src={adobe} alt="Adobe" title="Adobe" />
       </TechnologyButton>
     </div>
   </ProjectLayout>

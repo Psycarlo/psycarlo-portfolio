@@ -1,4 +1,6 @@
 ---
+import { Image } from 'astro:assets'
+
 import Layout from '../layouts/Layout.astro'
 import WrapperLayout from '../layouts/WrapperLayout.vue'
 import ContentLayout from '../layouts/ContentLayout.vue'
@@ -16,13 +18,13 @@ import signature from '../assets/signature.png'
   >
     <ContentLayout>
       <div class="flex items-center justify-center relative">
-        <img
-          src={carlos.src}
+        <Image
+          src={carlos}
           alt="Carlos Marques"
           class="peer w-[80%] rounded-lg overflow-hidden ring-2 ring-offset-2 ring-brand-grayLightest hover:scale-105 duration-300 transition object-cover"
         />
-        <img
-          src={signature.src}
+        <Image
+          src={signature}
           alt="Carlos Marques Signature"
           class="absolute left-2 top-4 dark:left-14 -rotate-12 drop-shadow-xl"
         />

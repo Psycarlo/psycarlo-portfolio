@@ -1,4 +1,6 @@
 ---
+import { Image } from 'astro:assets'
+
 import Layout from '../layouts/Layout.astro'
 import WrapperLayout from '../layouts/WrapperLayout.vue'
 import ContentLayout from '../layouts/ContentLayout.vue'
@@ -18,19 +20,19 @@ import qrln from '../assets/qrln.png'
   >
     <ContentLayout>
       <BitcoinCard client:visible>
-        <img
-          src={splash.src}
+        <Image
+          src={splash}
           alt="Psybitcoin Splash"
           class="rounded-lg shadow-md"
         />
-        <img
-          src={qr.src}
+        <Image
+          src={qr}
           alt="Bitcoin Adress QR Code"
           class="rounded-lg duration-300 hover:scale-[1.02] transition-transform"
           slot="qr"
         />
-        <img
-          src={qrln.src}
+        <Image
+          src={qrln}
           alt="Lightning Adress QR Code"
           class="rounded-lg duration-300 hover:scale-[1.02] transition-transform"
           slot="qrln"
