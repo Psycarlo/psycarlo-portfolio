@@ -1,0 +1,60 @@
+---
+import { Image } from 'astro:assets'
+
+import Layout from '../../layouts/Layout.astro'
+import ProjectLayout from '../../layouts/ProjectLayout.vue'
+import TechnologyButton from '../../components/TechnologyButton.vue'
+
+import psyui from '../../assets/psyui.png'
+import vividImage1 from '../../assets/vivid/vivid1.png'
+
+import ts from '../../assets/ts.png'
+import vue from '../../assets/vue.png'
+import tailwind from '../../assets/tailwind.png'
+import github from '../../assets/github.png'
+import turborepo from '../../assets/turborepo.png'
+import vsc from '../../assets/vsc.png'
+---
+
+<Layout title="Psyui | Carlos Marques" page="none">
+  <ProjectLayout
+    client:load
+    title="Psyui"
+    website="https://psyui.com"
+    description="Psyui is an open-source, copy & paste components library built with Vue.js and Tailwind CSS."
+    intro="Psyui offers copy & paste vue components to make your website look 10x better. Don't need to install any psyui library - just copy & paste the code and use it and edit it the way you want."
+    problem="Developers often encounter challenges when building visually appealing dashboards and trending website using vue. The lack of aesthetically pleasing options can impact the overall user experience and design quality of their applications."
+    solution="Psyui solves this problem by offering a comprehensive copy & paste library of visually striking vue components. By leveraging the power of Vue.js and Tailwind CSS, developers can effortlessly create aesthetically pleasing dashboards and trending websites that meet both functional and design requirements. Psyui empowers developers to craft exceptional user interfaces and elevate the visual appeal of their applications."
+  >
+    <Image src={psyui} alt="Psyui" class="w-[48px] h-[48px]" />
+    <Image
+      src={vividImage1}
+      alt="Psyui"
+      class="w-full rounded-md"
+      slot="image1"
+    />
+    <div
+      class="grid-cols-4 sm:grid-cols-5 grid md:grid-cols-6 gap-2"
+      slot="technologies"
+    >
+      <TechnologyButton to="https://www.typescriptlang.org/">
+        <Image src={ts} alt="Typescript" title="Typescript" />
+      </TechnologyButton>
+      <TechnologyButton to="https://vuejs.org/">
+        <Image src={vue} alt="Vue" title="Vue" />
+      </TechnologyButton>
+      <TechnologyButton to="https://tailwindcss.com/">
+        <Image src={tailwind} alt="Tailwind" title="Tailwind" />
+      </TechnologyButton>
+      <TechnologyButton to="https://github.com/">
+        <Image src={github} alt="Github" title="Github" />
+      </TechnologyButton>
+      <TechnologyButton to="https://turbo.build/repo">
+        <Image src={turborepo} alt="Turborepo" title="Turborepo" />
+      </TechnologyButton>
+      <TechnologyButton to="https://code.visualstudio.com/">
+        <Image src={vsc} alt="Visual Studio Code" title="Visual Studio Code" />
+      </TechnologyButton>
+    </div>
+  </ProjectLayout>
+</Layout>
