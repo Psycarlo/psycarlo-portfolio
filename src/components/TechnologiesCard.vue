@@ -6,7 +6,9 @@
       <p class="text-lg font-semibold">{{ title }}</p>
       <slot name="icon"></slot>
     </div>
-    <p class="text-xs text-brand-gray">{{ description }}</p>
+    <p class="text-xs text-brand-grayDark dark:text-brand-gray">
+      {{ description }}
+    </p>
     <div class="mt-3 grid w-fit grid-cols-3 gap-2 xs:grid-cols-6">
       <slot></slot>
     </div>
