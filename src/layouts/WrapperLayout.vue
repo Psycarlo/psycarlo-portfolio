@@ -9,7 +9,7 @@
       </div>
       <div class="mt-10 flex flex-col gap-2">
         <h3 class="text-4xl font-semibold">{{ title }}</h3>
-        <p class="dark:text-brand-grayLight text-brand-grayDark">
+        <p class="text-brand-grayDark dark:text-brand-grayLight">
           {{ description }}
         </p>
       </div>
@@ -24,22 +24,14 @@
   import LetsWorkTogether from '../components/LetsWorkTogether.vue'
   import TheFooter from '../components/TheFooter.vue'
 
-  defineProps({
-    topic: {
-      type: String,
-      required: true
-    },
-    title: {
-      type: String,
-      required: true
-    },
-    description: {
-      type: String,
-      required: true
-    },
-    withoutLetsWorkTogether: {
-      type: Boolean,
-      default: false
-    }
+  type WrapperLayoutProps = {
+    topic: string
+    title: string
+    description: string
+    withoutLetsWorkTogether?: boolean
+  }
+
+  withDefaults(defineProps<WrapperLayoutProps>(), {
+    withoutLetsWorkTogether: false
   })
 </script>
