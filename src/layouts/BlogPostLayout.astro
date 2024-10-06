@@ -1,0 +1,67 @@
+---
+import '@fontsource-variable/inter'
+import TheHeader from '../components/TheHeader.vue'
+import { ViewTransitions } from 'astro:transitions'
+
+const { frontmatter } = Astro.props
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="Software Engineer & Designer from Portugal."
+    />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <meta name="generator" content={Astro.generator} />
+    <meta property="og:title" content="Portfolio | Carlos Marques" />
+    <meta
+      itemprop="description"
+      content="Software Engineer & Designer from Portugal."
+    />
+    <meta
+      property="og:description"
+      content="Software Engineer & Designer from Portugal."
+    />
+    <meta itemprop="image" content="/main.png" />
+    <meta property="og:image" content="/main.png" />
+    <title>{frontmatter.title}</title>
+    <ViewTransitions />
+  </head>
+  <body
+    class="bg-brand-light dark:bg-brand-darkest font-brand text-brand-darkest dark:text-brand-lightest"
+  >
+    <main class="flex justify-center px-2 xs:px-4 sm:px-8">
+      <div class="w-[560px] py-4 flex flex-col gap-4">
+        <TheHeader client:load page={Astro.props.page} />
+        <div class="he:pt-20 pt-32">
+          <slot />
+        </div>
+      </div>
+    </main>
+    <script is:inline>
+      const theme = (() => {
+        if (
+          typeof localStorage !== 'undefined' &&
+          localStorage.getItem('theme')
+        ) {
+          return localStorage.getItem('theme')
+        }
+        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          return 'dark'
+        }
+        return 'light'
+      })()
+
+      if (theme === 'light') {
+        document.documentElement.classList.remove('dark')
+      } else {
+        document.documentElement.classList.add('dark')
+      }
+      window.localStorage.setItem('theme', theme)
+    </script>
+  </body>
+</html>
