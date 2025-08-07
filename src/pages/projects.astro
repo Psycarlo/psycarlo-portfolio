@@ -30,7 +30,11 @@ import ProjectCard from '../components/ProjectCard.vue'
         type="Learning platform, Bitcoin education"
         to="/projects/psybitcoin/"
       >
-        <Image src={psybitcoinImage} alt="Psybitcoin" />
+        <Image
+          src={psybitcoinImage}
+          alt="Psybitcoin"
+          transition:name="psybitcoin"
+        />
       </ProjectCard>
       <ProjectCard
         title="Psyui"

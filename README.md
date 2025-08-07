@@ -1,6 +1,6 @@
 ## Development Requirements
 
-- Node 18: [Current](https://nodejs.org/en/)
+- Node 22: [Current](https://nodejs.org/en/)
 - Pnpm: [Current](https://pnpm.io/)
 - (Optional) [Visual Studio Code](https://code.visualstudio.com/)
 
