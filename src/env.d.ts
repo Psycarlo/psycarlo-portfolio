@@ -3,6 +3,7 @@
 
 interface ImportMetaEnv {
   readonly SENDGRID_API_KEY: string
+  readonly BREVO_API_KEY: string
 }
 
 interface ImportMeta {

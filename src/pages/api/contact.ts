@@ -1,13 +1,11 @@
 import type { APIRoute } from "astro";
 
-import sendGrid from '@sendgrid/mail'
+import { TransactionalEmailsApi, TransactionalEmailsApiApiKeys, type SendSmtpEmail } from "@getbrevo/brevo";
 
 const FROM_EMAIL = 'support@psybitcoin.com'
 const TO_EMAIL = 'psycarlo1@gmail.com'
 
 const EMAIL_VALID_REGEX = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-
-sendGrid.setApiKey(import.meta.env.SENDGRID_API_KEY)
 
 export const POST: APIRoute = async ({ request }) => {
   const data = await request.formData();
@@ -38,15 +36,24 @@ export const POST: APIRoute = async ({ request }) => {
     )
   }
   
-  const emailData = {
-    from: FROM_EMAIL,
-    to: TO_EMAIL,
+  const _message: SendSmtpEmail = {
+    sender: {
+      name: 'Carlos Marques Portfolio',
+      email: FROM_EMAIL
+    },
+    to: [{ email: TO_EMAIL, name: 'Carlos Marques' }],
     subject: `Contact form submission from ${name}`,
-    text: `${name} | ${email} : ${message}`
+    textContent: `${name} | ${email} : ${message}`
   }
 
+  const transactionalEmailsApi = new TransactionalEmailsApi()
+  transactionalEmailsApi.setApiKey(
+    TransactionalEmailsApiApiKeys.apiKey,
+    import.meta.env.BREVO_API_KEY
+  )
+
   try {
-    await sendGrid.send(emailData)
+    await transactionalEmailsApi.sendTransacEmail(_message)
   } catch (error) {
     return new Response(
       JSON.stringify({
