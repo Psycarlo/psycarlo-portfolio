@@ -9,13 +9,13 @@ importers:
   .:
     dependencies:
       '@astrojs/tailwind':
-        specifier: ^5.1.0
+        specifier: ^5.1.5
         version: 5.1.5(astro@4.16.18(rollup@4.35.0)(typescript@5.8.2))(tailwindcss@3.4.17)
       '@astrojs/vercel':
         specifier: ^8.2.8
         version: 8.2.8(astro@4.16.18(rollup@4.35.0)(typescript@5.8.2))(rollup@4.35.0)(vue@3.5.13(typescript@5.8.2))
       '@astrojs/vue':
-        specifier: ^4.5.0
+        specifier: ^4.5.3
         version: 4.5.3(astro@4.16.18(rollup@4.35.0)(typescript@5.8.2))(rollup@4.35.0)(vue@3.5.13(typescript@5.8.2))
       '@fontsource-variable/inter':
         specifier: ^5.0.8
@@ -27,7 +27,7 @@ importers:
         specifier: ^7.7.0
         version: 7.7.0
       astro:
-        specifier: ^4.10.3
+        specifier: ^4.16.18
         version: 4.16.18(rollup@4.35.0)(typescript@5.8.2)
       radix-vue:
         specifier: ^1.9.6
@@ -39,7 +39,7 @@ importers:
         specifier: ^3.3.3
         version: 3.4.17
       vue:
-        specifier: ^3.2.30
+        specifier: ^3.5.13
         version: 3.5.13(typescript@5.8.2)
     devDependencies:
       prettier:
