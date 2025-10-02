@@ -3,7 +3,7 @@ import { Image } from 'astro:assets'
 
 import carlosImage from '../assets/carlos.png'
 import psybitcoinImage from '../assets/psybitcoin.png'
-import mybitgImage from '../assets/mybitg.png'
+import medusaImage from '../assets/medusa.png'
 import satsignerImage from '../assets/satsigner.png'
 import psyuiImage from '../assets/psyui.png'
 
@@ -61,8 +61,8 @@ import TheFooter from '../components/TheFooter.vue'
           class="text-brand-grayDark text-sm dark:text-brand-grayLight text-center sm:text-left"
         >
           Software Engineer & Designer from Portugal.<br />
-           I create beautiful and performant products.<br />
-           Also teach about Bitcoin ₿.
+          I create beautiful and performant products.<br />
+          Also teach about Bitcoin ₿.
         </p>
         <ul class="flex gap-4 items-center justify-center sm:justify-normal">
           <li>
@@ -110,13 +110,6 @@ import TheFooter from '../components/TheFooter.vue'
           <Image src={psybitcoinImage} alt="Psybitcoin" />
         </ProjectCard>
         <ProjectCard
-          title="PsyUI"
-          type="Open source, Copy-paste components"
-          to="/projects/psyui/"
-        >
-          <Image src={psyuiImage} alt="PsyUI" />
-        </ProjectCard>
-        <ProjectCard
           title="SatSigner"
           type="Open source, Bitcoin Mobile App"
           to="/projects/satsigner/"
@@ -124,11 +117,18 @@ import TheFooter from '../components/TheFooter.vue'
           <Image src={satsignerImage} alt="SatSigner" />
         </ProjectCard>
         <ProjectCard
-          title="My Bit G"
-          type="Open source, Bitcoin Desktop Wallet"
-          to="/projects/mybitg/"
+          title="Medusa Wallet"
+          type="Open source, Bitcoin Lightning Wallet"
+          to="/projects/medusawallet/"
         >
-          <Image src={mybitgImage} alt="My Bit G" />
+          <Image src={medusaImage} alt="Medusa Wallet" />
+        </ProjectCard>
+        <ProjectCard
+          title="PsyUI"
+          type="Open source, Copy-paste components"
+          to="/projects/psyui/"
+        >
+          <Image src={psyuiImage} alt="PsyUI" />
         </ProjectCard>
       </div>
     </div>

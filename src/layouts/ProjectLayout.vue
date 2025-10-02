@@ -27,20 +27,28 @@
           </p>
           <slot name="image2"></slot>
           <h2
+            v-if="problem"
             class="text-2xl font-semibold text-brand-darkest dark:text-brand-lightest"
           >
             The Problem
           </h2>
-          <p class="text-lg text-brand-grayDark dark:text-brand-gray">
+          <p
+            v-if="problem"
+            class="text-lg text-brand-grayDark dark:text-brand-gray"
+          >
             {{ problem }}
           </p>
           <slot name="image3"></slot>
           <h2
+            v-if="solution"
             class="text-2xl font-semibold text-brand-darkest dark:text-brand-lightest"
           >
             Our Solution
           </h2>
-          <p class="text-lg text-brand-grayDark dark:text-brand-gray">
+          <p
+            v-if="solution"
+            class="text-lg text-brand-grayDark dark:text-brand-gray"
+          >
             {{ solution }}
           </p>
           <h2

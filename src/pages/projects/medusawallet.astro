@@ -5,44 +5,32 @@ import Layout from '../../layouts/Layout.astro'
 import ProjectLayout from '../../layouts/ProjectLayout.vue'
 import TechnologyButton from '../../components/TechnologyButton.vue'
 
-import satsigner from '../../assets/satsigner.png'
+import medusa from '../../assets/medusa.png'
 
-import satsignerImage1 from '../../assets/satsigner/satsigner1.png'
-import satsignerImage2 from '../../assets/satsigner/satsigner2.png'
+import medusaImage0 from '../../assets/medusawallet/medusa0.png'
 
 import ts from '../../assets/ts.png'
 import expo from '../../assets/expo.png'
 import react from '../../assets/react.png'
-import jest from '../../assets/jest.png'
 import github from '../../assets/github.png'
-import turborepo from '../../assets/turborepo.png'
 import vsc from '../../assets/vsc.png'
 import figma from '../../assets/figma.png'
-import notion from '../../assets/notion.png'
 ---
 
-<Layout title="Satsigner | Carlos Marques" page="none">
+<Layout title="Medusa Wallet | Carlos Marques" page="none">
   <ProjectLayout
     client:load
-    title="SatSigner"
-    website="https://satsigner.com/"
-    description="A bitcoin first mobile application concept."
-    intro="A pouch for your sats."
-    problem="Bitcoin mobile wallets are very simple and lack data visualization."
-    solution="Create a bitcoin mobile wallet with a lot of data visualization. We want to make it easy for beginners as well as amazing for experienced users."
+    title="Medusa Wallet"
+    website="https://medusa.bz/"
+    description="Free and open source bitcoin lightning wallet where you also can buy KYC free."
+    intro="Users can buy KYC free sats and send them anywhere, instantly, using the Lightning Network."
   >
-    <Image src={satsigner} alt="SatSigner" class="w-[48px] h-[48px]" />
+    <Image src={medusa} alt="Medusa Wallet" class="w-[48px] h-[48px]" />
     <Image
-      src={satsignerImage1}
-      alt="SatSigner Splash"
+      src={medusaImage0}
+      alt="Medusa Wallet Image 1"
       class="w-full rounded-md"
       slot="image1"
-    />
-    <Image
-      src={satsignerImage2}
-      alt="SatSigner UI"
-      class="w-full rounded-md"
-      slot="image2"
     />
     <div
       class="grid-cols-4 sm:grid-cols-5 grid md:grid-cols-6 gap-2"
@@ -57,23 +45,14 @@ import notion from '../../assets/notion.png'
       <TechnologyButton to="https://reactnative.dev/">
         <Image src={react} alt="React Native" title="React Native" />
       </TechnologyButton>
-      <TechnologyButton to="https://jestjs.io/">
-        <Image src={jest} alt="Jest" title="Jest" />
-      </TechnologyButton>
       <TechnologyButton to="https://github.com/">
         <Image src={github} alt="Github" title="Github" />
-      </TechnologyButton>
-      <TechnologyButton to="https://turbo.build/repo">
-        <Image src={turborepo} alt="Turborepo" title="Turborepo" />
       </TechnologyButton>
       <TechnologyButton to="https://code.visualstudio.com/">
         <Image src={vsc} alt="Visual Studio Code" title="Visual Studio Code" />
       </TechnologyButton>
       <TechnologyButton to="https://www.figma.com/">
         <Image src={figma} alt="Figma" title="Figma" />
-      </TechnologyButton>
-      <TechnologyButton to="https://www.notion.so/">
-        <Image src={notion} alt="Notion" title="Notion" />
       </TechnologyButton>
     </div>
   </ProjectLayout>
