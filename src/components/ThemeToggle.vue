@@ -43,7 +43,11 @@
   const theme = ref('light')
 
   function handleToggle() {
-    theme.value = theme.value === 'light' ? 'dark' : 'light'
+    if (!document.startViewTransition)
+      return (theme.value = theme.value === 'light' ? 'dark' : 'light')
+    document.startViewTransition(
+      () => (theme.value = theme.value === 'light' ? 'dark' : 'light')
+    )
   }
 
   onMounted(() => {
