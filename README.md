@@ -73,7 +73,7 @@ In the technologies page we show all the technologies I used to build my project
 
 ### Bitcoin
 
-Here, I showcase psybitcoin and tell more about bitcoin. I also provide a QR Code/Bitcoin Address so people can "Buy me a coffee".
+Here, I showcase psybitcoin and tell more about bitcoin. I also provide a QR Code and a bitcoin address so people can "Buy me a coffee".
 
 ### Contact Me
 
