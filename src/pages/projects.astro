@@ -2,12 +2,9 @@
 import { Image } from 'astro:assets'
 
 import psybitcoinImage from '../assets/psybitcoin.png'
-import spameImage from '../assets/spame.png'
 import medusaImage from '../assets/medusa.png'
 import satsignerImage from '../assets/satsigner.png'
 import kurikaImage from '../assets/kurika.png'
-import yearlyImage from '../assets/yearly.png'
-// import lotusImage from '../assets/lotus.png'
 import psyuiImage from '../assets/psyui.png'
 
 import Layout from '../layouts/Layout.astro'
@@ -62,20 +59,6 @@ import ProjectCard from '../components/ProjectCard.vue'
         to="/projects/kurika/"
       >
         <Image src={kurikaImage} alt="Kurika" />
-      </ProjectCard>
-      <ProjectCard
-        title="Yearly"
-        type="Ecommerce, Self-care journaling"
-        to="/projects/yearly/"
-      >
-        <Image src={yearlyImage} alt="Yearly" />
-      </ProjectCard>
-      <ProjectCard
-        title="Spame"
-        type="Content creation, AI tool"
-        to="/projects/spame/"
-      >
-        <Image src={spameImage} alt="Spame" />
       </ProjectCard>
     </ContentLayout>
   </WrapperLayout>

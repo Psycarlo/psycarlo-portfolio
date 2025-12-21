@@ -8,7 +8,8 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "format": "prettier --config --check .prettierrc src"
+    "format": "prettier --config --check .prettierrc src",
+    "format:fix": "prettier --config --write .prettierrc src"
   },
   "dependencies": {
     "@astrojs/tailwind": "^5.1.5",
@@ -29,6 +30,6 @@
     "prettier-plugin-tailwindcss": "^0.5.14"
   },
   "engines": {
-    "node": ">=18.0.0"
+    "node": ">=22"
   }
 }
