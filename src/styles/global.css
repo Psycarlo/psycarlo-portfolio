@@ -2,6 +2,8 @@
 
 @config '../../tailwind.config.cjs';
 
+@plugin "@tailwindcss/typography";
+
 @layer base {
   :root {
     --expo-out: linear(

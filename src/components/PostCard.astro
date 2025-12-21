@@ -1,0 +1,22 @@
+---
+import { Image } from 'astro:assets'
+
+const { id, title, pubDate, image } = Astro.props
+---
+
+<a
+  href={`/blog/${id}/`}
+  class="cursor-pointer dark:border-brand-grayDarkest group flex flex-col gap-2 rounded-lg border border-brand-light bg-brand-lightest p-4 shadow-sm duration-300 hover:scale-[1.01] dark:bg-brand-dark"
+>
+  <span class="font-mono dark:text-gray-300">
+    {
+      new Intl.DateTimeFormat('en-US', {
+        month: 'long',
+        day: 'numeric',
+        year: 'numeric'
+      }).format(pubDate)
+    }
+  </span>
+  <Image src={image} alt="" class="rounded-md" />
+  <h3 class="font-semibold text-xl py-2">{title}</h3>
+</a>

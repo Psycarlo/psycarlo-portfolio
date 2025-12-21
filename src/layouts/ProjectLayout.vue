@@ -57,9 +57,7 @@
             Technologies Used
           </h2>
           <slot name="technologies"></slot>
-          <div
-            class="mt-3 h-[1px] w-full bg-brand-lighty dark:bg-brand-dark"
-          ></div>
+          <div class="mt-3 h-px w-full bg-brand-lighty dark:bg-brand-dark" />
         </div>
       </div>
     </div>
