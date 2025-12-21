@@ -22,6 +22,10 @@ cd psycarlo-portfolio
 pnpm install
 ```
 
+4. Add environment variables
+
+Create a `.env` file and add required environment variables. Check `.env.example`.
+
 ### Run
 
 Run in development mode
@@ -46,7 +50,7 @@ pnpm preview
 
 ### Deploy
 
-Deployed in [Vercel](https://vercel.com/)
+Deployed on [Vercel](https://vercel.com/)
 
 ## Pages
 
@@ -74,6 +78,14 @@ In the technologies page we show all the technologies I used to build my project
 ### Bitcoin
 
 Here, I showcase psybitcoin and tell more about bitcoin. I also provide a QR Code and a bitcoin address so people can "Buy me a coffee".
+
+### Blog
+
+A list of my blog posts.
+
+### Blog Post
+
+The blog post.
 
 ### Contact Me
 
