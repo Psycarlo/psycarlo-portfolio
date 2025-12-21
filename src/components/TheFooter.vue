@@ -86,7 +86,7 @@
       class="relative z-10 mx-2 flex flex-col items-center gap-2 rounded-lg bg-brand-lighter px-6 py-12 dark:bg-brand-darky"
     >
       <p class="text-center text-sm text-brand-grayDark dark:text-brand-gray">
-        © 2023 Carlos Marques | Software Engineer & Designer
+        © 2025 Carlos Marques | Software Engineer & Designer
       </p>
       <div class="text-sm">
         by
