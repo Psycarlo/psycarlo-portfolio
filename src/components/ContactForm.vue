@@ -34,13 +34,13 @@
     ></textarea>
     <button
       type="submit"
-      class="w-full rounded-lg py-3 font-medium text-brand-lightest transition-colors duration-300 dark:text-brand-lightest"
+      class="w-full cursor-pointer rounded-lg py-3 font-medium text-brand-lightest transition-colors duration-300 dark:text-brand-lightest"
       :class="[
         success
           ? 'bg-brand-success'
           : error
-          ? 'bg-brand-error'
-          : 'bg-brand-darkest hover:bg-brand-dark dark:bg-brand-dark dark:hover:bg-brand-grayDarkest'
+            ? 'bg-brand-error'
+            : 'bg-brand-darkest hover:bg-brand-dark dark:bg-brand-dark dark:hover:bg-brand-grayDarkest'
       ]"
       :disabled="error"
     >
@@ -48,8 +48,8 @@
         success
           ? 'Sent successfully!'
           : error
-          ? 'Error sending'
-          : 'Submit Inquiry'
+            ? 'Error sending'
+            : 'Submit Inquiry'
       }}
     </button>
     <p

@@ -5,7 +5,6 @@
         <a
           :href="props.href"
           class="group flex h-10 w-10 items-center justify-center rounded-full transition-all duration-200 hover:bg-brand-light dark:hover:bg-brand-dark"
-          :class="{ 'bg-brand-light dark:bg-brand-dark': page === 'bitcoin' }"
           :aria-label="props.ariaLabel"
         >
           <span
@@ -23,7 +22,7 @@
         <TooltipContent
           side="bottom"
           :side-offset="5"
-          class="data-[state=delayed-open]:data-[side=top]:animate-slideDownAndFade data-[state=delayed-open]:data-[side=right]:animate-slideLeftAndFade data-[state=delayed-open]:data-[side=left]:animate-slideRightAndFade data-[state=delayed-open]:data-[side=bottom]:animate-slideUpAndFade z-[100] select-none rounded-md bg-brand-darkest px-[15px] py-[10px] text-sm leading-none text-brand-lightest shadow-[hsl(206_22%_7%_/_35%)_0px_10px_38px_-10px,_hsl(206_22%_7%_/_20%)_0px_10px_20px_-15px] will-change-[transform,opacity] dark:bg-brand-dark dark:text-brand-lightest"
+          class="z-100 px-3.75 select-none rounded-md bg-brand-darkest py-2.5 text-sm leading-none text-brand-lightest shadow-[hsl(206_22%_7%_/_35%)_0px_10px_38px_-10px,_hsl(206_22%_7%_/_20%)_0px_10px_20px_-15px] will-change-[transform,opacity] data-[state=delayed-open]:data-[side=bottom]:animate-slideUpAndFade data-[state=delayed-open]:data-[side=left]:animate-slideRightAndFade data-[state=delayed-open]:data-[side=right]:animate-slideLeftAndFade data-[state=delayed-open]:data-[side=top]:animate-slideDownAndFade dark:bg-brand-dark dark:text-brand-lightest"
         >
           {{ props.title }}
         </TooltipContent>
