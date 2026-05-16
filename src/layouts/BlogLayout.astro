@@ -2,7 +2,7 @@
 import { Image } from 'astro:assets'
 import WrapperLayout from './WrapperLayout.vue'
 
-const { title, description, pubDate, updatedDate, heroImage } = Astro.props
+const { title, description, pubDate, updatedDate, heroImage, id } = Astro.props
 ---
 
 <WrapperLayout topic="" title="" description="">
@@ -30,7 +30,12 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props
     <div class="mt-2">
       <article>
         <div class="flex flex-col gap-2">
-          <Image src={heroImage} alt="" class="w-full rounded-lg shadow-sm" />
+          <Image
+            src={heroImage}
+            alt=""
+            class="w-full rounded-lg shadow-sm"
+            transition:name={`hero-${id}`}
+          />
           <span class="font-mono dark:text-gray-300">
             {
               new Intl.DateTimeFormat('en-US', {

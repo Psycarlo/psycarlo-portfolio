@@ -1,17 +1,18 @@
-import type { APIRoute } from "astro";
+import type { APIRoute } from 'astro'
 
-import { TransactionalEmailsApi, TransactionalEmailsApiApiKeys, type SendSmtpEmail } from "@getbrevo/brevo";
+import { BrevoClient, type SendTransacEmailRequest } from '@getbrevo/brevo'
 
 const FROM_EMAIL = 'support@psybitcoin.com'
 const TO_EMAIL = 'psycarlo1@gmail.com'
 
-const EMAIL_VALID_REGEX = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+const EMAIL_VALID_REGEX =
+  /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
 
 export const POST: APIRoute = async ({ request }) => {
-  const data = await request.formData();
-  const name = data.get("name");
-  const email = data.get("email");
-  const message = data.get("message");
+  const data = await request.formData()
+  const name = data.get('name')
+  const email = data.get('email')
+  const message = data.get('message')
 
   const responseMessage = []
 
@@ -19,7 +20,7 @@ export const POST: APIRoute = async ({ request }) => {
     responseMessage.push('error/name')
   }
 
-  if (!email || (typeof email === 'string') && !EMAIL_VALID_REGEX.test(email)) {
+  if (!email || (typeof email === 'string' && !EMAIL_VALID_REGEX.test(email))) {
     responseMessage.push('error/email')
   }
 
@@ -30,13 +31,13 @@ export const POST: APIRoute = async ({ request }) => {
   if (responseMessage.length > 0) {
     return new Response(
       JSON.stringify({
-        message: responseMessage,
+        message: responseMessage
       }),
       { status: 400 }
     )
   }
-  
-  const _message: SendSmtpEmail = {
+
+  const _message: SendTransacEmailRequest = {
     sender: {
       name: 'Carlos Marques Portfolio',
       email: FROM_EMAIL
@@ -46,27 +47,23 @@ export const POST: APIRoute = async ({ request }) => {
     textContent: `${name} | ${email} : ${message}`
   }
 
-  const transactionalEmailsApi = new TransactionalEmailsApi()
-  transactionalEmailsApi.setApiKey(
-    TransactionalEmailsApiApiKeys.apiKey,
-    import.meta.env.BREVO_API_KEY
-  )
+  const brevo = new BrevoClient({ apiKey: import.meta.env.BREVO_API_KEY })
 
   try {
-    await transactionalEmailsApi.sendTransacEmail(_message)
+    await brevo.transactionalEmails.sendTransacEmail(_message)
   } catch (error) {
     return new Response(
       JSON.stringify({
-        message: "error/remote",
+        message: 'error/remote'
       }),
       { status: 400 }
-    );
+    )
   }
 
   return new Response(
     JSON.stringify({
-      message: "success"
+      message: 'success'
     }),
     { status: 200 }
-  );
-};
+  )
+}

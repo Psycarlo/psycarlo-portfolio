@@ -1,11 +1,11 @@
 <template>
   <a
-    class="dark:border-brand-grayDarkest group flex items-center justify-between rounded-lg border border-brand-light bg-brand-lightest p-4 shadow-sm duration-300 hover:scale-[1.01] dark:bg-brand-dark"
+    class="dark:border-brand-grayDarkest group border-brand-light bg-brand-lightest dark:bg-brand-dark flex items-center justify-between rounded-lg border p-4 shadow-sm duration-300 hover:scale-[1.01]"
     :href="to"
   >
     <div class="flex items-center gap-4">
       <div
-        class="flex h-14 w-14 min-w-[3.5rem] min-h-[3.5rem] items-center justify-center rounded-full border-2 border-brand-light bg-brand-lightest bg-center dark:border-brand-darky dark:bg-brand-darky"
+        class="border-brand-light bg-brand-lightest dark:border-brand-darky dark:bg-brand-darky flex h-14 min-h-[3.5rem] w-14 min-w-[3.5rem] items-center justify-center rounded-full border-2 bg-center"
       >
         <slot></slot>
       </div>
@@ -20,7 +20,7 @@
       viewBox="0 0 24 24"
       stroke-width="2"
       stroke="currentColor"
-      class="stroke-brand-grayLight h-5 w-5 min-h-[1.25rem] min-w-[1.25rem] transition-all duration-300 group-hover:translate-x-1 group-hover:stroke-brand-gray"
+      class="stroke-brand-grayLight group-hover:stroke-brand-gray h-5 min-h-[1.25rem] w-5 min-w-[1.25rem] transition-all duration-300 group-hover:translate-x-1"
     >
       <path
         stroke-linecap="round"

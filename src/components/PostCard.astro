@@ -17,6 +17,11 @@ const { id, title, pubDate, image } = Astro.props
       }).format(pubDate)
     }
   </span>
-  <Image src={image} alt="" class="rounded-md" />
+  <Image
+    src={image}
+    alt=""
+    class="rounded-md"
+    transition:name={`hero-${id}`}
+  />
   <h3 class="font-semibold text-xl py-2">{title}</h3>
 </a>

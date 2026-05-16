@@ -1,7 +1,7 @@
 <template>
   <div class="mb-2 flex flex-col gap-2 pb-2">
     <div
-      class="relative z-10 mx-2 flex flex-col gap-6 rounded-lg bg-brand-lighter px-6 py-8 dark:bg-brand-darky"
+      class="bg-brand-lighter dark:bg-brand-darky relative z-10 mx-2 flex flex-col gap-6 rounded-lg px-6 py-8"
     >
       <div class="flex justify-between">
         <div class="flex items-center gap-3">
@@ -83,9 +83,9 @@
       </div>
     </div>
     <div
-      class="relative z-10 mx-2 flex flex-col items-center gap-2 rounded-lg bg-brand-lighter px-6 py-12 dark:bg-brand-darky"
+      class="bg-brand-lighter dark:bg-brand-darky relative z-10 mx-2 flex flex-col items-center gap-2 rounded-lg px-6 py-12"
     >
-      <p class="text-center text-sm text-brand-grayDark dark:text-brand-gray">
+      <p class="text-brand-grayDark dark:text-brand-gray text-center text-sm">
         © {{ new Date().getFullYear() }} Carlos Marques | Software Engineer &
         Designer
       </p>
@@ -93,13 +93,13 @@
         by
         <a
           href="https://www.instagram.com/psybitcoin/"
-          class="underline transition-all duration-200 hover:text-brand-darky hover:no-underline dark:hover:text-brand-light"
+          class="hover:text-brand-darky dark:hover:text-brand-light underline transition-all duration-200 hover:no-underline"
           target="_blank"
           >Psycarlo</a
         >
         //
         <a
-          class="underline transition-all duration-200 hover:text-brand-darky hover:no-underline dark:hover:text-brand-light"
+          class="hover:text-brand-darky dark:hover:text-brand-light underline transition-all duration-200 hover:no-underline"
           href="https://psybitcoin.com/"
           target="_blank"
           >Psybitcoin</a

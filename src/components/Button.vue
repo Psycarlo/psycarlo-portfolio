@@ -1,7 +1,7 @@
 <template>
   <a
     :href="to"
-    class="group flex items-center gap-1 rounded-lg bg-brand-darkest px-5 py-2 text-sm font-medium text-brand-lightest shadow-md ring-offset-1 ring-offset-transparent transition-all duration-300 hover:ring-[3px] hover:ring-brand-grayLightest dark:border-brand-darky dark:bg-brand-dark dark:text-brand-lightest dark:hover:ring-brand-dark/40"
+    class="group bg-brand-darkest text-brand-lightest hover:ring-brand-grayLightest dark:border-brand-darky dark:bg-brand-dark dark:text-brand-lightest dark:hover:ring-brand-dark/40 flex items-center gap-1 rounded-lg px-5 py-2 text-sm font-medium shadow-md ring-offset-1 ring-offset-transparent transition-all duration-300 hover:ring-[3px]"
     :target="withTargetBlank ? '_blank' : undefined"
   >
     <span>{{ text }}</span>
@@ -12,7 +12,7 @@
       viewBox="0 0 24 24"
       stroke-width="1.5"
       stroke="currentColor"
-      class="h-4 w-4 stroke-brand-grayLight transition-transform duration-200 group-hover:translate-x-1"
+      class="stroke-brand-grayLight h-4 w-4 transition-transform duration-200 group-hover:translate-x-1"
     >
       <path
         stroke-linecap="round"

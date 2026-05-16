@@ -30,7 +30,7 @@
           <div class="flex flex-col items-center">
             <p>On-chain</p>
             <slot name="qr"></slot>
-            <p class="mt-1 text-center text-xs text-brand-grayDark">
+            <p class="text-brand-grayDark mt-1 text-center text-xs">
               scan the qr code
             </p>
           </div>
@@ -47,7 +47,7 @@
           <div class="flex flex-col items-center">
             <p>Lightning Address</p>
             <slot name="qrln"></slot>
-            <p class="mt-1 text-center text-xs text-brand-grayDark">
+            <p class="text-brand-grayDark mt-1 text-center text-xs">
               scan the qr code
             </p>
           </div>

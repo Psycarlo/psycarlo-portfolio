@@ -1,7 +1,7 @@
 <template>
   <a
     :href="to"
-    class="group flex items-center gap-1 rounded-lg border border-brand-light bg-brand-lightest px-3 py-2 text-sm font-semibold text-brand-dark shadow-md ring-offset-1 ring-offset-transparent transition-all duration-300 hover:ring-[3px] hover:ring-brand-light dark:border-brand-darky dark:bg-brand-dark dark:text-brand-lightest dark:hover:ring-brand-dark/40"
+    class="group border-brand-light bg-brand-lightest text-brand-dark hover:ring-brand-light dark:border-brand-darky dark:bg-brand-dark dark:text-brand-lightest dark:hover:ring-brand-dark/40 flex items-center gap-1 rounded-lg border px-3 py-2 text-sm font-semibold shadow-md ring-offset-1 ring-offset-transparent transition-all duration-300 hover:ring-[3px]"
   >
     <span>{{ text }}</span>
     <svg
@@ -10,7 +10,7 @@
       viewBox="0 0 24 24"
       stroke-width="1.5"
       stroke="currentColor"
-      class="h-4 w-4 stroke-brand-gray transition-transform duration-300 group-hover:translate-x-[3px]"
+      class="stroke-brand-gray h-4 w-4 transition-transform duration-300 group-hover:translate-x-[3px]"
     >
       <path
         stroke-linecap="round"

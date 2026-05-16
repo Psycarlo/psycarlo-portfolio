@@ -1,6 +1,6 @@
 <template>
   <div
-    class="fixed left-[50%] top-4 z-50 flex h-28 w-[96%] translate-x-[-50%] flex-col items-center justify-center gap-2 rounded-xl bg-brand-lightest px-6 shadow-md dark:border dark:border-brand-darky dark:bg-brand-darker he:h-16 he:flex-row he:justify-between he:gap-0 sm:w-[560px]"
+    class="bg-brand-lightest dark:border-brand-darky dark:bg-brand-darker he:h-16 he:flex-row he:justify-between he:gap-0 fixed top-4 left-[50%] z-50 flex h-28 w-[96%] translate-x-[-50%] flex-col items-center justify-center gap-2 rounded-xl px-6 shadow-md sm:w-[560px] dark:border"
   >
     <ul class="flex items-center gap-2.5">
       <li>
@@ -16,7 +16,7 @@
             viewBox="0 0 24 24"
             stroke-width="1.5"
             stroke="currentColor"
-            class="h-6 w-6 transition-colors duration-200 group-hover:stroke-brand-darkest dark:group-hover:stroke-brand-lightest"
+            class="group-hover:stroke-brand-darkest dark:group-hover:stroke-brand-lightest h-6 w-6 transition-colors duration-200"
           >
             <path
               stroke-linecap="round"
@@ -39,7 +39,7 @@
             viewBox="0 0 24 24"
             stroke-width="1.5"
             stroke="currentColor"
-            class="h-6 w-6 transition-colors duration-200 group-hover:stroke-brand-darkest dark:group-hover:stroke-brand-lightest"
+            class="group-hover:stroke-brand-darkest dark:group-hover:stroke-brand-lightest h-6 w-6 transition-colors duration-200"
           >
             <path
               stroke-linecap="round"
@@ -62,7 +62,7 @@
             viewBox="0 0 24 24"
             stroke-width="1.5"
             stroke="currentColor"
-            class="h-6 w-6 transition-colors duration-200 group-hover:stroke-brand-darkest dark:group-hover:stroke-brand-lightest"
+            class="group-hover:stroke-brand-darkest dark:group-hover:stroke-brand-lightest h-6 w-6 transition-colors duration-200"
           >
             <path
               stroke-linecap="round"
@@ -85,7 +85,7 @@
             viewBox="0 0 24 24"
             stroke-width="1.5"
             stroke="currentColor"
-            class="h-6 w-6 transition-colors duration-200 group-hover:stroke-brand-darkest dark:group-hover:stroke-brand-lightest"
+            class="group-hover:stroke-brand-darkest dark:group-hover:stroke-brand-lightest h-6 w-6 transition-colors duration-200"
           >
             <path
               stroke-linecap="round"
@@ -105,7 +105,7 @@
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
-            class="h-6 w-6 transition-colors duration-200 group-hover:text-brand-darkest dark:group-hover:text-brand-lightest"
+            class="group-hover:text-brand-darkest dark:group-hover:text-brand-lightest h-6 w-6 transition-colors duration-200"
           >
             <path
               fill="currentColor"
@@ -131,7 +131,7 @@
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="h-5 w-5 transition-colors duration-200 group-hover:text-brand-darkest dark:group-hover:text-brand-lightest"
+            class="group-hover:text-brand-darkest dark:group-hover:text-brand-lightest h-5 w-5 transition-colors duration-200"
           >
             <path d="M2 6h4" />
             <path d="M2 10h4" />

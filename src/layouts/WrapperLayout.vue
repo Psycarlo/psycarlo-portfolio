@@ -1,5 +1,5 @@
 <template>
-  <div class="relative rounded-lg bg-brand-lightest dark:bg-brand-darker">
+  <div class="bg-brand-lightest dark:bg-brand-darker relative rounded-lg">
     <div v-if="topic || title || description" class="p-8">
       <div v-if="topic" class="flex items-center gap-2">
         <div
