@@ -23,12 +23,16 @@ import cssImage from '../assets/css.png'
 import scssImage from '../assets/scss.png'
 import tailwindImage from '../assets/tailwind.png'
 
+import GithubIcon from '../assets/icons/github.svg'
+import GitlabIcon from '../assets/icons/gitlab.svg'
+
 import Layout from '../layouts/Layout.astro'
 import Button from '../components/Button.vue'
 
 // @ts-ignore
 import CopyButton from '../components/CopyButton.vue'
 import ProjectCard from '../components/ProjectCard.vue'
+import ActivityGraph from '../components/ActivityGraph.vue'
 import TechnologiesCard from '../components/TechnologiesCard.vue'
 import TechnologyButton from '../components/TechnologyButton.vue'
 import ViewButton from '../components/ViewButton.vue'
@@ -155,7 +159,41 @@ import TheFooter from '../components/TheFooter.vue'
       </div>
     </div>
     <div
-      class="flex flex-col gap-6 rounded-lg bg-brand-lighter dark:bg-brand-darky p-6 mx-2 relative z-10"
+      class="flex flex-col gap-6 rounded-lg bg-brand-lighter dark:bg-brand-darky mt-3 p-6 mx-2 relative z-10"
+    >
+      <div class="flex justify-between">
+        <div class="flex gap-2 items-center">
+          <div
+            class="bg-orange-500 w-2 h-2 rounded-full animate-pulse motion-reduce:animate-none"
+          >
+          </div>
+          <h2 class="font-medium text-xl">Activity</h2>
+        </div>
+        <div class="flex gap-2">
+          <a
+            href="https://github.com/psycarlo"
+            target="_blank"
+            rel="noopener"
+            aria-label="GitHub profile"
+            class="flex h-9 w-9 items-center justify-center rounded-lg border bg-brand-lightest dark:bg-brand-dark border-brand-light dark:border-brand-darky text-brand-darkest dark:text-brand-lightest shadow-md ring-offset-1 ring-offset-transparent hover:ring-[3px] hover:ring-brand-light dark:hover:ring-brand-dark/40 transition-all duration-300"
+          >
+            <GithubIcon class="w-5 h-5" />
+          </a>
+          <a
+            href="https://gitlab.com/psycarlo"
+            target="_blank"
+            rel="noopener"
+            aria-label="GitLab profile"
+            class="flex h-9 w-9 items-center justify-center rounded-lg border bg-brand-lightest dark:bg-brand-dark border-brand-light dark:border-brand-darky shadow-md ring-offset-1 ring-offset-transparent hover:ring-[3px] hover:ring-brand-light dark:hover:ring-brand-dark/40 transition-all duration-300"
+          >
+            <GitlabIcon class="w-5 h-5" />
+          </a>
+        </div>
+      </div>
+      <ActivityGraph client:visible />
+    </div>
+    <div
+      class="flex flex-col gap-6 rounded-lg bg-brand-lighter dark:bg-brand-darky mt-3 p-6 mx-2 relative z-10"
     >
       <div class="flex justify-between">
         <div class="flex gap-2 items-center">

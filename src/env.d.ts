@@ -3,6 +3,8 @@
 
 interface ImportMetaEnv {
   readonly BREVO_API_KEY: string
+  readonly GITHUB_TOKEN: string
+  readonly GITLAB_TOKEN: string
 }
 
 interface ImportMeta {
