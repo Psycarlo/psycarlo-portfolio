@@ -38,7 +38,7 @@
     TooltipProvider,
     TooltipRoot,
     TooltipTrigger
-  } from 'radix-vue'
+  } from 'reka-ui'
 
   type HeaderButtonProps = {
     title: string
