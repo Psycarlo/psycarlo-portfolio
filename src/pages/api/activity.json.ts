@@ -76,22 +76,42 @@ async function fetchGitHub(from: string, to: string): Promise<Map<string, number
 async function fetchGitLab(from: string, to: string): Promise<Map<string, number>> {
   const map = new Map<string, number>()
   if (!GL_TOKEN) return map
-  let page = 1
   const MAX_PAGES = 50
-  while (page <= MAX_PAGES) {
+
+  const fetchPage = async (page: number): Promise<Array<{ created_at: string }>> => {
     const url = `https://gitlab.com/api/v4/users/${GL_USER}/events?after=${from}&before=${to}&per_page=100&page=${page}`
     const res = await fetch(url, {
       headers: { 'PRIVATE-TOKEN': GL_TOKEN }
     })
     if (!res.ok) throw new Error(`gitlab_http_${res.status}`)
-    const events = (await res.json()) as Array<{ created_at: string }>
-    if (!Array.isArray(events) || events.length === 0) break
+    const events = await res.json()
+    return Array.isArray(events) ? events : []
+  }
+
+  const url = `https://gitlab.com/api/v4/users/${GL_USER}/events?after=${from}&before=${to}&per_page=100&page=1`
+  const first = await fetch(url, {
+    headers: { 'PRIVATE-TOKEN': GL_TOKEN }
+  })
+  if (!first.ok) throw new Error(`gitlab_http_${first.status}`)
+  const firstEvents = await first.json()
+  const pages = [Array.isArray(firstEvents) ? firstEvents : []]
+
+  const totalPages = Math.min(
+    Number(first.headers.get('x-total-pages')) || 1,
+    MAX_PAGES
+  )
+  if (totalPages > 1) {
+    const rest = await Promise.all(
+      Array.from({ length: totalPages - 1 }, (_, i) => fetchPage(i + 2))
+    )
+    pages.push(...rest)
+  }
+
+  for (const events of pages) {
     for (const e of events) {
       const date = e.created_at.slice(0, 10)
       map.set(date, (map.get(date) ?? 0) + 1)
     }
-    if (events.length < 100) break
-    page++
   }
   return map
 }
