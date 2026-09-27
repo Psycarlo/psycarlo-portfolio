@@ -2,9 +2,9 @@
 import { Image } from 'astro:assets'
 
 import Layout from '../layouts/Layout.astro'
-import WrapperLayout from '../layouts/WrapperLayout.vue'
+import WrapperLayout from '../layouts/WrapperLayout.astro'
 import ContentLayout from '../layouts/ContentLayout.vue'
-import BitcoinCard from '../components/BitcoinCard.vue'
+import BitcoinCard from '../components/BitcoinCard.astro'
 
 import splash from '../assets/splash.png'
 import qr from '../assets/qr.png'
@@ -16,10 +16,9 @@ import qrln from '../assets/qrln.png'
     topic="Bitcoin"
     title="Absolute Scarcity"
     description="Bitcoin is the hardest money in the world. It brings peace, love, hope and freedom to the human race."
-    client:load
   >
     <ContentLayout>
-      <BitcoinCard client:visible>
+      <BitcoinCard>
         <Image
           src={splash}
           alt="Psybitcoin Splash"
@@ -27,12 +26,14 @@ import qrln from '../assets/qrln.png'
         />
         <Image
           src={qr}
+          width={480}
           alt="Bitcoin Address QR Code"
           class="rounded-lg duration-300 hover:scale-[1.02] transition-transform"
           slot="qr"
         />
         <Image
           src={qrln}
+          width={480}
           alt="Lightning Address QR Code"
           class="rounded-lg duration-300 hover:scale-[1.02] transition-transform"
           slot="qrln"

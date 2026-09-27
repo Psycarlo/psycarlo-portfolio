@@ -1,6 +1,7 @@
 ---
 import '@fontsource-variable/inter'
-import TheHeader from '../components/TheHeader.vue'
+import interLatinFont from '@fontsource-variable/inter/files/inter-latin-wght-normal.woff2?url'
+import TheHeader from '../components/TheHeader.astro'
 import { ClientRouter } from 'astro:transitions'
 import '../styles/global.css'
 
@@ -11,7 +12,6 @@ type CurrentPage =
   | 'technologies'
   | 'bitcoin'
   | 'blog'
-  | 'post'
   | 'none'
 
 interface Props {
@@ -19,32 +19,56 @@ interface Props {
   page: CurrentPage
 }
 
-const { title } = Astro.props
+const { title, page } = Astro.props
+
+const description = 'Software Engineer & Designer from Portugal.'
+const ogImage = new URL('/main.png', Astro.site).href
+const ogUrl = new URL(Astro.url.pathname, Astro.site).href
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta
-      name="description"
-      content="Software Engineer & Designer from Portugal."
-    />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/png" href="/favicon.png" />
+    <link
+      rel="preload"
+      href={interLatinFont}
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
     <meta name="generator" content={Astro.generator} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={ogUrl} />
     <meta property="og:title" content="Portfolio | Carlos Marques" />
-    <meta
-      itemprop="description"
-      content="Software Engineer & Designer from Portugal."
-    />
-    <meta
-      property="og:description"
-      content="Software Engineer & Designer from Portugal."
-    />
-    <meta itemprop="image" content="/main.png" />
-    <meta property="og:image" content="/main.png" />
+    <meta itemprop="description" content={description} />
+    <meta property="og:description" content={description} />
+    <meta itemprop="image" content={ogImage} />
+    <meta property="og:image" content={ogImage} />
+    <meta name="twitter:card" content="summary_large_image" />
     <title>{title}</title>
+    <script is:inline>
+      // Runs before first paint to avoid a flash of the wrong theme, and again
+      // after every client-side navigation because the router replaces the
+      // <html> attributes with the ones from the new page.
+      function applyTheme() {
+        let theme = null
+        try {
+          theme = localStorage.getItem('theme')
+        } catch {}
+        if (theme !== 'light' && theme !== 'dark') {
+          theme = window.matchMedia('(prefers-color-scheme: dark)').matches
+            ? 'dark'
+            : 'light'
+        }
+        document.documentElement.classList.toggle('dark', theme === 'dark')
+      }
+      applyTheme()
+      document.addEventListener('astro:after-swap', applyTheme)
+    </script>
     <ClientRouter />
   </head>
   <body
@@ -52,32 +76,11 @@ const { title } = Astro.props
   >
     <main class="flex justify-center px-2 xs:px-4 sm:px-8">
       <div class="w-full max-w-140 py-4 flex flex-col gap-4 min-w-0">
-        <TheHeader client:load page={Astro.props.page} />
+        <TheHeader page={page} />
         <div class="he:pt-20 pt-32">
           <slot />
         </div>
       </div>
     </main>
-    <script is:inline>
-      const theme = (() => {
-        if (
-          typeof localStorage !== 'undefined' &&
-          localStorage.getItem('theme')
-        ) {
-          return localStorage.getItem('theme')
-        }
-        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-          return 'dark'
-        }
-        return 'light'
-      })()
-
-      if (theme === 'light') {
-        document.documentElement.classList.remove('dark')
-      } else {
-        document.documentElement.classList.add('dark')
-      }
-      window.localStorage.setItem('theme', theme)
-    </script>
   </body>
 </html>

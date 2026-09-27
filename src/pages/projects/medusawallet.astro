@@ -2,7 +2,7 @@
 import { Image } from 'astro:assets'
 
 import Layout from '../../layouts/Layout.astro'
-import ProjectLayout from '../../layouts/ProjectLayout.vue'
+import ProjectLayout from '../../layouts/ProjectLayout.astro'
 import TechnologyButton from '../../components/TechnologyButton.vue'
 
 import medusa from '../../assets/medusa.png'
@@ -17,9 +17,8 @@ import vsc from '../../assets/vsc.png'
 import figma from '../../assets/figma.png'
 ---
 
-<Layout title="Medusa Wallet | Carlos Marques" page="none">
+<Layout title="Medusa Wallet | Carlos Marques" page="projects">
   <ProjectLayout
-    client:load
     title="Medusa Wallet"
     website="https://medusa.bz/"
     description="Free and open source bitcoin lightning wallet where you also can buy KYC free."

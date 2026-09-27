@@ -2,7 +2,7 @@
 import { Image } from 'astro:assets'
 
 import Layout from '../../layouts/Layout.astro'
-import ProjectLayout from '../../layouts/ProjectLayout.vue'
+import ProjectLayout from '../../layouts/ProjectLayout.astro'
 import TechnologyButton from '../../components/TechnologyButton.vue'
 
 import kurika from '../../assets/kurika.png'
@@ -11,9 +11,8 @@ import kurikaImage1 from '../../assets/kurika/kurika1.png'
 import adobe from '../../assets/adobe.png'
 ---
 
-<Layout title="Kurika | Carlos Marques" page="none">
+<Layout title="Kurika | Carlos Marques" page="projects">
   <ProjectLayout
-    client:load
     title="Kurika"
     description="Meet Kurika, a groundbreaking Proof of Concept for a mobile application that reimagines social interaction within groups. Kurika allows users to create and manage groups, fostering communication, entertainment, and collaboration among members. This concept focuses on enhancing group dynamics through various features."
     intro="Kurika offers a multitude of features, including group messaging, playlist sharing, group game recording, and competitive ranking. Users can access a shared agenda and calendar, enabling seamless coordination. Additionally, location sharing enhances group activities and connectivity, making Kurika a unique and engaging social platform."

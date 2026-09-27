@@ -28,15 +28,13 @@ import GitlabIcon from '../assets/icons/gitlab.svg'
 
 import Layout from '../layouts/Layout.astro'
 import Button from '../components/Button.vue'
-
-// @ts-ignore
-import CopyButton from '../components/CopyButton.vue'
+import CopyButton from '../components/CopyButton.astro'
 import ProjectCard from '../components/ProjectCard.vue'
 import ActivityGraph from '../components/ActivityGraph.vue'
 import TechnologiesCard from '../components/TechnologiesCard.vue'
 import TechnologyButton from '../components/TechnologyButton.vue'
 import ViewButton from '../components/ViewButton.vue'
-import LetsWorkTogether from '../components/LetsWorkTogether.vue'
+import LetsWorkTogether from '../components/LetsWorkTogether.astro'
 import TheFooter from '../components/TheFooter.vue'
 ---
 
@@ -95,11 +93,7 @@ import TheFooter from '../components/TheFooter.vue'
             <Button to="/contact/" text="Contact Me" variant="primary" />
           </li>
           <li>
-            <CopyButton
-              client:load
-              text="Copy Email"
-              copyText="psycarlo1@gmail.com"
-            />
+            <CopyButton text="Copy Email" copyText="psycarlo1@gmail.com" />
           </li>
         </ul>
       </div>
@@ -110,7 +104,11 @@ import TheFooter from '../components/TheFooter.vue'
           src={carlosImage}
           alt="Carlos Marques"
           class="w-[210px] aspect-[7/12]"
+          width={420}
+          widths={[210, 420]}
+          sizes="210px"
           loading="eager"
+          fetchpriority="high"
         />
       </div>
     </div>
@@ -309,7 +307,7 @@ import TheFooter from '../components/TheFooter.vue'
         </TechnologiesCard>
       </div>
     </div>
-    <LetsWorkTogether client:visible />
+    <LetsWorkTogether />
     <TheFooter />
   </div>
 </Layout>

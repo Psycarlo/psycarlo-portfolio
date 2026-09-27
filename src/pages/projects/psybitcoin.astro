@@ -2,7 +2,7 @@
 import { Image } from 'astro:assets'
 
 import Layout from '../../layouts/Layout.astro'
-import ProjectLayout from '../../layouts/ProjectLayout.vue'
+import ProjectLayout from '../../layouts/ProjectLayout.astro'
 import TechnologyButton from '../../components/TechnologyButton.vue'
 
 import psybitcoin from '../../assets/psybitcoin.png'
@@ -28,9 +28,8 @@ import notion from '../../assets/notion.png'
 import adobe from '../../assets/adobe.png'
 ---
 
-<Layout title="Psybitcoin | Carlos Marques" page="none">
+<Layout title="Psybitcoin | Carlos Marques" page="projects">
   <ProjectLayout
-    client:load
     title="Psybitcoin"
     website="https://psybitcoin.com"
     description="An educational platform that teaches student about bitcoin and other exciting topics. Bitcoin brings peace, love, hope and freedom to humanity and everyone should know about it."

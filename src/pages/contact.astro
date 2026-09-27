@@ -1,6 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro'
-import WrapperLayout from '../layouts/WrapperLayout.vue'
+import WrapperLayout from '../layouts/WrapperLayout.astro'
 import ContactForm from '../components/ContactForm.vue'
 ---
 
@@ -9,8 +9,8 @@ import ContactForm from '../components/ContactForm.vue'
     topic="Contact Me"
     title="Product Inquiry"
     description="Got an idea and need help implementing it? Reach out now"
-    without-lets-work-together
+    withoutLetsWorkTogether
   >
-    <ContactForm client:only />
+    <ContactForm client:load />
   </WrapperLayout>
 </Layout>

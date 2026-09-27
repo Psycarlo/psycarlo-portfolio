@@ -8,7 +8,7 @@ import kurikaImage from '../assets/kurika.png'
 import psyuiImage from '../assets/psyui.png'
 
 import Layout from '../layouts/Layout.astro'
-import WrapperLayout from '../layouts/WrapperLayout.vue'
+import WrapperLayout from '../layouts/WrapperLayout.astro'
 import ContentLayout from '../layouts/ContentLayout.vue'
 import ProjectCard from '../components/ProjectCard.vue'
 ---
@@ -18,7 +18,6 @@ import ProjectCard from '../components/ProjectCard.vue'
     topic="Projects"
     title="My Works"
     description="Get to know the projects I worked on. My work strives to give users a memorable experience."
-    client:load
   >
     <ContentLayout>
       <ProjectCard

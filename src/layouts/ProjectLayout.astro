@@ -1,0 +1,85 @@
+---
+import Button from '../components/Button.vue'
+import LetsWorkTogether from '../components/LetsWorkTogether.astro'
+import TheFooter from '../components/TheFooter.vue'
+
+interface Props {
+  title: string
+  description: string
+  website?: string
+  intro?: string
+  problem?: string
+  solution?: string
+}
+
+const { title, description, website, intro, problem, solution } = Astro.props
+---
+
+<div class="bg-brand-lightest dark:bg-brand-darker relative rounded-lg">
+  <div class="flex flex-col gap-4 px-8 pt-8">
+    <div class="flex flex-col gap-4">
+      <slot />
+      <h2
+        class="text-brand-darkest dark:text-brand-lightest text-3xl font-bold"
+      >
+        {title}
+      </h2>
+      <p class="text-brand-grayDark dark:text-brand-gray text-lg">
+        {description}
+      </p>
+      {
+        website && (
+          <Button
+            to={website}
+            text="Visit Website"
+            variant="primary"
+            withArrow
+            withTargetBlank
+            class="w-fit"
+          />
+        )
+      }
+      <div class="mt-6 flex flex-col gap-3">
+        <slot name="image1" />
+        <p class="text-brand-grayDark dark:text-brand-gray text-lg">
+          {intro}
+        </p>
+        <slot name="image2" />
+        {
+          problem && (
+            <>
+              <h2 class="text-brand-darkest dark:text-brand-lightest text-2xl font-semibold">
+                The Problem
+              </h2>
+              <p class="text-brand-grayDark dark:text-brand-gray text-lg">
+                {problem}
+              </p>
+            </>
+          )
+        }
+        <slot name="image3" />
+        {
+          solution && (
+            <>
+              <h2 class="text-brand-darkest dark:text-brand-lightest text-2xl font-semibold">
+                Our Solution
+              </h2>
+              <p class="text-brand-grayDark dark:text-brand-gray text-lg">
+                {solution}
+              </p>
+            </>
+          )
+        }
+        <h2
+          class="text-brand-darkest dark:text-brand-lightest text-2xl font-semibold"
+        >
+          Technologies Used
+        </h2>
+        <slot name="technologies" />
+        <div class="bg-brand-lighty dark:bg-brand-dark mt-3 h-px w-full"></div>
+      </div>
+    </div>
+  </div>
+  <LetsWorkTogether />
+  <TheFooter />
+</div>

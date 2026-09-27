@@ -2,6 +2,8 @@ import type { APIRoute } from 'astro'
 
 import { BrevoClient, type SendTransacEmailRequest } from '@getbrevo/brevo'
 
+export const prerender = false
+
 const FROM_EMAIL = 'support@psybitcoin.com'
 const TO_EMAIL = 'psycarlo1@gmail.com'
 

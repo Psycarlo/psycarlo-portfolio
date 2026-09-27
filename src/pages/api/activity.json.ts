@@ -169,11 +169,16 @@ export const GET: APIRoute = async () => {
     ...(errors.length ? { errors } : {})
   }
 
+  // Vercel's CDN honours s-maxage. Keep partial results (a provider failed)
+  // only briefly so a transient API error isn't served for a whole day.
+  const cacheControl = errors.length
+    ? 'public, s-maxage=300, stale-while-revalidate=3600'
+    : 'public, s-maxage=86400, stale-while-revalidate=604800'
+
   return new Response(JSON.stringify(payload), {
     headers: {
       'Content-Type': 'application/json',
-      'Cache-Control':
-        'public, s-maxage=86400, stale-while-revalidate=604800'
+      'Cache-Control': cacheControl
     }
   })
 }

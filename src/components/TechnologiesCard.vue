@@ -18,7 +18,7 @@
 <script setup lang="ts">
   defineProps({
     title: {
-      tpye: String,
+      type: String,
       required: true
     },
     description: {

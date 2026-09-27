@@ -2,7 +2,7 @@
 import { Image } from 'astro:assets'
 
 import Layout from '../layouts/Layout.astro'
-import WrapperLayout from '../layouts/WrapperLayout.vue'
+import WrapperLayout from '../layouts/WrapperLayout.astro'
 import ContentLayout from '../layouts/ContentLayout.vue'
 
 import carlos from '../assets/psycarlo.webp'
@@ -14,7 +14,6 @@ import signature from '../assets/signature.png'
     topic="About"
     title="I'm Carlos"
     description="Hello, I'm Carlos Marques, a passionate creator based in the picturesque country of Portugal. I embarked on my journey in the world of technology and design at the University of Aveiro, where my curiosity and love for crafting memorable digital experiences first took root. With over 9 years of professional experience under my belt, I've honed my skills to develop products that not only meet user needs but also leave a lasting impression. My preferred canvas for crafting these digital wonders is Vue.js, a framework that allows me to bring my creative visions to life. Beyond my work, I'm equally enthusiastic about educating and empowering others, and I enjoy teaching about the fascinating world of bitcoin. Join me on this digital adventure, and let's create something amazing together."
-    client:load
   >
     <ContentLayout>
       <div class="flex items-center justify-center relative">

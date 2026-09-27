@@ -1,0 +1,44 @@
+---
+import LetsWorkTogether from '../components/LetsWorkTogether.astro'
+import TheFooter from '../components/TheFooter.vue'
+
+interface Props {
+  topic: string
+  title: string
+  description: string
+  withoutLetsWorkTogether?: boolean
+}
+
+const {
+  topic,
+  title,
+  description,
+  withoutLetsWorkTogether = false
+} = Astro.props
+---
+
+<div class="bg-brand-lightest dark:bg-brand-darker relative rounded-lg">
+  {
+    (topic || title || description) && (
+      <div class="p-8">
+        {topic && (
+          <div class="flex items-center gap-2">
+            <div class="h-2 min-h-[0.5rem] w-2 min-w-[0.5rem] animate-pulse rounded-full bg-orange-500 motion-reduce:animate-none" />
+            <h2 class="text-xl font-medium">{topic}</h2>
+          </div>
+        )}
+        {title && description && (
+          <div class="mt-10 flex flex-col gap-2">
+            <h3 class="text-4xl font-semibold">{title}</h3>
+            <p class="text-brand-grayDark dark:text-brand-grayLight">
+              {description}
+            </p>
+          </div>
+        )}
+      </div>
+    )
+  }
+  <slot />
+  {!withoutLetsWorkTogether && <LetsWorkTogether />}
+  <TheFooter />
+</div>

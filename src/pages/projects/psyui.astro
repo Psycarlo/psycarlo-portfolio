@@ -2,7 +2,7 @@
 import { Image } from 'astro:assets'
 
 import Layout from '../../layouts/Layout.astro'
-import ProjectLayout from '../../layouts/ProjectLayout.vue'
+import ProjectLayout from '../../layouts/ProjectLayout.astro'
 import TechnologyButton from '../../components/TechnologyButton.vue'
 
 import psyui from '../../assets/psyui.png'
@@ -16,9 +16,8 @@ import turborepo from '../../assets/turborepo.png'
 import vsc from '../../assets/vsc.png'
 ---
 
-<Layout title="Psyui | Carlos Marques" page="none">
+<Layout title="Psyui | Carlos Marques" page="projects">
   <ProjectLayout
-    client:load
     title="Psyui"
     website="https://psyui.vercel.app/"
     description="Psyui is an open-source, copy & paste components library built with Vue.js and Tailwind CSS."

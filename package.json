@@ -20,8 +20,8 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "format": "prettier --config --check .prettierrc src",
-    "format:fix": "prettier --config --write .prettierrc src"
+    "format": "prettier --check src",
+    "format:fix": "prettier --write src"
   },
   "dependencies": {
     "@astrojs/vercel": "^10.0.7",
@@ -31,7 +31,6 @@
     "@tailwindcss/typography": "^0.5.19",
     "@tailwindcss/vite": "^4.3.0",
     "astro": "^6.3.3",
-    "reka-ui": "^2.9.7",
     "sharp": "^0.34.5",
     "tailwindcss": "^4.3.0",
     "vue": "^3.5.24"

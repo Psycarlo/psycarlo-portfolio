@@ -1,6 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro'
-import WrapperLayout from '../../layouts/WrapperLayout.vue'
+import WrapperLayout from '../../layouts/WrapperLayout.astro'
 import ContentLayout from '../../layouts/ContentLayout.vue'
 import PostCard from '../../components/PostCard.astro'
 import { getCollection } from 'astro:content'
@@ -15,7 +15,6 @@ const posts = (await getCollection('blog')).sort(
     topic="Blog"
     title="Psycarlo's Blog"
     description="Blog posts about tech, bitcoin and life in general."
-    client:load
   >
     <ContentLayout>
       <section>

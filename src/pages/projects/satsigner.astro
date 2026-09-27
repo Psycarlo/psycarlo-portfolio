@@ -2,7 +2,7 @@
 import { Image } from 'astro:assets'
 
 import Layout from '../../layouts/Layout.astro'
-import ProjectLayout from '../../layouts/ProjectLayout.vue'
+import ProjectLayout from '../../layouts/ProjectLayout.astro'
 import TechnologyButton from '../../components/TechnologyButton.vue'
 
 import satsigner from '../../assets/satsigner.png'
@@ -21,9 +21,8 @@ import figma from '../../assets/figma.png'
 import notion from '../../assets/notion.png'
 ---
 
-<Layout title="Satsigner | Carlos Marques" page="none">
+<Layout title="Satsigner | Carlos Marques" page="projects">
   <ProjectLayout
-    client:load
     title="SatSigner"
     website="https://satsigner.com/"
     description="A bitcoin first mobile application concept."

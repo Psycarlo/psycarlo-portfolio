@@ -29,37 +29,38 @@
       ref="scrollRef"
       class="no-scrollbar overflow-x-auto select-none"
       @mousedown="onDragStart"
+      @scroll.passive="hideTooltip"
     >
-      <TooltipProvider :delay-duration="80" :skip-delay-duration="200">
-        <div
-          class="grid grid-flow-col grid-rows-7 gap-0.75"
-          :style="{ gridTemplateColumns: `repeat(${columns}, 10px)` }"
-        >
+      <div
+        ref="gridRef"
+        class="grid grid-flow-col grid-rows-7 gap-0.75"
+        :style="{ gridTemplateColumns: `repeat(${columns}, 10px)` }"
+        @pointerover="onCellOver"
+        @pointerleave="onGridLeave"
+      >
+        <template v-if="days.length">
           <span
             v-for="i in offset"
             :key="`pad-${i}`"
             class="w-2.5 h-2.5"
           ></span>
-          <TooltipRoot v-for="d in displayDays" :key="d.date">
-            <TooltipTrigger as-child>
-              <span
-                :class="['w-2.5 h-2.5 rounded-sm', tierClass(d.level)]"
-              ></span>
-            </TooltipTrigger>
-            <TooltipPortal>
-              <TooltipContent
-                side="top"
-                :side-offset="6"
-                class="bg-brand-darkest text-brand-lightest data-[state=delayed-open]:data-[side=top]:animate-slideDownAndFade dark:bg-brand-dark z-100 rounded-md px-2.5 py-1.5 text-xs leading-none shadow-md will-change-[transform,opacity] select-none"
-              >
-                {{ dayTitle(d) }}
-              </TooltipContent>
-            </TooltipPortal>
-          </TooltipRoot>
-        </div>
-      </TooltipProvider>
+          <span
+            v-for="(d, i) in days"
+            :key="d.date"
+            :data-index="i"
+            :class="['w-2.5 h-2.5 rounded-sm', tierClass(d.level)]"
+          ></span>
+        </template>
+        <template v-else>
+          <span
+            v-for="i in SKELETON_CELLS"
+            :key="`skeleton-${i}`"
+            :class="['w-2.5 h-2.5 rounded-sm', tierClass(0)]"
+          ></span>
+        </template>
+      </div>
       <div
-        class="grid mt-2 text-xs text-brand-grayDark dark:text-brand-gray"
+        class="grid h-4 mt-2 text-xs text-brand-grayDark dark:text-brand-gray"
         :style="{ gridTemplateColumns: `repeat(${columns}, 10px)`, columnGap: '3px' }"
       >
         <span
@@ -71,27 +72,36 @@
         >
       </div>
     </div>
+    <div
+      v-if="tooltip"
+      role="tooltip"
+      class="bg-brand-darkest text-brand-lightest animate-slideDownAndFade dark:bg-brand-dark pointer-events-none fixed z-100 -translate-x-1/2 -translate-y-full rounded-md px-2.5 py-1.5 text-xs leading-none whitespace-nowrap shadow-md will-change-[transform,opacity] select-none"
+      :style="{ left: `${tooltip.x}px`, top: `${tooltip.y}px` }"
+    >
+      {{ tooltip.text }}
+    </div>
   </div>
 </template>
 
 <script setup lang="ts">
-  import { computed, nextTick, onMounted, ref } from 'vue'
-  import {
-    TooltipContent,
-    TooltipPortal,
-    TooltipProvider,
-    TooltipRoot,
-    TooltipTrigger
-  } from 'reka-ui'
+  import { computed, nextTick, onBeforeUnmount, onMounted, ref } from 'vue'
 
   type Day = { date: string; count: number; level: number }
   type Payload = { total: number; days: Day[] }
+  type Tooltip = { text: string; x: number; y: number }
+
+  // The page is prerendered, so the loading skeleton must not depend on the
+  // current date or it would differ between the build and the visitor.
+  const SKELETON_COLUMNS = 53
+  const SKELETON_CELLS = SKELETON_COLUMNS * 7
 
   const days = ref<Day[]>([])
   const total = ref<number | null>(null)
   const loading = ref(true)
   const error = ref(false)
   const scrollRef = ref<HTMLDivElement | null>(null)
+  const gridRef = ref<HTMLDivElement | null>(null)
+  const tooltip = ref<Tooltip | null>(null)
 
   function scrollToRight() {
     if (scrollRef.value) {
@@ -116,38 +126,51 @@
     e.preventDefault()
   }
 
-  const skeletonDays = computed<Day[]>(() => {
-    const end = new Date()
-    end.setUTCHours(0, 0, 0, 0)
-    const arr: Day[] = []
-    for (let i = 364; i >= 0; i--) {
-      const d = new Date(end)
-      d.setUTCDate(d.getUTCDate() - i)
-      arr.push({ date: d.toISOString().slice(0, 10), count: 0, level: 0 })
+  // One tooltip for the whole grid instead of one component per day.
+  function onCellOver(e: PointerEvent) {
+    const cell = e.target as HTMLElement
+    const index = cell.dataset.index
+    if (index === undefined) return hideTooltip()
+    const day = days.value[Number(index)]
+    if (!day) return hideTooltip()
+    const rect = cell.getBoundingClientRect()
+    tooltip.value = {
+      text: dayTitle(day),
+      x: rect.left + rect.width / 2,
+      y: rect.top - 6
     }
-    return arr
-  })
+  }
 
-  const displayDays = computed(() =>
-    days.value.length ? days.value : skeletonDays.value
-  )
+  // Touch fires pointerleave on release; keep the tooltip until the next tap
+  // or scroll so it can be read.
+  function onGridLeave(e: PointerEvent) {
+    if (e.pointerType === 'mouse') hideTooltip()
+  }
+
+  function onPointerDownOutside(e: PointerEvent) {
+    if (!gridRef.value?.contains(e.target as Node)) hideTooltip()
+  }
+
+  function hideTooltip() {
+    tooltip.value = null
+  }
 
   const offset = computed(() => {
-    if (!displayDays.value.length) return 0
-    return new Date(
-      displayDays.value[0].date + 'T00:00:00Z'
-    ).getUTCDay()
+    if (!days.value.length) return 0
+    return new Date(days.value[0].date + 'T00:00:00Z').getUTCDay()
   })
 
   const columns = computed(() =>
-    Math.ceil((offset.value + displayDays.value.length) / 7)
+    days.value.length
+      ? Math.ceil((offset.value + days.value.length) / 7)
+      : SKELETON_COLUMNS
   )
 
   const monthLabels = computed(() => {
     const labels: { col: number; label: string }[] = []
     let lastMonth = -1
-    for (let i = 0; i < displayDays.value.length; i++) {
-      const dt = new Date(displayDays.value[i].date + 'T00:00:00Z')
+    for (let i = 0; i < days.value.length; i++) {
+      const dt = new Date(days.value[i].date + 'T00:00:00Z')
       const m = dt.getUTCMonth()
       if (m === lastMonth) continue
       lastMonth = m
@@ -156,7 +179,7 @@
       if (prev && col - prev.col < 3) continue
       labels.push({
         col,
-        label: dt.toLocaleString('en-US', { month: 'short' })
+        label: dt.toLocaleString('en-US', { month: 'short', timeZone: 'UTC' })
       })
     }
     return labels
@@ -184,7 +207,8 @@
     return d.toLocaleDateString('en-US', {
       month: 'short',
       day: 'numeric',
-      year: 'numeric'
+      year: 'numeric',
+      timeZone: 'UTC'
     })
   }
 
@@ -194,7 +218,8 @@
   }
 
   onMounted(async () => {
-    await nextTick()
+    window.addEventListener('scroll', hideTooltip, { passive: true })
+    document.addEventListener('pointerdown', onPointerDownOutside)
     scrollToRight()
     try {
       const res = await fetch('/api/activity.json')
@@ -209,6 +234,11 @@
     } finally {
       loading.value = false
     }
+  })
+
+  onBeforeUnmount(() => {
+    window.removeEventListener('scroll', hideTooltip)
+    document.removeEventListener('pointerdown', onPointerDownOutside)
   })
 </script>
 

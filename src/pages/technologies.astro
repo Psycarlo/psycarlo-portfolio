@@ -52,7 +52,7 @@ import unityImage from '../assets/unity.png'
 import shopifyImage from '../assets/shopify.png'
 
 import Layout from '../layouts/Layout.astro'
-import WrapperLayout from '../layouts/WrapperLayout.vue'
+import WrapperLayout from '../layouts/WrapperLayout.astro'
 import ContentLayout from '../layouts/ContentLayout.vue'
 import TechnologyButton from '../components/TechnologyButton.vue'
 import TechnologiesCard from '../components/TechnologiesCard.vue'
@@ -63,7 +63,6 @@ import TechnologiesCard from '../components/TechnologiesCard.vue'
     topic="Technologies"
     title="Dev Things"
     description="Get to know the technologies I use to build my projects. I am always open to learn new things."
-    client:load
   >
     <ContentLayout>
       <TechnologiesCard
@@ -352,7 +351,7 @@ import TechnologiesCard from '../components/TechnologiesCard.vue'
         <TechnologyButton to="https://www.adobe.com/">
           <Image src={adobeImage} alt="Adobe" title="Adobe" />
         </TechnologyButton>
-        <TechnologyButton to="figma.com">
+        <TechnologyButton to="https://www.figma.com/">
           <Image src={figmaImage} alt="Figma" title="Figma" />
         </TechnologyButton>
         <svg
