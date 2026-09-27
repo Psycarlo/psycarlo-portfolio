@@ -1,4 +1,5 @@
 ---
+import BackLink from '../components/BackLink.astro'
 import Button from '../components/Button.vue'
 import LetsWorkTogether from '../components/LetsWorkTogether.astro'
 import TheFooter from '../components/TheFooter.vue'
@@ -13,11 +14,17 @@ interface Props {
 }
 
 const { title, description, website, intro, problem, solution } = Astro.props
+
+// Screenshot slots get a placeholder frame that pulses until the image loads.
+// The frame sits inside the reveal wrapper because both use `animation`.
+const frameClass =
+  'img-frame bg-brand-lighty dark:bg-brand-dark overflow-hidden rounded-md *:block'
 ---
 
 <div class="bg-brand-lightest dark:bg-brand-darker relative rounded-lg">
   <div class="flex flex-col gap-4 px-8 pt-8">
-    <div class="flex flex-col gap-4">
+    <BackLink href="/projects/" text="All projects" class="reveal" />
+    <div class="reveal flex flex-col gap-4">
       <slot />
       <h2
         class="text-brand-darkest dark:text-brand-lightest text-3xl font-bold"
@@ -39,45 +46,71 @@ const { title, description, website, intro, problem, solution } = Astro.props
           />
         )
       }
-      <div class="mt-6 flex flex-col gap-3">
-        <slot name="image1" />
-        <p class="text-brand-grayDark dark:text-brand-gray text-lg">
-          {intro}
-        </p>
-        <slot name="image2" />
-        {
-          problem && (
-            <>
-              <h2 class="text-brand-darkest dark:text-brand-lightest text-2xl font-semibold">
-                The Problem
-              </h2>
-              <p class="text-brand-grayDark dark:text-brand-gray text-lg">
-                {problem}
-              </p>
-            </>
-          )
-        }
-        <slot name="image3" />
-        {
-          solution && (
-            <>
-              <h2 class="text-brand-darkest dark:text-brand-lightest text-2xl font-semibold">
-                Our Solution
-              </h2>
-              <p class="text-brand-grayDark dark:text-brand-gray text-lg">
-                {solution}
-              </p>
-            </>
-          )
-        }
+    </div>
+    <div class="mt-6 flex flex-col gap-3">
+      {
+        Astro.slots.has('image1') && (
+          <div class="reveal">
+            <div class={frameClass}>
+              <slot name="image1" />
+            </div>
+          </div>
+        )
+      }
+      <p class="reveal text-brand-grayDark dark:text-brand-gray text-lg">
+        {intro}
+      </p>
+      {
+        Astro.slots.has('image2') && (
+          <div class="reveal">
+            <div class={frameClass}>
+              <slot name="image2" />
+            </div>
+          </div>
+        )
+      }
+      {
+        problem && (
+          <div class="reveal flex flex-col gap-3">
+            <h2 class="text-brand-darkest dark:text-brand-lightest text-2xl font-semibold">
+              The Problem
+            </h2>
+            <p class="text-brand-grayDark dark:text-brand-gray text-lg">
+              {problem}
+            </p>
+          </div>
+        )
+      }
+      {
+        Astro.slots.has('image3') && (
+          <div class="reveal">
+            <div class={frameClass}>
+              <slot name="image3" />
+            </div>
+          </div>
+        )
+      }
+      {
+        solution && (
+          <div class="reveal flex flex-col gap-3">
+            <h2 class="text-brand-darkest dark:text-brand-lightest text-2xl font-semibold">
+              Our Solution
+            </h2>
+            <p class="text-brand-grayDark dark:text-brand-gray text-lg">
+              {solution}
+            </p>
+          </div>
+        )
+      }
+      <div class="reveal flex flex-col gap-3">
         <h2
           class="text-brand-darkest dark:text-brand-lightest text-2xl font-semibold"
         >
           Technologies Used
         </h2>
         <slot name="technologies" />
-        <div class="bg-brand-lighty dark:bg-brand-dark mt-3 h-px w-full"></div>
       </div>
+      <div class="bg-brand-lighty dark:bg-brand-dark mt-3 h-px w-full"></div>
     </div>
   </div>
   <LetsWorkTogether />

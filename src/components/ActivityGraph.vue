@@ -6,9 +6,9 @@
         <span v-else-if="error">Activity unavailable</span>
         <span v-else>
           <span
-            class="font-semibold text-brand-darkest dark:text-brand-lightest"
+            class="font-semibold tabular-nums text-brand-darkest dark:text-brand-lightest"
           >
-            {{ total?.toLocaleString() ?? 0 }}
+            {{ displayTotal.toLocaleString() }}
           </span>
           contributions in the last year
         </span>
@@ -48,14 +48,16 @@
             v-for="(d, i) in days"
             :key="d.date"
             :data-index="i"
-            :class="['w-2.5 h-2.5 rounded-sm', tierClass(d.level)]"
+            :class="['cell-in w-2.5 h-2.5 rounded-sm', tierClass(d.level)]"
+            :style="{ '--col': Math.floor((i + offset) / 7) }"
           ></span>
         </template>
         <template v-else>
           <span
             v-for="i in SKELETON_CELLS"
             :key="`skeleton-${i}`"
-            :class="['w-2.5 h-2.5 rounded-sm', tierClass(0)]"
+            :class="['cell-skeleton w-2.5 h-2.5 rounded-sm', tierClass(0)]"
+            :style="{ '--col': Math.floor((i - 1) / 7) }"
           ></span>
         </template>
       </div>
@@ -66,7 +68,7 @@
         <span
           v-for="lbl in monthLabels"
           :key="lbl.col"
-          class="whitespace-nowrap"
+          class="label-in whitespace-nowrap"
           :style="{ gridColumn: `${lbl.col} / span 1` }"
           >{{ lbl.label }}</span
         >
@@ -96,7 +98,8 @@
   const SKELETON_CELLS = SKELETON_COLUMNS * 7
 
   const days = ref<Day[]>([])
-  const total = ref<number | null>(null)
+  const displayTotal = ref(0)
+  let countFrame = 0
   const loading = ref(true)
   const error = ref(false)
   const scrollRef = ref<HTMLDivElement | null>(null)
@@ -153,6 +156,22 @@
 
   function hideTooltip() {
     tooltip.value = null
+  }
+
+  // Eases the total from 0 once data arrives.
+  function countUp(to: number) {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      displayTotal.value = to
+      return
+    }
+    const start = performance.now()
+    const duration = 900
+    const tick = (now: number) => {
+      const t = Math.min((now - start) / duration, 1)
+      displayTotal.value = Math.round(to * (1 - Math.pow(1 - t, 3)))
+      if (t < 1) countFrame = requestAnimationFrame(tick)
+    }
+    countFrame = requestAnimationFrame(tick)
   }
 
   const offset = computed(() => {
@@ -226,7 +245,7 @@
       if (!res.ok) throw new Error('fetch_failed')
       const data = (await res.json()) as Payload
       days.value = data.days
-      total.value = data.total
+      countUp(data.total)
       await nextTick()
       scrollToRight()
     } catch {
@@ -237,12 +256,44 @@
   })
 
   onBeforeUnmount(() => {
+    cancelAnimationFrame(countFrame)
     window.removeEventListener('scroll', hideTooltip)
     document.removeEventListener('pointerdown', onPointerDownOutside)
   })
 </script>
 
 <style scoped>
+  /* Loading: a soft wave sweeps across the columns. Loaded: cells pop in
+     column by column, then the month labels fade in. */
+  @media (prefers-reduced-motion: no-preference) {
+    .cell-skeleton {
+      animation: cell-wave 1.8s ease-in-out infinite;
+      animation-delay: calc(var(--col) * 25ms);
+    }
+    .cell-in {
+      animation: cell-in 0.5s var(--expo-out) backwards;
+      animation-delay: calc(var(--col) * 8ms);
+    }
+    .label-in {
+      animation: label-in 0.6s ease-out 0.25s backwards;
+    }
+  }
+  @keyframes cell-wave {
+    50% {
+      opacity: 0.35;
+    }
+  }
+  @keyframes cell-in {
+    from {
+      opacity: 0;
+      transform: scale(0.4);
+    }
+  }
+  @keyframes label-in {
+    from {
+      opacity: 0;
+    }
+  }
   .no-scrollbar {
     scrollbar-width: none;
   }

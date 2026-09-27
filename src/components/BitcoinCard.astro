@@ -6,15 +6,15 @@ const BC1_ADDRESS = 'bc1qzsdges0lm34jkjfydgltr6jqnuxcjrj7rapuyy'
 const LN_ADDRESS = 'psycarlo@walletofsatoshi.com'
 ---
 
-<div class="flex flex-col gap-4">
+<div class="reveal flex flex-col gap-4">
   <slot />
   <div class="flex flex-col gap-2">
     <h3 class="text-2xl font-medium">Learn about Bitcoin</h3>
-    <p class="text-brand-gray">
+    <p class="text-brand-grayDark dark:text-brand-gray">
       Psybitcoin is a learning platform that teaches about bitcoin and other
       exciting topics. Video lessons are currently only available in Portuguese.
     </p>
-    <p class="text-brand-gray">
+    <p class="text-brand-grayDark dark:text-brand-gray">
       In psybitcoin you can watch engaging videos that will teach you everything
       in a simplified way, track the price of bitcoin with a wonderful custom
       chart, interact with the community, read articles, invite friends and earn
@@ -22,13 +22,13 @@ const LN_ADDRESS = 'psycarlo@walletofsatoshi.com'
     </p>
   </div>
 </div>
-<div class="mt-3 flex justify-center">
+<div class="reveal mt-3 flex justify-center">
   <PsybitcoinButton />
 </div>
-<div class="mt-8">
+<div class="reveal mt-8">
   <div class="flex flex-col gap-2">
     <h3 class="text-2xl font-medium">Buy me a coffee</h3>
-    <p class="text-brand-gray">
+    <p class="text-brand-grayDark dark:text-brand-gray">
       Want to buy me a coffee? I am taking bitcoin ;)
     </p>
     <div class="flex gap-4">
@@ -36,7 +36,9 @@ const LN_ADDRESS = 'psycarlo@walletofsatoshi.com'
         <div class="flex flex-col items-center">
           <p>On-chain</p>
           <slot name="qr" />
-          <p class="text-brand-grayDark mt-1 text-center text-xs">
+          <p
+            class="text-brand-grayDark dark:text-brand-gray mt-1 text-center text-xs"
+          >
             scan the qr code
           </p>
         </div>
@@ -52,7 +54,9 @@ const LN_ADDRESS = 'psycarlo@walletofsatoshi.com'
         <div class="flex flex-col items-center">
           <p>Lightning Address</p>
           <slot name="qrln" />
-          <p class="text-brand-grayDark mt-1 text-center text-xs">
+          <p
+            class="text-brand-grayDark dark:text-brand-gray mt-1 text-center text-xs"
+          >
             scan the qr code
           </p>
         </div>

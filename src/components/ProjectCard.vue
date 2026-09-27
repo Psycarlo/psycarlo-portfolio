@@ -1,6 +1,6 @@
 <template>
   <a
-    class="dark:border-brand-grayDarkest group border-brand-light bg-brand-lightest dark:bg-brand-dark flex items-center justify-between rounded-lg border p-4 shadow-sm duration-300 hover:scale-[1.01]"
+    class="reveal dark:border-brand-grayDarkest group border-brand-light bg-brand-lightest dark:bg-brand-dark hover:border-brand-grayLightest dark:hover:border-brand-grayDark flex items-center justify-between rounded-lg border p-4 shadow-sm transition-[translate,box-shadow,border-color] duration-300 ease-out hover:-translate-y-0.5 hover:shadow-md motion-reduce:transition-none motion-reduce:hover:translate-y-0"
     :href="to"
   >
     <div class="flex items-center gap-4">

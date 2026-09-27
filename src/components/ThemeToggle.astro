@@ -2,7 +2,7 @@
   type="button"
   title="Theme Toggle"
   aria-label="Toggle theme"
-  class="group hover:bg-brand-light hover:dark:bg-brand-dark flex h-10 w-10 cursor-pointer items-center justify-center rounded-full transition-all duration-200"
+  class="group hover:bg-brand-light hover:dark:bg-brand-dark relative flex h-10 w-10 cursor-pointer items-center justify-center rounded-full transition-all duration-200"
   data-theme-toggle
 >
   <svg
@@ -11,7 +11,7 @@
     viewBox="0 0 24 24"
     stroke-width="1.5"
     stroke="currentColor"
-    class="stroke-brand-darkest group-hover:fill-brand-darkest block h-6 w-6 transition-colors duration-200 dark:hidden"
+    class="stroke-brand-darkest group-hover:fill-brand-darkest absolute h-6 w-6 transition-[opacity,rotate,scale,fill] duration-500 ease-out motion-reduce:transition-none dark:scale-50 dark:-rotate-90 dark:opacity-0"
   >
     <path
       stroke-linecap="round"
@@ -25,7 +25,7 @@
     viewBox="0 0 24 24"
     stroke-width="1.5"
     stroke="currentColor"
-    class="stroke-brand-lightest group-hover:fill-brand-lightest hidden h-6 w-6 transition-colors duration-200 dark:block"
+    class="stroke-brand-lightest group-hover:fill-brand-lightest absolute h-6 w-6 scale-50 rotate-90 opacity-0 transition-[opacity,rotate,scale,fill] duration-500 ease-out motion-reduce:transition-none dark:scale-100 dark:rotate-0 dark:opacity-100"
   >
     <path
       stroke-linecap="round"
@@ -48,7 +48,17 @@
   document.addEventListener('click', (event) => {
     const target = event.target as Element | null
     if (!target?.closest('[data-theme-toggle]')) return
-    if (!document.startViewTransition) return toggleTheme()
-    document.startViewTransition(toggleTheme)
+
+    const reduceMotion = window.matchMedia(
+      '(prefers-reduced-motion: reduce)'
+    ).matches
+    if (!document.startViewTransition || reduceMotion) return toggleTheme()
+
+    // Opts this view transition into the diagonal reveal in global.css.
+    const root = document.documentElement
+    root.setAttribute('data-theme-transition', '')
+    document
+      .startViewTransition(toggleTheme)
+      .finished.finally(() => root.removeAttribute('data-theme-transition'))
   })
 </script>

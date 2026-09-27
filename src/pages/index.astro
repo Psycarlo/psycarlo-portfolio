@@ -44,13 +44,13 @@ import TheFooter from '../components/TheFooter.vue'
       <a
         href="https://bitcoin.psycarlo.com"
         target="_blank"
-        class="self-start text-[10px] font-medium bg-orange-500/10 text-orange-500 px-2 py-0.5 rounded-full hover:bg-orange-500/20 transition-colors mb-3 flex items-center gap-1"
+        class="reveal self-start text-[10px] font-medium bg-orange-500/10 text-orange-500 px-2 py-0.5 rounded-full hover:bg-orange-500/20 transition-colors mb-3 flex items-center gap-1"
       >
         <span class="font-bold">NEW</span>
         <span class="opacity-50">|</span>
         <span>bitcoin-decoder</span>
       </a>
-      <div class="flex gap-3 items-center">
+      <div class="reveal flex gap-3 items-center">
         <div
           class="bg-orange-500 w-2 h-2 rounded-full animate-pulse motion-reduce:animate-none"
         >
@@ -64,8 +64,8 @@ import TheFooter from '../components/TheFooter.vue'
           </h2>
         </div>
       </div>
-      <div class="flex flex-col mt-6">
-        <span class="text-xs text-brand-gray">Current position</span>
+      <div class="reveal flex flex-col mt-6">
+        <span class="text-xs text-brand-grayDark dark:text-brand-gray">Current position</span>
         <span class="text-sm">
           DevRel Engineer @
           <a
@@ -77,7 +77,7 @@ import TheFooter from '../components/TheFooter.vue'
           </a>
         </span>
       </div>
-      <div class="flex flex-col gap-3 mt-6">
+      <div class="reveal flex flex-col gap-3 mt-6">
         <h1 class="font-semibold text-4xl text-center sm:text-left">
           Carlos Marques
         </h1>
@@ -103,7 +103,7 @@ import TheFooter from '../components/TheFooter.vue'
         <Image
           src={carlosImage}
           alt="Carlos Marques"
-          class="w-[210px] aspect-[7/12]"
+          class="hero-in w-[210px] aspect-[7/12]"
           width={420}
           widths={[210, 420]}
           sizes="210px"
@@ -115,10 +115,10 @@ import TheFooter from '../components/TheFooter.vue'
     <div
       class="flex flex-col gap-6 rounded-lg bg-brand-lighter dark:bg-brand-darky mt-0 sm:mt-10 mb-3 p-6 mx-2 relative z-10"
     >
-      <div class="flex justify-between">
+      <div class="reveal flex justify-between">
         <div class="flex gap-2 items-center">
           <div
-            class="bg-orange-500 w-2 h-2 rounded-full animate-pulse motion-reduce:animate-none"
+            class="bg-orange-500 w-2 h-2 rounded-full"
           >
           </div>
           <h2 class="font-medium text-xl">Projects</h2>
@@ -159,10 +159,10 @@ import TheFooter from '../components/TheFooter.vue'
     <div
       class="flex flex-col gap-6 rounded-lg bg-brand-lighter dark:bg-brand-darky mt-3 p-6 mx-2 relative z-10"
     >
-      <div class="flex justify-between">
+      <div class="reveal flex justify-between">
         <div class="flex gap-2 items-center">
           <div
-            class="bg-orange-500 w-2 h-2 rounded-full animate-pulse motion-reduce:animate-none"
+            class="bg-orange-500 w-2 h-2 rounded-full"
           >
           </div>
           <h2 class="font-medium text-xl">Activity</h2>
@@ -188,15 +188,17 @@ import TheFooter from '../components/TheFooter.vue'
           </a>
         </div>
       </div>
-      <ActivityGraph client:visible />
+      <div class="reveal">
+        <ActivityGraph client:visible />
+      </div>
     </div>
     <div
       class="flex flex-col gap-6 rounded-lg bg-brand-lighter dark:bg-brand-darky mt-3 p-6 mx-2 relative z-10"
     >
-      <div class="flex justify-between">
+      <div class="reveal flex justify-between">
         <div class="flex gap-2 items-center">
           <div
-            class="bg-orange-500 w-2 h-2 rounded-full animate-pulse motion-reduce:animate-none"
+            class="bg-orange-500 w-2 h-2 rounded-full"
           >
           </div>
           <h2 class="font-medium text-xl">Technologies</h2>

@@ -51,10 +51,12 @@ const ogUrl = new URL(Astro.url.pathname, Astro.site).href
     <meta name="twitter:card" content="summary_large_image" />
     <title>{title}</title>
     <script is:inline>
-      // Runs before first paint to avoid a flash of the wrong theme, and again
-      // after every client-side navigation because the router replaces the
-      // <html> attributes with the ones from the new page.
-      function applyTheme() {
+      // Runs before first paint so there is no flash of the wrong theme and
+      // reveal-on-enter content starts hidden. The router replaces <html>
+      // attributes on navigation, so the same state is copied onto the
+      // incoming document before it is swapped in.
+      ;(function () {
+        const root = document.documentElement
         let theme = null
         try {
           theme = localStorage.getItem('theme')
@@ -64,10 +66,18 @@ const ogUrl = new URL(Astro.url.pathname, Astro.site).href
             ? 'dark'
             : 'light'
         }
-        document.documentElement.classList.toggle('dark', theme === 'dark')
-      }
-      applyTheme()
-      document.addEventListener('astro:after-swap', applyTheme)
+        const motion =
+          'IntersectionObserver' in window &&
+          window.matchMedia('(prefers-reduced-motion: no-preference)').matches
+        root.classList.toggle('dark', theme === 'dark')
+        root.toggleAttribute('data-motion', motion)
+
+        document.addEventListener('astro:before-swap', (event) => {
+          const next = event.newDocument.documentElement
+          next.classList.toggle('dark', root.classList.contains('dark'))
+          next.toggleAttribute('data-motion', root.hasAttribute('data-motion'))
+        })
+      })()
     </script>
     <ClientRouter />
   </head>
@@ -77,10 +87,13 @@ const ogUrl = new URL(Astro.url.pathname, Astro.site).href
     <main class="flex justify-center px-2 xs:px-4 sm:px-8">
       <div class="w-full max-w-140 py-4 flex flex-col gap-4 min-w-0">
         <TheHeader page={page} />
-        <div class="he:pt-20 pt-32">
+        <div class="pt-20">
           <slot />
         </div>
       </div>
     </main>
+    <script>
+      import '../scripts/motion'
+    </script>
   </body>
 </html>

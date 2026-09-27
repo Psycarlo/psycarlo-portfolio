@@ -12,6 +12,15 @@ const EMAIL_VALID_REGEX =
 
 export const POST: APIRoute = async ({ request }) => {
   const data = await request.formData()
+
+  // Honeypot field, hidden from people. Pretend it worked so bots move on.
+  const company = data.get('company')
+  if (typeof company === 'string' && company.length > 0) {
+    return new Response(JSON.stringify({ message: 'success' }), {
+      status: 200
+    })
+  }
+
   const name = data.get('name')
   const email = data.get('email')
   const message = data.get('message')

@@ -20,10 +20,10 @@ const { page } = Astro.props
 ---
 
 <header
-  class="bg-brand-lightest dark:border-brand-darky dark:bg-brand-darker he:h-16 he:flex-row he:justify-between he:gap-0 fixed top-4 left-[50%] z-50 flex h-28 w-[96%] translate-x-[-50%] flex-col items-center justify-center gap-2 rounded-xl px-6 shadow-md sm:w-[560px] dark:border"
+  class="bg-brand-lightest dark:border-brand-darky dark:bg-brand-darker xs:px-4 he:px-6 fixed top-4 left-[50%] z-50 flex h-16 w-[96%] translate-x-[-50%] items-center justify-between rounded-xl px-2 shadow-md sm:w-[560px] dark:border"
 >
   <nav aria-label="Main">
-    <ul class="flex items-center gap-2.5">
+    <ul class="xs:gap-2.5 flex items-center gap-1">
       <li>
         <HeaderButton
           title="Home"
@@ -169,7 +169,8 @@ const { page } = Astro.props
     <li>
       <ThemeToggle />
     </li>
-    <li>
+    <!-- Hidden on small screens: the hero and page footers already have it. -->
+    <li class="he:block hidden">
       <Button to="/contact/" text="Contact Me" variant="primary" />
     </li>
   </ul>

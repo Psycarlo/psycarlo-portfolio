@@ -1,12 +1,12 @@
 <template>
   <div class="mb-2 flex flex-col gap-2 pb-2">
     <div
-      class="bg-brand-lighter dark:bg-brand-darky relative z-10 mx-2 flex flex-col gap-6 rounded-lg px-6 py-8"
+      class="reveal bg-brand-lighter dark:bg-brand-darky relative z-10 mx-2 flex flex-col gap-6 rounded-lg px-6 py-8"
     >
       <div class="flex justify-between">
         <div class="flex items-center gap-3">
           <div
-            class="h-2 min-h-[0.5rem] w-2 min-w-[0.5rem] animate-pulse rounded-full bg-orange-500 motion-reduce:animate-none"
+            class="h-2 min-h-[0.5rem] w-2 min-w-[0.5rem] rounded-full bg-orange-500"
           ></div>
           <h2 class="text-xl font-medium">
             Follow <span class="hidden sm:inline">Me</span>
@@ -83,7 +83,7 @@
       </div>
     </div>
     <div
-      class="bg-brand-lighter dark:bg-brand-darky relative z-10 mx-2 flex flex-col items-center gap-2 rounded-lg px-6 py-12"
+      class="reveal bg-brand-lighter dark:bg-brand-darky relative z-10 mx-2 flex flex-col items-center gap-2 rounded-lg px-6 py-12"
     >
       <p class="text-brand-grayDark dark:text-brand-gray text-center text-sm">
         © {{ new Date().getFullYear() }} Carlos Marques | Software Engineer &

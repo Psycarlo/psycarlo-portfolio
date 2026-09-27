@@ -1,0 +1,35 @@
+---
+interface Props {
+  href: string
+  text?: string
+  class?: string
+}
+
+const { href, text = 'Back', class: className } = Astro.props
+---
+
+<a
+  href={href}
+  class:list={[
+    'group text-brand-grayDark hover:text-brand-darkest dark:text-brand-gray dark:hover:text-brand-lightest inline-flex w-fit cursor-pointer items-center gap-1 text-xs font-medium transition-colors duration-200',
+    className
+  ]}
+>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="16"
+    height="16"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    class="transition-transform duration-200 group-hover:-translate-x-0.5"
+    aria-hidden="true"
+  >
+    <path d="M6 8L2 12L6 16"></path>
+    <path d="M2 12H22"></path>
+  </svg>
+  {text}
+</a>

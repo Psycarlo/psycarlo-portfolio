@@ -19,11 +19,11 @@ import qrln from '../assets/qrln.png'
   >
     <ContentLayout>
       <BitcoinCard>
-        <Image
-          src={splash}
-          alt="Psybitcoin Splash"
-          class="rounded-lg shadow-md"
-        />
+        <div
+          class="img-frame bg-brand-lighty dark:bg-brand-dark overflow-hidden rounded-lg shadow-md *:block"
+        >
+          <Image src={splash} alt="Psybitcoin Splash" class="rounded-lg" />
+        </div>
         <Image
           src={qr}
           width={480}

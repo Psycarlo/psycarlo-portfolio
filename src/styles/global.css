@@ -25,23 +25,17 @@
       1 100%
     );
   }
-}
 
-::view-transition-group(root) {
-  animation-duration: 0.7s;
-  animation-timing-function: var(--expo-out);
-}
-
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
+  /* One consistent, visible focus indicator for keyboard users. Components
+     that draw their own focus ring use `outline-none`. */
+  :focus-visible {
+    outline: 2px solid var(--color-orange-500);
+    outline-offset: 2px;
   }
 }
 
-.animate-spin {
-  animation: spin 1s linear infinite;
-}
-
+/* Theme toggle: diagonal reveal. Scoped to the toggle (it sets
+   data-theme-transition) so page navigations keep a plain cross-fade. */
 @keyframes reveal-dark {
   from {
     clip-path: polygon(50% -71%, -50% 71%, -50% 71%, 50% -71%);
@@ -60,15 +54,92 @@
   }
 }
 
-::view-transition-new(root) {
+html[data-theme-transition]::view-transition-group(root) {
+  animation-duration: 0.7s;
+  animation-timing-function: var(--expo-out);
+}
+
+html[data-theme-transition]::view-transition-new(root) {
   animation-name: reveal-light;
 }
 
-::view-transition-old(root),
-.dark::view-transition-old(root) {
+html[data-theme-transition]::view-transition-old(root) {
   animation: none;
   z-index: -1;
 }
-.dark::view-transition-new(root) {
+
+html.dark[data-theme-transition]::view-transition-new(root) {
   animation-name: reveal-dark;
+}
+
+/* Active nav indicator glides between items on navigation. */
+::view-transition-group(nav-indicator) {
+  animation-duration: 0.5s;
+  animation-timing-function: var(--expo-out);
+}
+
+/* Reveal on enter. `data-motion` is set on <html> before first paint only when
+   the visitor hasn't asked for reduced motion; src/scripts/motion.ts adds
+   `data-revealed` as elements scroll into view, staggering each batch. */
+@keyframes reveal-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+}
+
+@keyframes reveal-failsafe {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Blocks holding a view-transition morph target (transition:name) are skipped:
+   a fading parent would make the morphed element blink when it lands. */
+html[data-motion]
+  .reveal:not([data-revealed]):not(:has([data-astro-transition-scope])) {
+  opacity: 0;
+  /* If the script never runs, show the content anyway. */
+  animation: reveal-failsafe 0s 3s forwards;
+}
+
+html[data-motion]
+  .reveal[data-revealed]:not(:has([data-astro-transition-scope])) {
+  animation: reveal-in 0.7s var(--expo-out) var(--reveal-delay, 0ms) backwards;
+}
+
+/* Hero portrait: CSS only, so the LCP image never waits on JS. */
+@keyframes hero-in {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.98);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero-in {
+    animation: hero-in 0.9s var(--expo-out) 0.15s backwards;
+  }
+}
+
+/* Images inside an .img-frame fade in once loaded; the frame pulses meanwhile.
+   src/scripts/motion.ts sets data-loading only on images not yet decoded. */
+.img-frame img {
+  transition: opacity 0.6s var(--expo-out);
+}
+
+.img-frame img[data-loading] {
+  opacity: 0;
+}
+
+@keyframes frame-pulse {
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .img-frame:has(img[data-loading]) {
+    animation: frame-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
 }

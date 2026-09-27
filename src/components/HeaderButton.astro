@@ -11,7 +11,10 @@ const { title, href, selected, ariaLabel } = Astro.props
 
 <a
   href={href}
-  class="group hover:bg-brand-light dark:hover:bg-brand-dark relative flex h-10 w-10 items-center justify-center rounded-full transition-all duration-200"
+  class:list={[
+    'group hover:bg-brand-light dark:hover:bg-brand-dark xs:h-10 xs:w-10 relative flex h-9 w-9 items-center justify-center rounded-full transition-all duration-200',
+    selected && 'bg-brand-light dark:bg-brand-dark'
+  ]}
   aria-label={ariaLabel}
   aria-current={selected ? 'page' : undefined}
 >
@@ -19,11 +22,21 @@ const { title, href, selected, ariaLabel } = Astro.props
     class:list={[
       selected
         ? 'text-brand-darkest dark:text-brand-lightest'
-        : 'text-brand-gray'
+        : 'text-brand-grayDark dark:text-brand-gray'
     ]}
   >
     <slot />
   </span>
+  {
+    selected && (
+      <span
+        aria-hidden="true"
+        class="absolute -bottom-1.5 left-1/2 h-1 w-1 -translate-x-1/2 rounded-full bg-orange-500"
+        transition:name="nav-indicator"
+        transition:animate="initial"
+      />
+    )
+  }
   <span
     aria-hidden="true"
     class="bg-brand-darkest text-brand-lightest dark:bg-brand-dark dark:text-brand-lightest pointer-events-none absolute top-full left-1/2 z-100 mt-[5px] -translate-x-1/2 translate-y-0.5 rounded-md px-3.75 py-2.5 text-sm leading-none whitespace-nowrap opacity-0 shadow-[hsl(206_22%_7%_/_35%)_0px_10px_38px_-10px,_hsl(206_22%_7%_/_20%)_0px_10px_20px_-15px] transition-[opacity,translate] duration-200 ease-out select-none group-hover:translate-y-0 group-hover:opacity-100 group-hover:delay-300 group-focus-visible:translate-y-0 group-focus-visible:opacity-100 motion-reduce:transition-none"
