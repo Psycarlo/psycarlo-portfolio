@@ -12,7 +12,7 @@ const { title, href, selected, ariaLabel } = Astro.props
 <a
   href={href}
   class:list={[
-    'group hover:bg-brand-light dark:hover:bg-brand-dark xs:h-10 xs:w-10 relative flex h-9 w-9 items-center justify-center rounded-full transition-all duration-200',
+    'group hover:bg-brand-light dark:hover:bg-brand-dark xs:h-10 xs:w-10 relative flex h-9 w-9 items-center justify-center rounded-full transition-[background-color,scale] duration-150 ease-out active:scale-[0.96]',
     selected && 'bg-brand-light dark:bg-brand-dark'
   ]}
   aria-label={ariaLabel}
@@ -39,7 +39,7 @@ const { title, href, selected, ariaLabel } = Astro.props
   }
   <span
     aria-hidden="true"
-    class="bg-brand-darkest text-brand-lightest dark:bg-brand-dark dark:text-brand-lightest pointer-events-none absolute top-full left-1/2 z-100 mt-[5px] -translate-x-1/2 translate-y-0.5 rounded-md px-3.75 py-2.5 text-sm leading-none whitespace-nowrap opacity-0 shadow-[hsl(206_22%_7%_/_35%)_0px_10px_38px_-10px,_hsl(206_22%_7%_/_20%)_0px_10px_20px_-15px] transition-[opacity,translate] duration-200 ease-out select-none group-hover:translate-y-0 group-hover:opacity-100 group-hover:delay-300 group-focus-visible:translate-y-0 group-focus-visible:opacity-100 motion-reduce:transition-none"
+    class="nav-tooltip bg-brand-darkest text-brand-lightest dark:bg-brand-dark dark:text-brand-lightest pointer-events-none absolute top-full left-1/2 z-100 mt-4 -translate-x-1/2 origin-top rounded-lg px-2.5 py-1.5 text-xs font-medium whitespace-nowrap opacity-0 shadow-[0_8px_24px_-8px_oklch(0_0_0/0.35),inset_0_1px_0_oklch(1_0_0/0.08)] transition-[opacity,scale] duration-150 ease-out select-none group-hover:opacity-100 group-hover:delay-300 group-focus-visible:opacity-100 motion-safe:scale-[0.97] motion-safe:group-hover:scale-100 motion-safe:group-focus-visible:scale-100"
   >
     {title}
   </span>

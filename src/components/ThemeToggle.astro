@@ -2,7 +2,7 @@
   type="button"
   title="Theme Toggle"
   aria-label="Toggle theme"
-  class="group hover:bg-brand-light hover:dark:bg-brand-dark relative flex h-10 w-10 cursor-pointer items-center justify-center rounded-full transition-all duration-200"
+  class="group hover:bg-brand-light dark:hover:bg-brand-dark xs:h-10 xs:w-10 grid h-9 w-9 cursor-pointer place-items-center rounded-full transition-[background-color,scale] duration-150 ease-out active:scale-[0.96]"
   data-theme-toggle
 >
   <svg
@@ -11,7 +11,8 @@
     viewBox="0 0 24 24"
     stroke-width="1.5"
     stroke="currentColor"
-    class="stroke-brand-darkest group-hover:fill-brand-darkest absolute h-6 w-6 transition-[opacity,rotate,scale,fill] duration-500 ease-out motion-reduce:transition-none dark:scale-50 dark:-rotate-90 dark:opacity-0"
+    class="stroke-brand-darkest group-hover:fill-brand-darkest ease-icon h-6 w-6 blur-[0px] transition-[opacity,filter,scale,fill] duration-300 [grid-area:1/1] dark:opacity-0 motion-safe:dark:scale-[0.25] motion-safe:dark:blur-[4px]"
+    data-theme-icon
   >
     <path
       stroke-linecap="round"
@@ -25,7 +26,8 @@
     viewBox="0 0 24 24"
     stroke-width="1.5"
     stroke="currentColor"
-    class="stroke-brand-lightest group-hover:fill-brand-lightest absolute h-6 w-6 scale-50 rotate-90 opacity-0 transition-[opacity,rotate,scale,fill] duration-500 ease-out motion-reduce:transition-none dark:scale-100 dark:rotate-0 dark:opacity-100"
+    class="stroke-brand-lightest group-hover:fill-brand-lightest ease-icon h-6 w-6 opacity-0 blur-[0px] transition-[opacity,filter,scale,fill] duration-300 [grid-area:1/1] dark:opacity-100 motion-safe:scale-[0.25] motion-safe:blur-[4px] motion-safe:dark:scale-100 motion-safe:dark:blur-[0px]"
+    data-theme-icon
   >
     <path
       stroke-linecap="round"
@@ -39,10 +41,21 @@
   // The icon is picked by CSS from the `dark` class on <html>, so the button
   // is correct before any JS runs. Delegated so it survives page swaps.
   function toggleTheme() {
+    // Without this every color transition on the page fires at once and the
+    // switch smears; only the toggle's own icons animate.
+    const freeze = document.createElement('style')
+    freeze.textContent =
+      '*:not([data-theme-icon]),*::before,*::after{transition:none!important}'
+    document.head.appendChild(freeze)
+
     const isDark = document.documentElement.classList.toggle('dark')
     try {
       localStorage.setItem('theme', isDark ? 'dark' : 'light')
     } catch {}
+
+    // Apply the new colors while transitions are off, then restore them.
+    void document.body.offsetHeight
+    requestAnimationFrame(() => requestAnimationFrame(() => freeze.remove()))
   }
 
   document.addEventListener('click', (event) => {

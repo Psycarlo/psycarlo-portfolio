@@ -2,16 +2,16 @@
   <div class="px-8 pb-12">
     <Transition
       mode="out-in"
-      enter-active-class="transition duration-500 ease-out motion-reduce:transition-none"
-      enter-from-class="translate-y-2 opacity-0"
-      leave-active-class="transition duration-200 ease-in motion-reduce:transition-none"
-      leave-to-class="opacity-0"
+      enter-active-class="transition-[opacity,translate,filter] duration-300 ease-out"
+      enter-from-class="opacity-0 motion-safe:translate-y-3 motion-safe:blur-[4px]"
+      leave-active-class="transition-[opacity,translate,filter] duration-150 ease-out"
+      leave-to-class="opacity-0 motion-safe:-translate-y-3 motion-safe:blur-[4px]"
     >
       <div
         v-if="status === 'success'"
         key="success"
         role="status"
-        class="bg-brand-lighty dark:bg-brand-dark flex flex-col items-center gap-3 rounded-lg px-6 py-12 text-center"
+        class="bg-brand-lighter dark:bg-brand-darky flex flex-col items-center gap-3 rounded-3xl px-6 py-12 text-center"
       >
         <svg
           class="text-brand-success h-14 w-14"
@@ -43,7 +43,7 @@
         </p>
         <button
           type="button"
-          class="mt-2 cursor-pointer text-sm font-medium underline hover:no-underline"
+          class="decoration-brand-grayLight dark:decoration-brand-grayDark mt-2 cursor-pointer text-sm font-medium underline underline-offset-2 transition-[text-decoration-color] duration-150 ease-out hover:decoration-transparent"
           @click="status = 'idle'"
         >
           Send another message
@@ -140,7 +140,7 @@
         </div>
         <button
           type="submit"
-          class="text-brand-lightest dark:text-brand-lightest w-full cursor-pointer rounded-lg py-3 font-medium transition-colors duration-300 disabled:cursor-not-allowed disabled:opacity-75"
+          class="text-brand-lightest dark:text-brand-lightest h-12 w-full cursor-pointer rounded-full font-medium shadow-[inset_0_1px_0_oklch(1_0_0/0.12),0_1px_2px_oklch(0_0_0/0.12)] transition-[background-color,scale] duration-150 ease-out enabled:active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-75"
           :class="
             status === 'error'
               ? 'bg-brand-error hover:bg-brand-error/90'
@@ -235,17 +235,15 @@
   const labelClass =
     'text-brand-grayDark dark:text-brand-gray text-xs font-medium'
   const inputClass =
-    'bg-brand-lighty dark:bg-brand-dark placeholder:text-brand-gray dark:placeholder:text-brand-grayDark block w-full rounded-lg border-0 px-4 py-4 ring-offset-1 ring-offset-transparent transition-shadow duration-300 outline-none focus:ring-2'
+    'bg-brand-lighty dark:bg-brand-dark placeholder:text-brand-gray dark:placeholder:text-brand-grayDark block w-full rounded-xl border-0 px-4 py-4 ring-offset-1 ring-offset-transparent transition-[box-shadow] duration-150 ease-out outline-none focus:ring-2'
   // Only one ring colour per state so the error colour wins while focused.
   const validInputClass = 'focus:ring-orange-500/50'
   const errorInputClass = 'ring-brand-error/70 ring-2'
   const errorClass = 'text-brand-error text-xs font-medium'
   const errorTransition = {
-    enterActiveClass:
-      'transition duration-200 ease-out motion-reduce:transition-none',
-    enterFromClass: '-translate-y-1 opacity-0',
-    leaveActiveClass:
-      'transition duration-150 ease-in motion-reduce:transition-none',
+    enterActiveClass: 'transition-[opacity,translate] duration-200 ease-out',
+    enterFromClass: 'opacity-0 motion-safe:-translate-y-1',
+    leaveActiveClass: 'transition-[opacity] duration-150 ease-out',
     leaveToClass: 'opacity-0'
   }
 

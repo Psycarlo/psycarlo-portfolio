@@ -2,8 +2,8 @@
 // `.img-frame` rules in src/styles/global.css. Runs once per full page
 // load; `astro:page-load` re-scans after every client-side navigation.
 
-const STAGGER_MS = 60
-const MAX_STAGGER_STEPS = 8
+const STAGGER_MS = 70
+const MAX_STAGGER_STEPS = 6
 
 let observer: IntersectionObserver | undefined
 

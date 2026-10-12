@@ -17,19 +17,19 @@ const {
 } = Astro.props
 ---
 
-<div class="bg-brand-lightest dark:bg-brand-darker relative rounded-lg">
+<div class="bg-brand-lightest dark:bg-brand-darker relative rounded-4xl">
   {
     (topic || title || description) && (
       <div class="p-8">
         {topic && (
           <div class="reveal flex items-center gap-2">
-            <div class="h-2 min-h-[0.5rem] w-2 min-w-[0.5rem] animate-pulse rounded-full bg-orange-500 motion-reduce:animate-none" />
+            <span class="status-dot" aria-hidden="true" />
             <h2 class="text-xl font-medium">{topic}</h2>
           </div>
         )}
         {title && description && (
           <div class="reveal mt-10 flex flex-col gap-2">
-            <h3 class="text-4xl font-semibold">{title}</h3>
+            <h3 class="text-4xl font-semibold tracking-tight">{title}</h3>
             <p class="text-brand-grayDark dark:text-brand-grayLight">
               {description}
             </p>

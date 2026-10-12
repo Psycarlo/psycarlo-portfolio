@@ -16,11 +16,13 @@ const { title, description, pubDate, updatedDate, heroImage, id } = Astro.props
           <Image
             src={heroImage}
             alt=""
-            class="w-full rounded-lg shadow-sm"
+            class="img-outline w-full rounded-2xl"
             transition:name={`hero-${id}`}
           />
           <div class="reveal flex flex-col gap-2">
-            <span class="font-mono dark:text-gray-300">
+            <span
+              class="text-brand-grayDark dark:text-brand-gray font-mono text-xs tracking-wide uppercase"
+            >
               {
                 new Intl.DateTimeFormat('en-US', {
                   month: 'long',
@@ -29,7 +31,7 @@ const { title, description, pubDate, updatedDate, heroImage, id } = Astro.props
                 }).format(pubDate)
               }
             </span>
-            <h1 class="text-xl font-semibold">{title}</h1>
+            <h1 class="text-2xl font-semibold tracking-tight">{title}</h1>
             <p class="dark:text-gray-300">{description}</p>
           </div>
         </div>

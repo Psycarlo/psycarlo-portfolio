@@ -20,9 +20,9 @@ const { page } = Astro.props
 ---
 
 <header
-  class="bg-brand-lightest dark:border-brand-darky dark:bg-brand-darker xs:px-4 he:px-6 fixed top-4 left-[50%] z-50 flex h-16 w-[96%] translate-x-[-50%] items-center justify-between rounded-xl px-2 shadow-md sm:w-[560px] dark:border"
+  class="bg-brand-lightest/80 dark:bg-brand-darker/80 shadow-float xs:h-16 xs:px-3 fixed top-4 left-[50%] z-50 flex h-14 w-[calc(100%-1rem)] translate-x-[-50%] items-center justify-between rounded-full border border-transparent px-2.5 backdrop-blur-xl backdrop-saturate-150 sm:w-[560px]"
 >
-  <nav aria-label="Main">
+  <nav aria-label="Main" data-tooltip-group>
     <ul class="xs:gap-2.5 flex items-center gap-1">
       <li>
         <HeaderButton
@@ -149,7 +149,7 @@ const { page } = Astro.props
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
-            stroke-width="2"
+            stroke-width="1.8"
             stroke-linecap="round"
             stroke-linejoin="round"
             class="group-hover:text-brand-darkest dark:group-hover:text-brand-lightest h-5 w-5 transition-colors duration-200"
@@ -165,7 +165,7 @@ const { page } = Astro.props
       </li>
     </ul>
   </nav>
-  <ul class="flex items-center gap-3">
+  <ul class="xs:gap-3 flex items-center gap-1">
     <li>
       <ThemeToggle />
     </li>
@@ -175,3 +175,25 @@ const { page } = Astro.props
     </li>
   </ul>
 </header>
+
+<script>
+  // The first nav tooltip waits before opening. Once one has been shown, its
+  // neighbours open instantly until the pointer or focus leaves the nav
+  // (`[data-warm]` in src/styles/global.css). Delegated so it survives swaps.
+  document.addEventListener('transitionend', (event) => {
+    const tooltip = event.target as HTMLElement
+    if (event.propertyName !== 'opacity') return
+    if (!tooltip.classList?.contains('nav-tooltip')) return
+    if (getComputedStyle(tooltip).opacity !== '1') return
+    tooltip.closest('[data-tooltip-group]')?.setAttribute('data-warm', '')
+  })
+
+  function cool(event: PointerEvent | FocusEvent) {
+    const group = (event.target as Element).closest?.('[data-tooltip-group]')
+    if (!group || group.contains(event.relatedTarget as Node | null)) return
+    group.removeAttribute('data-warm')
+  }
+
+  document.addEventListener('pointerout', cool)
+  document.addEventListener('focusout', cool)
+</script>

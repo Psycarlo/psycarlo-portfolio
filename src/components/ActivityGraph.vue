@@ -77,7 +77,7 @@
     <div
       v-if="tooltip"
       role="tooltip"
-      class="bg-brand-darkest text-brand-lightest animate-slideDownAndFade dark:bg-brand-dark pointer-events-none fixed z-100 -translate-x-1/2 -translate-y-full rounded-md px-2.5 py-1.5 text-xs leading-none whitespace-nowrap shadow-md will-change-[transform,opacity] select-none"
+      class="bg-brand-darkest text-brand-lightest animate-slideDownAndFade dark:bg-brand-dark pointer-events-none fixed z-100 -translate-x-1/2 -translate-y-full rounded-lg px-2.5 py-1.5 text-xs leading-none font-medium whitespace-nowrap shadow-[0_8px_24px_-8px_oklch(0_0_0/0.35),inset_0_1px_0_oklch(1_0_0/0.08)] will-change-[transform,opacity] select-none"
       :style="{ left: `${tooltip.x}px`, top: `${tooltip.y}px` }"
     >
       {{ tooltip.text }}

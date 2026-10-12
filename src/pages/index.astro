@@ -39,7 +39,7 @@ import TheFooter from '../components/TheFooter.vue'
 ---
 
 <Layout title="Portfolio | Carlos Marques" page="home">
-  <div class="rounded-lg bg-brand-lightest dark:bg-brand-darker relative">
+  <div class="rounded-4xl bg-brand-lightest dark:bg-brand-darker relative">
     <div class="flex flex-col px-8 pt-8 sm:pb-8 sm:relative">
       <a
         href="https://bitcoin.psycarlo.com"
@@ -51,10 +51,7 @@ import TheFooter from '../components/TheFooter.vue'
         <span>bitcoin-decoder</span>
       </a>
       <div class="reveal flex gap-3 items-center">
-        <div
-          class="bg-orange-500 w-2 h-2 rounded-full animate-pulse motion-reduce:animate-none"
-        >
-        </div>
+        <span class="status-dot" aria-hidden="true"></span>
         <div class="flex flex-col items-start">
           <h2 class="font-medium he:text-xl text-lg">
             Software Engineer, Designer
@@ -78,7 +75,7 @@ import TheFooter from '../components/TheFooter.vue'
         </span>
       </div>
       <div class="reveal flex flex-col gap-3 mt-6">
-        <h1 class="font-semibold text-4xl text-center sm:text-left">
+        <h1 class="font-semibold text-4xl tracking-tight text-center sm:text-left">
           Carlos Marques
         </h1>
         <p
@@ -88,7 +85,7 @@ import TheFooter from '../components/TheFooter.vue'
           I create beautiful and performant products.<br />
           Also teach about bitcoin ₿.
         </p>
-        <ul class="flex gap-4 items-center justify-center sm:justify-normal">
+        <ul class="flex gap-3 items-center justify-center sm:justify-normal">
           <li>
             <Button to="/contact/" text="Contact Me" variant="primary" />
           </li>
@@ -113,14 +110,11 @@ import TheFooter from '../components/TheFooter.vue'
       </div>
     </div>
     <div
-      class="flex flex-col gap-6 rounded-lg bg-brand-lighter dark:bg-brand-darky mt-0 sm:mt-10 mb-3 p-6 mx-2 relative z-10"
+      class="flex flex-col gap-6 rounded-3xl bg-brand-lighter dark:bg-brand-darky mt-0 sm:mt-10 mb-3 p-6 mx-2 relative z-10"
     >
-      <div class="reveal flex justify-between">
+      <div class="reveal flex items-center justify-between">
         <div class="flex gap-2 items-center">
-          <div
-            class="bg-orange-500 w-2 h-2 rounded-full"
-          >
-          </div>
+          <span class="size-2 rounded-full bg-orange-500" aria-hidden="true"></span>
           <h2 class="font-medium text-xl">Projects</h2>
         </div>
         <ViewButton />
@@ -157,23 +151,20 @@ import TheFooter from '../components/TheFooter.vue'
       </div>
     </div>
     <div
-      class="flex flex-col gap-6 rounded-lg bg-brand-lighter dark:bg-brand-darky mt-3 p-6 mx-2 relative z-10"
+      class="flex flex-col gap-6 rounded-3xl bg-brand-lighter dark:bg-brand-darky mt-3 p-6 mx-2 relative z-10"
     >
-      <div class="reveal flex justify-between">
+      <div class="reveal flex items-center justify-between">
         <div class="flex gap-2 items-center">
-          <div
-            class="bg-orange-500 w-2 h-2 rounded-full"
-          >
-          </div>
+          <span class="size-2 rounded-full bg-orange-500" aria-hidden="true"></span>
           <h2 class="font-medium text-xl">Activity</h2>
         </div>
-        <div class="flex gap-2">
+        <div class="flex gap-1.5">
           <a
             href="https://github.com/psycarlo"
             target="_blank"
             rel="noopener"
             aria-label="GitHub profile"
-            class="flex h-9 w-9 items-center justify-center rounded-lg border bg-brand-lightest dark:bg-brand-dark border-brand-light dark:border-brand-darky text-brand-darkest dark:text-brand-lightest shadow-md ring-offset-1 ring-offset-transparent hover:ring-[3px] hover:ring-brand-light dark:hover:ring-brand-dark/40 transition-all duration-300"
+            class="flex h-9 w-9 items-center justify-center rounded-full border border-transparent bg-brand-lightest dark:bg-brand-dark shadow-border hover:shadow-border-hover transition-[box-shadow,scale] duration-150 ease-out active:scale-[0.96] text-brand-darkest dark:text-brand-lightest"
           >
             <GithubIcon class="w-5 h-5" />
           </a>
@@ -182,7 +173,7 @@ import TheFooter from '../components/TheFooter.vue'
             target="_blank"
             rel="noopener"
             aria-label="GitLab profile"
-            class="flex h-9 w-9 items-center justify-center rounded-lg border bg-brand-lightest dark:bg-brand-dark border-brand-light dark:border-brand-darky shadow-md ring-offset-1 ring-offset-transparent hover:ring-[3px] hover:ring-brand-light dark:hover:ring-brand-dark/40 transition-all duration-300"
+            class="flex h-9 w-9 items-center justify-center rounded-full border border-transparent bg-brand-lightest dark:bg-brand-dark shadow-border hover:shadow-border-hover transition-[box-shadow,scale] duration-150 ease-out active:scale-[0.96]"
           >
             <GitlabIcon class="w-5 h-5" />
           </a>
@@ -193,14 +184,11 @@ import TheFooter from '../components/TheFooter.vue'
       </div>
     </div>
     <div
-      class="flex flex-col gap-6 rounded-lg bg-brand-lighter dark:bg-brand-darky mt-3 p-6 mx-2 relative z-10"
+      class="flex flex-col gap-6 rounded-3xl bg-brand-lighter dark:bg-brand-darky mt-3 p-6 mx-2 relative z-10"
     >
-      <div class="reveal flex justify-between">
+      <div class="reveal flex items-center justify-between">
         <div class="flex gap-2 items-center">
-          <div
-            class="bg-orange-500 w-2 h-2 rounded-full"
-          >
-          </div>
+          <span class="size-2 rounded-full bg-orange-500" aria-hidden="true"></span>
           <h2 class="font-medium text-xl">Technologies</h2>
         </div>
         <ViewButton to="/technologies/" />

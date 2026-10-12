@@ -20,22 +20,22 @@ import qrln from '../assets/qrln.png'
     <ContentLayout>
       <BitcoinCard>
         <div
-          class="img-frame bg-brand-lighty dark:bg-brand-dark overflow-hidden rounded-lg shadow-md *:block"
+          class="img-frame bg-brand-lighty dark:bg-brand-dark overflow-hidden rounded-2xl *:block"
         >
-          <Image src={splash} alt="Psybitcoin Splash" class="rounded-lg" />
+          <Image src={splash} alt="Psybitcoin Splash" class="rounded-2xl" />
         </div>
         <Image
           src={qr}
           width={480}
           alt="Bitcoin Address QR Code"
-          class="rounded-lg duration-300 hover:scale-[1.02] transition-transform"
+          class="img-outline rounded-2xl transition-[scale] duration-200 ease-out motion-safe:hover:scale-[1.02]"
           slot="qr"
         />
         <Image
           src={qrln}
           width={480}
           alt="Lightning Address QR Code"
-          class="rounded-lg duration-300 hover:scale-[1.02] transition-transform"
+          class="img-outline rounded-2xl transition-[scale] duration-200 ease-out motion-safe:hover:scale-[1.02]"
           slot="qrln"
         />
       </BitcoinCard>

@@ -6,22 +6,26 @@ const { id, title, pubDate, image } = Astro.props
 
 <a
   href={`/blog/${id}/`}
-  class="cursor-pointer dark:border-brand-grayDarkest group flex flex-col gap-2 rounded-lg border border-brand-light bg-brand-lightest p-4 shadow-sm transition-[translate,box-shadow,border-color] duration-300 ease-out hover:-translate-y-0.5 hover:border-brand-grayLightest hover:shadow-md dark:bg-brand-dark dark:hover:border-brand-grayDark motion-reduce:transition-none motion-reduce:hover:translate-y-0"
+  class="group bg-brand-lightest shadow-border hover:shadow-border-hover dark:bg-brand-dark flex cursor-pointer flex-col gap-1 rounded-3xl border border-transparent p-2 transition-[box-shadow,translate,scale] duration-200 ease-out active:scale-[0.99] motion-safe:hover:-translate-y-0.5"
 >
-  <span class="font-mono dark:text-gray-300">
-    {
-      new Intl.DateTimeFormat('en-US', {
-        month: 'long',
-        day: 'numeric',
-        year: 'numeric'
-      }).format(pubDate)
-    }
-  </span>
   <Image
     src={image}
     alt=""
-    class="rounded-md"
+    class="img-outline rounded-2xl"
     transition:name={`hero-${id}`}
   />
-  <h3 class="font-semibold text-xl py-2">{title}</h3>
+  <div class="flex flex-col gap-1 px-3 pt-2 pb-3">
+    <span
+      class="text-brand-grayDark dark:text-brand-gray font-mono text-xs tracking-wide uppercase"
+    >
+      {
+        new Intl.DateTimeFormat('en-US', {
+          month: 'long',
+          day: 'numeric',
+          year: 'numeric'
+        }).format(pubDate)
+      }
+    </span>
+    <h3 class="text-xl font-semibold tracking-tight">{title}</h3>
+  </div>
 </a>

@@ -1,17 +1,19 @@
 <template>
   <a
-    class="reveal dark:border-brand-grayDarkest group border-brand-light bg-brand-lightest dark:bg-brand-dark hover:border-brand-grayLightest dark:hover:border-brand-grayDark flex items-center justify-between rounded-lg border p-4 shadow-sm transition-[translate,box-shadow,border-color] duration-300 ease-out hover:-translate-y-0.5 hover:shadow-md motion-reduce:transition-none motion-reduce:hover:translate-y-0"
+    class="reveal group hover:bg-brand-lightest hover:shadow-border dark:hover:bg-brand-dark -mx-3 flex items-center justify-between gap-3 rounded-xl border border-transparent p-3 transition-[background-color,box-shadow,scale] duration-150 ease-out active:scale-[0.99]"
     :href="to"
   >
     <div class="flex items-center gap-4">
       <div
-        class="border-brand-light bg-brand-lightest dark:border-brand-darky dark:bg-brand-darky flex h-14 min-h-[3.5rem] w-14 min-w-[3.5rem] items-center justify-center rounded-full border-2 bg-center"
+        class="bg-brand-lightest shadow-border dark:bg-brand-darker flex h-14 min-h-[3.5rem] w-14 min-w-[3.5rem] items-center justify-center overflow-hidden rounded-full border border-transparent bg-center"
       >
         <slot></slot>
       </div>
       <div class="flex flex-col">
-        <p class="text-lg font-semibold">{{ title }}</p>
-        <p class="text-brand-grayDark dark:text-brand-gray">{{ type }}</p>
+        <p class="text-lg font-semibold tracking-tight">{{ title }}</p>
+        <p class="text-brand-grayDark dark:text-brand-gray text-sm">
+          {{ type }}
+        </p>
       </div>
     </div>
     <svg
@@ -20,7 +22,7 @@
       viewBox="0 0 24 24"
       stroke-width="2"
       stroke="currentColor"
-      class="stroke-brand-grayLight group-hover:stroke-brand-gray h-5 min-h-[1.25rem] w-5 min-w-[1.25rem] transition-all duration-300 group-hover:translate-x-1"
+      class="stroke-brand-grayLight group-hover:stroke-brand-grayDark dark:stroke-brand-grayDark dark:group-hover:stroke-brand-gray h-5 min-h-[1.25rem] w-5 min-w-[1.25rem] transition-[translate,stroke] duration-200 ease-out motion-safe:group-hover:translate-x-0.5"
     >
       <path
         stroke-linecap="round"

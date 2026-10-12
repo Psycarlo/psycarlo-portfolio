@@ -1,18 +1,16 @@
 <template>
-  <div class="mb-2 flex flex-col gap-2 pb-2">
+  <div class="px-2 pb-2">
     <div
-      class="reveal bg-brand-lighter dark:bg-brand-darky relative z-10 mx-2 flex flex-col gap-6 rounded-lg px-6 py-8"
+      class="reveal bg-brand-lighter dark:bg-brand-darky relative z-10 flex flex-col gap-8 rounded-3xl px-6 pt-8 pb-10"
     >
-      <div class="flex justify-between">
+      <div class="flex items-center justify-between">
         <div class="flex items-center gap-3">
-          <div
-            class="h-2 min-h-[0.5rem] w-2 min-w-[0.5rem] rounded-full bg-orange-500"
-          ></div>
+          <span class="size-2 rounded-full bg-orange-500" aria-hidden="true" />
           <h2 class="text-xl font-medium">
             Follow <span class="hidden sm:inline">Me</span>
           </h2>
         </div>
-        <ul class="flex gap-1 sm:gap-3">
+        <ul class="flex gap-1.5 sm:gap-2.5">
           <li>
             <SocialButton
               to="https://www.instagram.com/psybitcoin"
@@ -81,29 +79,29 @@
           </li>
         </ul>
       </div>
-    </div>
-    <div
-      class="reveal bg-brand-lighter dark:bg-brand-darky relative z-10 mx-2 flex flex-col items-center gap-2 rounded-lg px-6 py-12"
-    >
-      <p class="text-brand-grayDark dark:text-brand-gray text-center text-sm">
-        © {{ new Date().getFullYear() }} Carlos Marques | Software Engineer &
-        Designer
-      </p>
-      <div class="text-sm">
-        by
-        <a
-          href="https://www.instagram.com/psybitcoin/"
-          class="hover:text-brand-darky dark:hover:text-brand-light underline transition-all duration-200 hover:no-underline"
-          target="_blank"
-          >Psycarlo</a
-        >
-        //
-        <a
-          class="hover:text-brand-darky dark:hover:text-brand-light underline transition-all duration-200 hover:no-underline"
-          href="https://psybitcoin.com/"
-          target="_blank"
-          >Psybitcoin</a
-        >
+      <div
+        class="border-brand-grayLightest/70 dark:border-brand-dark flex flex-col items-center gap-2 border-t pt-8"
+      >
+        <p class="text-brand-grayDark dark:text-brand-gray text-center text-sm">
+          © {{ new Date().getFullYear() }} Carlos Marques | Software Engineer &
+          Designer
+        </p>
+        <div class="text-sm">
+          by
+          <a
+            href="https://www.instagram.com/psybitcoin/"
+            class="decoration-brand-grayLight hover:text-brand-darkest dark:decoration-brand-grayDark dark:hover:text-brand-lightest underline underline-offset-2 transition-[color,text-decoration-color] duration-150 ease-out hover:decoration-transparent"
+            target="_blank"
+            >Psycarlo</a
+          >
+          //
+          <a
+            class="decoration-brand-grayLight hover:text-brand-darkest dark:decoration-brand-grayDark dark:hover:text-brand-lightest underline underline-offset-2 transition-[color,text-decoration-color] duration-150 ease-out hover:decoration-transparent"
+            href="https://psybitcoin.com/"
+            target="_blank"
+            >Psybitcoin</a
+          >
+        </div>
       </div>
     </div>
   </div>

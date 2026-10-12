@@ -11,19 +11,19 @@ const { text, copyText, class: className } = Astro.props
 <button
   type="button"
   class:list={[
-    'group border-brand-grayLightest hover:ring-brand-light dark:border-brand-darky dark:hover:ring-brand-dark/40 flex cursor-pointer items-center gap-1 rounded-lg border px-3 py-2 text-sm font-medium shadow-sm ring-offset-1 ring-offset-transparent transition-all duration-300 hover:ring-[3px]',
+    'group bg-brand-lightest shadow-border hover:shadow-border-hover flex h-10 shrink-0 cursor-pointer items-center gap-1.5 rounded-full border border-transparent ps-3.5 pe-4 text-sm font-medium transition-[background-color,box-shadow,scale] duration-150 ease-out active:scale-[0.96] dark:bg-transparent dark:hover:bg-white/4',
     className
   ]}
   data-copy={copyText}
 >
-  <span class="relative h-5 w-5" aria-hidden="true">
+  <span class="grid h-5 w-5 place-items-center" aria-hidden="true">
     <svg
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
       viewBox="0 0 24 24"
       stroke-width="1.5"
       stroke="currentColor"
-      class="absolute inset-0 h-5 w-5 transition-[opacity,scale,rotate] duration-300 ease-out group-data-copied:scale-50 group-data-copied:-rotate-12 group-data-copied:opacity-0 motion-reduce:transition-none"
+      class="ease-icon h-5 w-5 blur-[0px] transition-[opacity,filter,scale] duration-300 [grid-area:1/1] group-data-copied:opacity-0 motion-safe:group-data-copied:scale-[0.25] motion-safe:group-data-copied:blur-[4px]"
     >
       <path
         stroke-linecap="round"
@@ -37,7 +37,7 @@ const { text, copyText, class: className } = Astro.props
       viewBox="0 0 24 24"
       stroke-width="2"
       stroke="currentColor"
-      class="text-brand-success absolute inset-0 h-5 w-5 scale-50 opacity-0 transition-[opacity,scale] duration-300 ease-out group-data-copied:scale-100 group-data-copied:opacity-100 motion-reduce:transition-none"
+      class="text-brand-success ease-icon h-5 w-5 opacity-0 blur-[0px] transition-[opacity,filter,scale] duration-300 [grid-area:1/1] group-data-copied:opacity-100 motion-safe:scale-[0.25] motion-safe:blur-[4px] motion-safe:group-data-copied:scale-100 motion-safe:group-data-copied:blur-[0px]"
     >
       <path
         stroke-linecap="round"

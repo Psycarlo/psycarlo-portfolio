@@ -18,16 +18,16 @@ const { title, description, website, intro, problem, solution } = Astro.props
 // Screenshot slots get a placeholder frame that pulses until the image loads.
 // The frame sits inside the reveal wrapper because both use `animation`.
 const frameClass =
-  'img-frame bg-brand-lighty dark:bg-brand-dark overflow-hidden rounded-md *:block'
+  'img-frame bg-brand-lighty dark:bg-brand-dark overflow-hidden rounded-2xl *:block'
 ---
 
-<div class="bg-brand-lightest dark:bg-brand-darker relative rounded-lg">
+<div class="bg-brand-lightest dark:bg-brand-darker relative rounded-4xl">
   <div class="flex flex-col gap-4 px-8 pt-8">
     <BackLink href="/projects/" text="All projects" class="reveal" />
     <div class="reveal flex flex-col gap-4">
       <slot />
       <h2
-        class="text-brand-darkest dark:text-brand-lightest text-3xl font-bold"
+        class="text-brand-darkest dark:text-brand-lightest text-3xl font-bold tracking-tight"
       >
         {title}
       </h2>
@@ -72,7 +72,7 @@ const frameClass =
       {
         problem && (
           <div class="reveal flex flex-col gap-3">
-            <h2 class="text-brand-darkest dark:text-brand-lightest text-2xl font-semibold">
+            <h2 class="text-brand-darkest dark:text-brand-lightest text-2xl font-semibold tracking-tight">
               The Problem
             </h2>
             <p class="text-brand-grayDark dark:text-brand-gray text-lg">
@@ -93,7 +93,7 @@ const frameClass =
       {
         solution && (
           <div class="reveal flex flex-col gap-3">
-            <h2 class="text-brand-darkest dark:text-brand-lightest text-2xl font-semibold">
+            <h2 class="text-brand-darkest dark:text-brand-lightest text-2xl font-semibold tracking-tight">
               Our Solution
             </h2>
             <p class="text-brand-grayDark dark:text-brand-gray text-lg">
@@ -104,7 +104,7 @@ const frameClass =
       }
       <div class="reveal flex flex-col gap-3">
         <h2
-          class="text-brand-darkest dark:text-brand-lightest text-2xl font-semibold"
+          class="text-brand-darkest dark:text-brand-lightest text-2xl font-semibold tracking-tight"
         >
           Technologies Used
         </h2>

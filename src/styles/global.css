@@ -4,8 +4,47 @@
 
 @plugin '@tailwindcss/typography';
 
+/* Stronger curves than the CSS keywords: a fast start reads as responsive.
+   Overrides Tailwind's `ease-out` / `ease-in-out`; `ease-icon` is for icon
+   swaps. */
+@theme static {
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+  --ease-icon: cubic-bezier(0.2, 0, 0, 1);
+}
+
+/* Shadow rings instead of borders: they adapt to any background and read
+   as depth, not as a box. Pair with `border border-transparent` so the edge
+   survives forced-colors mode. */
+@utility shadow-border {
+  box-shadow: var(--shadow-border);
+}
+
+@utility shadow-border-hover {
+  box-shadow: var(--shadow-border-hover);
+}
+
+@utility shadow-float {
+  box-shadow: var(--shadow-float);
+}
+
+/* A crisp inset edge for photos and screenshots on any background. */
+@utility img-outline {
+  outline: 1px solid var(--image-outline);
+  outline-offset: -1px;
+}
+
 @layer base {
   :root {
+    --shadow-border:
+      0px 0px 0px 1px oklch(0 0 0 / 0.06), 0px 1px 2px -1px oklch(0 0 0 / 0.06),
+      0px 2px 4px 0px oklch(0 0 0 / 0.04);
+    --shadow-border-hover:
+      0px 0px 0px 1px oklch(0 0 0 / 0.08), 0px 1px 2px -1px oklch(0 0 0 / 0.08),
+      0px 2px 4px 0px oklch(0 0 0 / 0.06);
+    --shadow-float:
+      var(--shadow-border), 0px 12px 32px -12px oklch(0 0 0 / 0.14);
+    --image-outline: oklch(0 0 0 / 0.1);
     --expo-out: linear(
       0 0%,
       0.1684 2.66%,
@@ -24,6 +63,14 @@
       0.9915 68.74%,
       1 100%
     );
+  }
+
+  .dark {
+    --shadow-border: 0 0 0 1px oklch(1 0 0 / 0.08);
+    --shadow-border-hover: 0 0 0 1px oklch(1 0 0 / 0.13);
+    --shadow-float:
+      var(--shadow-border), 0px 12px 32px -12px oklch(0 0 0 / 0.6);
+    --image-outline: oklch(1 0 0 / 0.1);
   }
 
   /* One consistent, visible focus indicator for keyboard users. Components
@@ -85,6 +132,7 @@ html.dark[data-theme-transition]::view-transition-new(root) {
   from {
     opacity: 0;
     transform: translateY(12px);
+    filter: blur(4px);
   }
 }
 
@@ -105,7 +153,7 @@ html[data-motion]
 
 html[data-motion]
   .reveal[data-revealed]:not(:has([data-astro-transition-scope])) {
-  animation: reveal-in 0.7s var(--expo-out) var(--reveal-delay, 0ms) backwards;
+  animation: reveal-in 0.6s var(--expo-out) var(--reveal-delay, 0ms) backwards;
 }
 
 /* Hero portrait: CSS only, so the LCP image never waits on JS. */
@@ -123,8 +171,11 @@ html[data-motion]
 }
 
 /* Images inside an .img-frame fade in once loaded; the frame pulses meanwhile.
-   src/scripts/motion.ts sets data-loading only on images not yet decoded. */
+   src/scripts/motion.ts sets data-loading only on images not yet decoded.
+   The inset outline gives every photo the same crisp edge on any background. */
 .img-frame img {
+  outline: 1px solid var(--image-outline);
+  outline-offset: -1px;
   transition: opacity 0.6s var(--expo-out);
 }
 
@@ -142,4 +193,45 @@ html[data-motion]
   .img-frame:has(img[data-loading]) {
     animation: frame-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   }
+}
+
+/* Live status dot: a soft halo breathes out of the dot instead of the whole
+   dot blinking. Static under reduced motion. */
+.status-dot {
+  position: relative;
+  display: inline-block;
+  width: 0.5rem;
+  height: 0.5rem;
+  flex-shrink: 0;
+  border-radius: 9999px;
+  background-color: var(--color-orange-500);
+}
+
+@keyframes status-halo {
+  from {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(2.6);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .status-dot::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background-color: inherit;
+    animation: status-halo 2s var(--ease-out) infinite;
+  }
+}
+
+/* Nav tooltips: once one has been shown, the rest open instantly while the
+   pointer stays in the nav (src/components/TheHeader.astro sets data-warm). */
+[data-warm] .nav-tooltip {
+  transition-delay: 0ms;
+  transition-duration: 0ms;
 }
